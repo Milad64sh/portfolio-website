@@ -1,12 +1,14 @@
 // pages/index.js
-import styles from '../styles/main.module.scss';
+import styles from './index.module.scss';
+import Layout from './layout';
 
 const Home = () => {
   return (
-    <div className={styles.container}>
-      <h1>Welcome to My Portfolio</h1>
-      {/* Add your portfolio content here */}
-    </div>
+    <Layout>
+      <div className={styles.container}>
+        <h1>Welcome to My Portfolio</h1>
+      </div>
+    </Layout>
   );
 };
 
