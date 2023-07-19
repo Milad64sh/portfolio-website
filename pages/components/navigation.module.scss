@@ -1,113 +1,52 @@
-@import '../../styles/transition.scss';
-
+@import '..//../styles/mixins.scss';
 .nav {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: space-between;
-  padding: 10px 0;
-
-  .logo {
-    font-size: 24px;
-    text-transform: uppercase;
-    text-decoration: none;
+  align-items: center;
+  visibility: visible;
+  .logoLink {
+    padding: 10px;
+    @include Link;
   }
-
-  .menuIcon {
-    cursor: pointer;
-    /* Hide the menu icon by default for larger screens */
-    display: none;
-    @media screen and (max-width: 767px) {
-      display: block;
-      margin-right: 10px;
-    }
-  }
-  .iconBar {
-    width: 20px;
-    height: 2px;
-    background-color: #333;
-    margin: 6px 0;
-    transition: 0.4s;
-    /* Style the menu icon when it's open */
-    &.open {
-      &.iconBar:nth-child(1) {
-        transform: rotate(-45deg) translate(-7px, 7px);
-      }
-
-      &.iconBar:nth-child(2) {
-        opacity: 0;
-      }
-
-      &.iconBar:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -5px);
-      }
-    }
-  }
-
-  .menu {
-    // display: none;
-    list-style: none;
-    margin-left: auto;
-    flex-direction: row;
-    transition: all 0.4s ease-in;
-    visibility: hidden;
-    width: 100%;
-    // transform: translateX(-100%);
-    /* Hide the menu on larger screens */
-    @media screen and (min-width: 768px) {
+  .navList {
+    .menu {
       display: flex;
-      visibility: visible;
-    }
-    &.open {
-      /* Style the menu for smaller screens */
-      @media screen and (max-width: 767px) {
-        display: flex;
-        // transform: translateX(0);
-        visibility: visible;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 1.5rem;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        padding: 10px 0;
-        width: 100%;
-      }
-    }
-
-    li {
-      margin-left: 20px;
-      margin-right: 10px;
-
-      /* Style the menu items for smaller screens */
-      @media screen and (max-width: 767px) {
-        margin-left: 0;
-        margin-bottom: 10px;
-      }
-      a {
-        text-decoration: none;
-        text-transform: uppercase;
+      flex-direction: row;
+      list-style-type: none;
+      .menuItem {
+        padding: 10px;
+        @include Link;
         color: #333;
       }
+    }
+  }
+  &.mobile {
+    visibility: hidden;
+    .menuIcon {
+      background-color: red;
+      width: 10px;
+      height: 10px;
     }
   }
 }
 
 .border {
-  display: block;
   position: relative;
-  padding-bottom: 0;
-}
-.border::before {
-  content: '';
-  position: absolute;
-  display: block;
-  bottom: 0;
-  left: 60%;
-  transform: translateX(-50%);
-  width: 80%;
-  border-bottom: 1px solid #000;
-  @media screen and (max-width: 767px) {
-    display: none;
+  padding: 0;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateX(0);
+    width: 50%;
+    height: 1px;
+    background-color: #333;
+    transition: 0.4s ease-in;
+    opacity: 1;
+    @media screen and (max-width: 767px) {
+      opacity: 0;
+    }
   }
 }
