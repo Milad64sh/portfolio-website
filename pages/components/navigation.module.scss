@@ -1,10 +1,15 @@
-@import '..//../styles/mixins.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+:export {
+  transition: $transition;
+}
 .nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   visibility: visible;
+  transition: $transition;
   .logoLink {
     padding: 10px;
     @include Link;
@@ -21,14 +26,6 @@
       }
     }
   }
-  &.mobile {
-    visibility: hidden;
-    .menuIcon {
-      background-color: red;
-      width: 10px;
-      height: 10px;
-    }
-  }
 }
 
 .border {
@@ -43,10 +40,5 @@
     width: 50%;
     height: 1px;
     background-color: #333;
-    transition: 0.4s ease-in;
-    opacity: 1;
-    @media screen and (max-width: 767px) {
-      opacity: 0;
-    }
   }
 }

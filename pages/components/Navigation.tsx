@@ -6,32 +6,17 @@ interface NavbarProps {
   isMobile: boolean;
 }
 const navigation: React.FC<NavbarProps> = ({ isMobile }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
   return (
     <>
-      <nav className={`${styles.nav} ${isMobile ? styles.mobile : ''}`}>
+      <nav className={styles.nav}>
         <div className={styles.logo}>
           <Link href='/' legacyBehavior>
             <a className={styles.logoLink}>logo</a>
           </Link>
         </div>
-        <div
-          className={`${styles.menuIcon} ${isMenuOpen && styles.open}`}
-          onClick={toggleMenu}
-        >
-          <div className={styles.iconBar} />
-          <div className={styles.iconBar} />
-          <div className={styles.iconBar} />
-        </div>
+
         <div className={styles.navList}>
-          <ul
-            className={`${styles.menu} ${
-              isMenuOpen ? styles.open : styles.close
-            }`}
-          >
+          <ul className={styles.menu}>
             <li>
               <Link href='/home' legacyBehavior>
                 <a className={styles.menuItem}>Home</a>

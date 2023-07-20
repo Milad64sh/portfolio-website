@@ -1,0 +1,105 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+:export {
+  transition: $transition;
+}
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 3.5rem;
+  .logoMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .logoLink {
+    padding: 10px;
+    @include Link;
+  }
+  .menuIcon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-right: 10px;
+    .iconBar {
+      width: 30px;
+      height: 2px;
+      background-color: #333;
+      margin: 4px;
+      transition: all 0.4s ease-in;
+    }
+    &.open {
+      .iconBar:nth-child(1) {
+        transform: rotate(-45deg) translate(-7px, 7px);
+      }
+      .iconBar:nth-child(2) {
+        opacity: 0;
+      }
+      .iconBar:nth-child(3) {
+        transform: rotate(45deg) translate(-7px, -7px);
+      }
+    }
+  }
+  .navList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    &.open {
+      visibility: visible;
+      opacity: 1;
+    }
+    .menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      list-style-type: none;
+      width: 90%;
+      .menuLi {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        transition: $transition;
+        &:hover {
+          width: 25%;
+        }
+        .menuItem {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          justify-content: center;
+          position: relative;
+          text-decoration: none;
+          text-transform: uppercase;
+          margin: 5px 0;
+          color: #333;
+          letter-spacing: 2px;
+          width: 100%;
+        }
+        .linkBorder {
+          position: absolute;
+          padding: 0;
+          background-color: #333;
+          text-align: center;
+          bottom: -3px;
+          width: 100%;
+          height: 1px;
+        }
+      }
+    }
+  }
+}
