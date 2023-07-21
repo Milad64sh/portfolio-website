@@ -14,17 +14,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   useEffect(() => {
     window.addEventListener('resize', () => {
-      setIsMobile(window.innerWidth <= 767); // Adjust the breakpoint according
+      setIsMobile(window.innerWidth <= 767);
     });
   }, []);
   return (
-    <div className={styles.container}>
-      {isMobile ? <MobileNav /> : <Navigation isMobile={isMobile} />}
-      <header>
+    <div className={styles.layout}>
+      <header className={styles.header}>
+        {isMobile ? <MobileNav /> : <Navigation isMobile={isMobile} />}
         <Header />
       </header>
       <main>{children}</main>
-      <footer>
+      <footer className={styles.footer}>
         <Footer />
       </footer>
     </div>

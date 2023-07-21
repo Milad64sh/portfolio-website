@@ -13,7 +13,7 @@ const MobileNav = () => {
         <div className={styles.logoMenu}>
           <div className={styles.logo}>
             <Link href='/' legacyBehavior>
-              <a className={styles.logoLink}>logo</a>
+              <a className={styles.logoLink}>M</a>
             </Link>
           </div>
           <div

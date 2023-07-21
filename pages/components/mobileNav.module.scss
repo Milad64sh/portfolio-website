@@ -30,7 +30,7 @@
     .iconBar {
       width: 30px;
       height: 2px;
-      background-color: #333;
+      background-color: #39372d;
       margin: 4px;
       transition: all 0.4s ease-in;
     }
@@ -55,6 +55,7 @@
     opacity: 0;
     transition: all 0.4s ease-in;
     backdrop-filter: blur(10px);
+    z-index: 100;
     width: 100%;
     &.open {
       visibility: visible;
@@ -67,6 +68,7 @@
       justify-content: center;
       list-style-type: none;
       width: 90%;
+
       .menuLi {
         display: flex;
         flex-direction: column;
@@ -86,18 +88,31 @@
           text-decoration: none;
           text-transform: uppercase;
           margin: 5px 0;
-          color: #333;
+          color: #39372d;
           letter-spacing: 2px;
           width: 100%;
         }
         .linkBorder {
           position: absolute;
           padding: 0;
-          background-color: #333;
+          background-color: #39372d;
           text-align: center;
           bottom: -3px;
           width: 100%;
           height: 1px;
+        }
+      }
+      .menuLi:nth-child(2) {
+        .linkBorder {
+          background-color: #f7f1f8;
+        }
+      }
+      .menuLi:nth-child(3) {
+        .menuItem {
+          color: #f7f1f8;
+        }
+        .linkBorder {
+          background-color: #f7f1f8;
         }
       }
     }

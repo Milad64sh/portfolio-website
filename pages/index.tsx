@@ -5,9 +5,7 @@ import Layout from './layout';
 const Home = () => {
   return (
     <Layout>
-      <div className={styles.container}>
-        <h1>Welcome to My Portfolio</h1>
-      </div>
+      <div className={styles.container}></div>
     </Layout>
   );
 };

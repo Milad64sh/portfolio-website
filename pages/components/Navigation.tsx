@@ -11,7 +11,7 @@ const navigation: React.FC<NavbarProps> = ({ isMobile }) => {
       <nav className={styles.nav}>
         <div className={styles.logo}>
           <Link href='/' legacyBehavior>
-            <a className={styles.logoLink}>logo</a>
+            <a className={styles.logoLink}>M</a>
           </Link>
         </div>
 
