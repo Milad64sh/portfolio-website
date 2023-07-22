@@ -6,10 +6,7 @@ const header = () => {
     <header>
       <div className={styles.header}>
         <div className={styles.HBG}>
-          <div className={styles.HBGYellow}></div>
           <div className={styles.HBGLightGrey}></div>
-          <div className={styles.HBGMiddleGrey}></div>
-          <div className={styles.HBGGrey}></div>
           <div className={styles.HBGDarkGrey}></div>
         </div>
 

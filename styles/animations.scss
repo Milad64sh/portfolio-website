@@ -1,0 +1,19 @@
+@keyframes slideFromLeft {
+  from {
+    visibility: hidden;
+    transform: translateX(-100%);
+  }
+  to {
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

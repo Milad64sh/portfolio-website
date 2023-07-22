@@ -1,5 +1,6 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
+@import '../../styles/animations.scss';
 :export {
   transition: $transition;
 }
@@ -11,6 +12,8 @@
   visibility: visible;
   background-color: transparent;
   transition: $transition;
+  animation: fadeIn 1s ease-in-out;
+
   .logoLink {
     padding: 10px;
     @include Link;
