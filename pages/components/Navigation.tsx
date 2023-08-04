@@ -11,7 +11,10 @@ const navigation: React.FC<NavbarProps> = ({ isMobile }) => {
       <nav className={styles.nav}>
         <div className={styles.logo}>
           <Link href='/' legacyBehavior>
-            <a className={styles.logoLink}>M</a>
+            <a className={styles.logoLink}>
+              <span className={styles.logoSpan}>Milad</span>
+              <span className={styles.logoSpan}>Shalikarian</span>
+            </a>
           </Link>
         </div>
 
@@ -35,7 +38,7 @@ const navigation: React.FC<NavbarProps> = ({ isMobile }) => {
           </ul>
         </div>
       </nav>
-      <div className={styles.border}></div>
+      {/* <div className={styles.border}></div> */}
     </>
   );
 };

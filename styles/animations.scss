@@ -10,10 +10,22 @@
 }
 
 @keyframes fadeIn {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-color: white;
+  }
+  33% {
+    background-color: lightgrey;
+  }
+  66% {
+    background-color: transparent;
   }
 }

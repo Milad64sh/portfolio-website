@@ -11,10 +11,14 @@
   align-items: center;
   position: relative;
   width: 100%;
-  height: 70vh;
+  height: 100vh;
   background-image: url('../../public/images/trinity-nguyen-Fhq3qIYUHL8-unsplash.jpg');
   background-size: cover;
   background-position: center;
+  @media screen and (max-width: 767px) {
+    background-image: none;
+  }
+
   .HBG {
     display: flex;
     flex-direction: column;
@@ -22,7 +26,7 @@
     height: 100%;
     animation: fadeIn 1s ease-in-out forwards;
     .HBGLightGrey {
-      flex: 1;
+      // flex: 1;
       position: absolute;
       display: block;
       -webkit-clip-path: polygon(
@@ -63,7 +67,7 @@
         0 100%,
         100% 100%
       );
-      background-color: rgba(#000f08, 0.8);
+      background-color: rgba(#000f08, 0.7);
       overflow: visible;
       z-index: 1;
       width: 100%;
@@ -75,12 +79,32 @@
     justify-content: start;
     align-items: end;
     z-index: 1500;
-    width: 30rem;
-    height: 40rem;
-    margin-bottom: 0.5rem;
-    border: 1px solid #f7f1f8;
-    border-bottom: none;
-    border-right: none;
+    width: 60%;
+    // height: 90%;
+    margin-bottom: 2rem;
+    background-color: rgba(#777, 0.3);
+    -webkit-clip-path: polygon(
+      100% 0,
+      67% 4%,
+      43% 8%,
+      22% 17%,
+      0 39%,
+      0 100%,
+      100% 100%
+    );
+    clip-path: polygon(
+      100% 0,
+      67% 4%,
+      43% 8%,
+      22% 17%,
+      0 25%,
+      0 100%,
+      100% 100%
+    );
+    @media screen and (max-width: 767px) {
+      background-color: transparent;
+    }
+
     .title {
       display: flex;
       flex-direction: column;
@@ -90,25 +114,80 @@
       z-index: 1000;
       color: #f7f1f8;
       text-transform: uppercase;
-      border: 1px solid #f7f1f8;
       border-left: none;
       border-right: none;
       height: 55%;
-      .headerH3 {
-        font-weight: 100;
-        letter-spacing: 2px;
-        padding: 0;
-        border-top: 1px solid #f7f1f8;
-        animation: fadeIn 1s ease-in-out forwards, slideFromLeft 1s ease-in-out;
-      }
       .headerH2 {
         letter-spacing: 5px;
         font-weight: 100;
         font-size: 3rem;
-        padding: 0;
+        padding-left: 25px;
         margin: 0;
         animation: fadeIn 1s ease-in-out forwards, slideFromLeft 1s ease-in-out;
       }
+      .headerH3 {
+        font-weight: 100;
+        letter-spacing: 2px;
+        padding-left: 25px;
+        margin-left: 5px;
+        width: 100%;
+        border-top: 1px solid #888;
+        animation: fadeIn 1s ease-in-out forwards;
+        .headerH3Span {
+          display: block;
+          padding: 5px;
+
+          @media screen and (max-width: 767px) {
+            font-size: medium;
+            padding: 2px;
+          }
+        }
+        .headerH3Span:nth-child(1) {
+          padding-top: 5px;
+          animation: fadeIn 5s ease-in-out forwards, slideFromLeft 5s;
+          .loadingContainer {
+            display: inline-block;
+            justify-content: center;
+            align-items: center;
+            .loadingSpan {
+              display: inline-block;
+              margin: 0 2px;
+              width: 4px;
+              height: 4px;
+              border-radius: 5px;
+            }
+          }
+          .loadingSpan:nth-child(1) {
+            animation: loading 2s infinite;
+          }
+          .loadingSpan:nth-child(2) {
+            animation: loading 2s infinite 0.5s;
+          }
+          .loadingSpan:nth-child(3) {
+            animation: loading 2s infinite 1s;
+          }
+          .loadingTxt {
+            display: inline-block;
+            font-size: small;
+          }
+        }
+        .headerH3Span:nth-child(2) {
+          animation: fadeIn 4s ease-in-out forwards, slideFromLeft 4s;
+        }
+        .headerH3Span:nth-child(3) {
+          animation: fadeIn 3s ease-in-out forwards, slideFromLeft 3s;
+        }
+        .headerH3Span:nth-child(4) {
+          animation: fadeIn 2s ease-in-out forwards, slideFromLeft 2s;
+        }
+        .headerH3Span:nth-child(5) {
+          animation: fadeIn 1s ease-in-out forwards, slideFromLeft 1s;
+        }
+      }
     }
+  }
+  .headerBtn {
+    z-index: 2;
+    margin-bottom: 6rem;
   }
 }

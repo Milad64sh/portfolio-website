@@ -5,7 +5,6 @@ import { ReactNode } from 'react';
 import Navigation from './components/Navigation';
 import MobileNav from './components/MobileNav';
 import styles from './index.module.scss';
-import SingleProject from './components/singleProject';
 
 interface LayoutProps {
   children: ReactNode;
@@ -24,10 +23,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {isMobile ? <MobileNav /> : <Navigation isMobile={isMobile} />}
         <Header />
       </header>
-      <main>
-        <SingleProject />
-        {children}
-      </main>
+      <main>{children}</main>
       <footer className={styles.footer}>
         <Footer />
       </footer>
