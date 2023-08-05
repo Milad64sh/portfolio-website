@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './header.module.scss';
 import Button from './Button';
-import Courses from './Courses';
+import Expertise from './Expertise';
 
 const header = () => {
   return (
@@ -37,11 +37,7 @@ const header = () => {
           </div>
         </div>
       </header>
-      <main>
-        <section id='sectionCourses'>
-          <Courses />
-        </section>
-      </main>
+      <main></main>
     </>
   );
 };

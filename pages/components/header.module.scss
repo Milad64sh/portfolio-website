@@ -26,7 +26,6 @@
     height: 100%;
     animation: fadeIn 1s ease-in-out forwards;
     .HBGLightGrey {
-      // flex: 1;
       position: absolute;
       display: block;
       -webkit-clip-path: polygon(
@@ -80,7 +79,6 @@
     align-items: end;
     z-index: 1500;
     width: 60%;
-    // height: 90%;
     margin-bottom: 2rem;
     background-color: rgba(#777, 0.3);
     -webkit-clip-path: polygon(

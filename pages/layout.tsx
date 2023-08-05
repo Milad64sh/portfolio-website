@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Header from './components/header';
 import Footer from './components/footer';
+import Expertise from './components/Expertise';
 import { ReactNode } from 'react';
 import Navigation from './components/Navigation';
 import MobileNav from './components/MobileNav';
@@ -23,7 +24,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {isMobile ? <MobileNav /> : <Navigation isMobile={isMobile} />}
         <Header />
       </header>
-      <main>{children}</main>
+      <main>
+        <section id='sectionCourses'>
+          <Expertise />
+        </section>
+        {children}
+      </main>
       <footer className={styles.footer}>
         <Footer />
       </footer>

@@ -1,5 +1,32 @@
+@import './variables.scss';
+
 @mixin Link {
   text-transform: uppercase;
   text-decoration: none;
   list-style-type: none;
+}
+
+@mixin applySectionTitleStyles {
+  color: map-get($sectionTitle, color);
+  text-transform: map-get($sectionTitle, text-transform);
+  font-weight: map-get($sectionTitle, font-weight);
+  letter-spacing: map-get($sectionTitle, letter-spacing);
+  padding: map-get($sectionTitle, padding);
+  margin-left: map-get($sectionTitle, margin-left);
+  background-color: map-get($sectionTitle, background-color);
+}
+
+@mixin applyEpertiseItemFlex {
+  display: map-get($expertiseItemFlex, display);
+  flex-direction: map-get($expertiseItemFlex, flex-direction);
+  justify-content: map-get($expertiseItemFlex, justify-content);
+  align-items: map-get($expertiseItemFlex, align-items);
+}
+
+@mixin mobileScreen {
+  @media screen and (max-width: 767px) {
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgba(lighten($color: #4c5651, $amount: 15%), 0.8);
+  }
 }
