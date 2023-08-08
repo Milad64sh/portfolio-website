@@ -1,11 +1,14 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
+@import '../../styles/animations.scss';
 .container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(10, 1fr);
   gap: 5px 5px;
   background-color: rgba(lighten($color: #4c5651, $amount: 60%), 0.8);
+  opacity: 0;
+  transition: opacity 1 ease-in-out;
   .heading {
     @include applyEpertiseItemFlex;
     margin-top: 1.5rem;
@@ -14,10 +17,6 @@
     grid-row: 1/2;
     background-color: lighten($color: #4c5651, $amount: 20%);
     @media screen and (max-width: 767px) {
-      // display: flex;
-      // flex-direction: column;
-      // justify-content: center;
-      // align-items: center;
       background-color: rgba(lighten($color: #354d43, $amount: 20%), 0.8);
       margin-left: 5px;
       margin-right: 5px;
@@ -26,9 +25,12 @@
       @include applySectionTitleStyles;
       z-index: 100;
       @media screen and (max-width: 767px) {
+        padding: 2rem;
         font-size: 1.5rem;
         font-weight: 100;
         background-color: transparent;
+        margin-left: 0;
+        margin-right: 0;
       }
     }
   }
@@ -40,6 +42,7 @@
     margin-right: 5px;
     margin-top: 5px;
     @include mobileScreen;
+    animation: slideFromLeft 1.5s ease-in-out;
   }
   .expertiseItem.css {
     @include applyEpertiseItemFlex;
@@ -114,4 +117,7 @@
     display: flex;
     flex-direction: column;
   }
+}
+.container .show {
+  opacity: 1;
 }

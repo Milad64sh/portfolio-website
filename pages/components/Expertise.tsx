@@ -1,21 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styles from './expertise.module.scss';
+import HtmlSkill from './skills/HtmlSkill';
 
-const Expertise = () => {
+const Expertise: React.FC = () => {
+  // adding a scroll listener to the window
+  const [scrollY, setScrollY] = useState<number>(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  const minScroll = 0;
+  const maxScroll = 2000;
+  const normalizedScroll = Math.min(maxScroll, Math.max(minScroll, scrollY));
+  const progress = (normalizedScroll - minScroll) / (maxScroll - minScroll);
+  const opacity = cubicBezier(progress);
+  function cubicBezier(progress: number): number {
+    return 1 - (1 - progress) ** 2;
+  }
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.container} style={{ opacity: opacity }}>
         <div className={styles.heading}>
           <h3>expertise</h3>
         </div>
         <div className={`${styles.expertiseItem} ${styles.html}`}>
-          <div className={styles.expertiseItemContent}>
-            <h4>html5</h4>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum,
-              ullam?
-            </p>
-          </div>
+          <HtmlSkill />
         </div>
         <div className={`${styles.expertiseItem} ${styles.css}`}>
           <div className={styles.expertiseItemContent}>
