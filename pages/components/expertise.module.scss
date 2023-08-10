@@ -34,7 +34,7 @@
       }
     }
   }
-  .expertiseItem.html {
+  .expertiseItem .Html-0 {
     @include applyEpertiseItemFlex;
     background-color: rgba(lighten($color: #4c5651, $amount: 15%), 0.8);
     grid-column: 3/7;
