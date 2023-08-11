@@ -20,3 +20,10 @@ $expertiseItemFlex: (
   justify-content: start,
   align-items: center,
 );
+
+$skillHoverEffect: (
+  transition: transform 0.5s ease-in-out,
+  hover: (
+    transform: scale(1.1),
+  ),
+);

@@ -31,12 +31,12 @@
   },
   {
     "id": 7,
-    "title": "Jest",
-    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta laborum provident voluptas earum suscipit quia, cupiditate hic non quibusdam totam?"
+    "title": "Node.js",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, rem itaque illo eius asperiores, libero voluptas est, possimus alias quidem suscipit? Ut aspernatur doloremque dignissimos. Similique recusandae tempora quasi tenetur?"
   },
   {
     "id": 8,
-    "title": "Node.js",
-    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, rem itaque illo eius asperiores, libero voluptas est, possimus alias quidem suscipit? Ut aspernatur doloremque dignissimos. Similique recusandae tempora quasi tenetur?"
+    "title": "Jest",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta laborum provident voluptas earum suscipit quia, cupiditate hic non quibusdam totam?"
   }
 ]

@@ -16,7 +16,7 @@
   background-color: map-get($sectionTitle, background-color);
 }
 
-@mixin applyEpertiseItemFlex {
+@mixin applyExpertiseItemFlex {
   display: map-get($expertiseItemFlex, display);
   flex-direction: map-get($expertiseItemFlex, flex-direction);
   justify-content: map-get($expertiseItemFlex, justify-content);
@@ -28,5 +28,12 @@
     margin-left: 5px;
     margin-right: 5px;
     background-color: rgba(lighten($color: #4c5651, $amount: 15%), 0.8);
+  }
+}
+
+@mixin skillHoverEffect {
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.01, 1.01);
   }
 }

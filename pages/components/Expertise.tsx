@@ -42,7 +42,7 @@ const Expertise: React.FC = () => {
           <SingleSkill
             key={skill.id}
             skill={skill}
-            className={styles[`skill-${index}`]}
+            style={styles[`expertiseItem-${index}`]}
           />
         ))}
       </div>

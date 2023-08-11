@@ -1,7 +1,7 @@
 @import '../../../styles/mixins.scss';
 
 .expertiseItemContent {
-  @include applyEpertiseItemFlex;
+  @include applyExpertiseItemFlex;
   width: 70%;
   color: $light;
   h4 {
