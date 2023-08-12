@@ -7,6 +7,10 @@ const Expertise: React.FC = () => {
   const { skillsData } = useAppContext();
   // adding a scroll listener to the window
   const [scrollY, setScrollY] = useState<number>(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // modal function
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +46,12 @@ const Expertise: React.FC = () => {
           <SingleSkill
             key={skill.id}
             skill={skill}
-            style={styles[`expertiseItem-${index}`]}
+            style={
+              !isModalOpen
+                ? styles[`expertiseItem-${index}`]
+                : styles.expertiseItemModal
+            }
+            toggleModal={toggleModal}
           />
         ))}
       </div>

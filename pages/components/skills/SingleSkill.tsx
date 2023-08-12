@@ -8,10 +8,13 @@ interface SingleSkillProp {
     description: string;
   };
   style?: string;
+  toggleModal: () => void;
 }
-const SingleSkill: React.FC<SingleSkillProp> = ({ skill, style }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const toggleModal = () => setIsModalOpen(!isModalOpen);
+const SingleSkill: React.FC<SingleSkillProp> = ({
+  skill,
+  style,
+  toggleModal,
+}) => {
   return (
     <div className={style} onClick={toggleModal}>
       <div className={styles.expertiseItemContent}>
