@@ -2,15 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from './expertise.module.scss';
 import { useAppContext } from '../../contexts/AppContext';
 import SingleSkill from './skills/SingleSkill';
+import SingleSkillModal from './skills/SingleSkillModal';
 
 const Expertise: React.FC = () => {
   const { skillsData } = useAppContext();
   // adding a scroll listener to the window
   const [scrollY, setScrollY] = useState<number>(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // modal function
-  const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,12 +43,7 @@ const Expertise: React.FC = () => {
           <SingleSkill
             key={skill.id}
             skill={skill}
-            style={
-              !isModalOpen
-                ? styles[`expertiseItem-${index}`]
-                : styles.expertiseItemModal
-            }
-            toggleModal={toggleModal}
+            style={styles[`expertiseItem-${index}`]}
           />
         ))}
       </div>

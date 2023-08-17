@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SingleSkillModal from './SingleSkillModal';
 import styles from './SingleSkill.module.scss';
 
 interface SingleSkillProp {
@@ -8,20 +9,27 @@ interface SingleSkillProp {
     description: string;
   };
   style?: string;
-  toggleModal: () => void;
 }
-const SingleSkill: React.FC<SingleSkillProp> = ({
-  skill,
-  style,
-  toggleModal,
-}) => {
+const SingleSkill: React.FC<SingleSkillProp> = ({ skill, style }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // modal function
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
   return (
-    <div className={style} onClick={toggleModal}>
-      <div className={styles.expertiseItemContent}>
-        <h4>{skill.title}</h4>
-        <p>{skill.description}</p>
+    <>
+      <div className={style} onClick={toggleModal}>
+        <div className={styles.expertiseItemContent}>
+          <h4>{skill.title}</h4>
+          <p>{skill.description}</p>
+        </div>
       </div>
-    </div>
+      <SingleSkillModal
+        isOpen={isModalOpen}
+        onClose={toggleModal}
+        skill={skill}
+        style={style}
+      />
+    </>
   );
 };
 
