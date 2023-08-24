@@ -8,7 +8,7 @@ interface ModalProps {
     description: string;
   };
   isOpen: boolean;
-  style?: string;
+  index: number;
   onClose: () => void;
 }
 
@@ -16,16 +16,19 @@ const SingleSkillModal: React.FC<ModalProps> = ({
   isOpen,
   onClose,
   skill,
-  style,
+  index,
 }) => {
   if (!isOpen) return null;
   return (
-    <div className={style}>
-      <div className={styles.modalContent}>
-        <p>{skill.title}</p>
-        <button className={styles.modalBtn} onClick={onClose}>
-          Close
-        </button>
+    <div className={styles.modalContainer}>
+      <div className={styles[`expertiseItem-${index}`]}>
+        <div className={styles.expertiseItemModalContent}>
+          <button className={styles.modalBtn} onClick={onClose}>
+            X
+          </button>
+          <h4>{skill.title}</h4>
+          <p>{skill.description}</p>
+        </div>
       </div>
     </div>
   );

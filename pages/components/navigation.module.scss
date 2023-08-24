@@ -10,7 +10,7 @@
   justify-content: space-between;
   align-items: center;
   visibility: visible;
-  // background-color: transparent;
+  background-color: transparent;
   background-color: rgba(#f7f1f8, 0.8);
   transition: $transition;
   animation: fadeIn 1s ease-in-out;
@@ -40,18 +40,3 @@
     }
   }
 }
-
-// .border {
-//   position: relative;
-//   padding: 0;
-//   &::after {
-//     content: '';
-//     position: absolute;
-//     bottom: 0;
-//     right: 0;
-//     transform: translateX(0);
-//     width: 70%;
-//     height: 1px;
-//     background-color: #000f08;
-//   }
-// }

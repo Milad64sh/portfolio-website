@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './mobileNav.module.scss';
 import Link from 'next/link';
 
@@ -7,6 +7,7 @@ const MobileNav = () => {
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
+
   return (
     <>
       <nav className={styles.mobileNav}>

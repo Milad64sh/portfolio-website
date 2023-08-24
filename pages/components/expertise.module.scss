@@ -34,17 +34,6 @@
       }
     }
   }
-  .expertiseItemModal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    background-color: rgba(#000000, 0.8);
-    width: 100%;
-    height: 100%;
-    z-index: 2000;
-  }
   .expertiseItem-0 {
     @include applyExpertiseItemFlex;
     @include skillHoverEffect;
@@ -55,7 +44,6 @@
     margin-right: 5px;
     margin-top: 5px;
     @include mobileScreen;
-    animation: slideFromLeft 1.5s ease-in-out;
   }
   .expertiseItem-1 {
     @include applyExpertiseItemFlex;

@@ -22,6 +22,12 @@
   justify-content: map-get($expertiseItemFlex, justify-content);
   align-items: map-get($expertiseItemFlex, align-items);
 }
+@mixin singleSkillModal {
+  grid-column: 3/5;
+  grid-row: 4/10;
+  margin-top: -15px;
+  margin-bottom: 2.88rem;
+}
 
 @mixin mobileScreen {
   @media screen and (max-width: 767px) {
@@ -36,4 +42,10 @@
   &:hover {
     transform: scale(1.01, 1.01);
   }
+}
+
+@mixin modal {
+  @include applyExpertiseItemFlex;
+  @include singleSkillModal;
+  @include mobileScreen;
 }

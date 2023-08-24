@@ -18,10 +18,25 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       setIsMobile(window.innerWidth <= 767);
     });
   }, []);
+  const [scroll, setScroll] = useState(false);
+  const handleScroll = () => {
+    if (window.scrollY > 100) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <div className={styles.layout}>
       <header className={styles.header}>
-        {isMobile ? <MobileNav /> : <Navigation isMobile={isMobile} />}
+        {isMobile ? <MobileNav /> : <Navigation scroll={scroll} />}
         <Header />
       </header>
       <main>

@@ -1,20 +1,77 @@
-// .modalContainer {
-//   position: fixed;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   background-color: rgba(0, 0, 0, 0.7);
-//   z-index: 4000;
-//   .modalContent {
-//     background-color: white;
-//     padding: 20px;
-//     border-radius: 5px;
-//     .modalBtn {
-//       cursor: pointer;
-//     }
-//   }
-// }
+@import '../../../styles/animations.scss';
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+.modalContainer {
+  position: fixed;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 5px 5px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 4000;
+  transition: opacity 0.3s ease-in-out;
+
+  .expertiseItem-0 {
+    background-color: rgba(lighten($color: #4c5651, $amount: 15%), 0.8);
+    @include modal;
+  }
+  .expertiseItem-1 {
+    background-color: rgba(lighten($color: #4c5651, $amount: 25%), 0.8);
+    @include modal;
+  }
+  .expertiseItem-2 {
+    background-color: rgba(lighten($color: #748518, $amount: 10%), 0.8);
+    @include modal;
+  }
+  .expertiseItem-3 {
+    background-color: rgba(lighten($color: #4c5651, $amount: 10%), 0.8);
+    @include modal;
+  }
+  .expertiseItem-4 {
+    background-color: rgba(lighten($color: #4c5651, $amount: 10%), 0.8);
+    @include modal;
+  }
+  .expertiseItem-5 {
+    background-color: rgba(lighten($color: #4c5651, $amount: 10%), 0.8);
+    @include modal;
+  }
+  .expertiseItem-6 {
+    background-color: rgba(darken($color: #4c5651, $amount: 10%), 0.8);
+    @include modal;
+  }
+  .expertiseItem-7 {
+    background-color: rgba(darken($color: #4c5651, $amount: 5%), 0.8);
+    @include modal;
+  }
+
+  .expertiseItemModalContent {
+    @include applyExpertiseItemFlex;
+    width: 100%;
+    color: $light;
+
+    h4 {
+      margin: 0.5rem 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .modalBtn {
+      display: block;
+      margin-left: auto;
+      margin-top: 10px;
+      margin-right: 10px;
+      background-color: transparent;
+      border: none;
+      color: $light;
+      font-size: large;
+      cursor: pointer;
+    }
+    p {
+      margin: 0;
+      width: 90%;
+    }
+  }
+}

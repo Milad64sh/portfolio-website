@@ -9,12 +9,16 @@ interface SingleSkillProp {
     description: string;
   };
   style?: string;
+  index: number;
 }
-const SingleSkill: React.FC<SingleSkillProp> = ({ skill, style }) => {
+const SingleSkill: React.FC<SingleSkillProp> = ({ skill, style, index }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // modal function
-  const toggleModal = () => setIsModalOpen(!isModalOpen);
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+    document.body.style.overflow = isModalOpen ? 'auto' : 'hidden';
+  };
   return (
     <>
       <div className={style} onClick={toggleModal}>
@@ -27,7 +31,7 @@ const SingleSkill: React.FC<SingleSkillProp> = ({ skill, style }) => {
         isOpen={isModalOpen}
         onClose={toggleModal}
         skill={skill}
-        style={style}
+        index={index}
       />
     </>
   );

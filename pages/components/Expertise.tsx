@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from './expertise.module.scss';
 import { useAppContext } from '../../contexts/AppContext';
 import SingleSkill from './skills/SingleSkill';
-import SingleSkillModal from './skills/SingleSkillModal';
 
 const Expertise: React.FC = () => {
   const { skillsData } = useAppContext();
@@ -43,6 +42,7 @@ const Expertise: React.FC = () => {
           <SingleSkill
             key={skill.id}
             skill={skill}
+            index={index}
             style={styles[`expertiseItem-${index}`]}
           />
         ))}
