@@ -115,6 +115,17 @@
     margin-right: 5px;
     @include mobileScreen;
   }
+  .expertiseItem-8 {
+    @include applyExpertiseItemFlex;
+    @include skillHoverEffect;
+    cursor: pointer;
+    background-color: rgba(darken($color: #4c5651, $amount: 5%), 0.8);
+    grid-column: 1/7;
+    grid-row: 10/10;
+    margin-left: 5px;
+    margin-right: 5px;
+    @include mobileScreen;
+  }
   .expertiseItemContent {
     @include applyExpertiseItemFlex;
     width: 70%;

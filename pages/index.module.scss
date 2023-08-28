@@ -26,7 +26,6 @@
     background-color: transparent;
     display: flex;
     flex-direction: column;
-
     -webkit-clip-path: polygon(25% 0, 17% 22%, 8% 43%, 0 100%, 0 0);
     clip-path: polygon(25% 0, 17% 22%, 8% 43%, 0 43%, 0 0);
     background-color: rgba(#f7f1f8, 0.8);
@@ -47,12 +46,15 @@
       }
     }
     .navList {
+      margin: 0;
       .menu {
-        display: flex;
-        flex-direction: row;
+        margin-top: 1.5rem;
         list-style-type: none;
+        padding-left: 10px;
+        width: 10%;
         .menuItem {
-          padding: 20px;
+          display: block;
+          padding-bottom: 20px;
           letter-spacing: 3px;
           @include Link;
           color: #000f08;

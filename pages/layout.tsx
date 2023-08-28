@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Header from './components/header';
 import Footer from './components/footer';
 import Expertise from './components/Expertise';
+import ProjectsList from './components/projects/ProjectsList';
 import { ReactNode } from 'react';
 import Navigation from './components/Navigation';
 import MobileNav from './components/MobileNav';
@@ -77,6 +78,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <main>
           <section id='sectionCourses'>
             <Expertise />
+          </section>
+          <section id='sectionProjects'>
+            <ProjectsList />
           </section>
           {children}
         </main>
