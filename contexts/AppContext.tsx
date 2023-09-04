@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 
 import skillsData from '../data/skillsListData.json';
-import projectsVideo from '../data/projects.json';
+import { videosData } from '../data/projects';
 
 interface AppContextType {
   skillsData: Array<{
@@ -9,9 +9,10 @@ interface AppContextType {
     title: string;
     description: string;
   }>;
-  projectsVideo: Array<{
-    id: number;
-    videoName: string;
+  videosData: Array<{
+    id: string;
+    title: string;
+    vidSrc: string;
   }>;
 }
 interface AppProviderProps {
@@ -21,7 +22,7 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 
 const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   return (
-    <AppContext.Provider value={{ skillsData, projectsVideo }}>
+    <AppContext.Provider value={{ skillsData, videosData }}>
       {children}
     </AppContext.Provider>
   );
