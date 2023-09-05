@@ -18,6 +18,8 @@ const SingleProject: React.FC<SingleProject> = ({ title, videoSrc }) => {
           </video>
         </div>
       </div>
+      <button className={styles.singlePrjBtn}>details</button>
+      {/* <div className={styles.borderLine}></div> */}
     </div>
   );
 };
