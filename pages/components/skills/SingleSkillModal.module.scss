@@ -47,6 +47,10 @@
     background-color: rgba(darken($color: #4c5651, $amount: 5%), 0.8);
     @include modal;
   }
+  .expertiseItem-8 {
+    background-color: rgba(darken($color: #4c5651, $amount: 5%), 0.8);
+    @include modal;
+  }
 
   .expertiseItemModalContent {
     @include applyExpertiseItemFlex;
