@@ -1,6 +1,6 @@
-@import '../../styles/variables.scss';
-@import '../../styles/mixins.scss';
-@import '../../styles/animations.scss';
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+@import '../../../styles/animations.scss';
 
 .container {
   display: grid;
@@ -152,21 +152,13 @@
 .container .show {
   opacity: 1;
 }
-.sliderContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-color: red;
-
-  @media screen and (min-width: 767px) {
-    display: none;
-  }
-  .mobileContainer {
-    display: none;
+.ExpertiseMobileContainer {
+  display: none;
+  @media screen and (max-width: 767px) {
+    display: flex;
     flex-direction: column;
-    width: 90%;
-    height: 5rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 }

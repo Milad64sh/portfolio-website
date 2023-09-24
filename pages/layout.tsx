@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Header from './components/header';
 import Footer from './components/footer';
-import Expertise from './components/Expertise';
+import Skills from './components/skills/Skills';
 import ProjectsList from './components/projects/ProjectsList';
 import { ReactNode } from 'react';
 import Navigation from './components/Navigation';
@@ -77,7 +77,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </header>
         <main>
           <section id='sectionCourses'>
-            <Expertise />
+            <Skills />
           </section>
           <section id='sectionProjects'>
             <ProjectsList />

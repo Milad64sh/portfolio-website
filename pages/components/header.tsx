@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './header.module.scss';
 import Button from './Button';
-import Expertise from './Expertise';
 
 const header = () => {
   return (

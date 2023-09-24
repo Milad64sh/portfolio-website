@@ -1,0 +1,27 @@
+@import '../../styles/mixins.scss';
+.container {
+  width: 95%;
+  .heading {
+    @include applyExpertiseItemFlex;
+    margin-top: 1.5rem;
+    width: 100%;
+    background-color: lighten($color: #4c5651, $amount: 20%);
+    @media screen and (max-width: 767px) {
+      display: block;
+      background-color: rgba(lighten($color: #354d43, $amount: 20%), 0.8);
+    }
+    h3 {
+      @include applySectionTitleStyles;
+      z-index: 100;
+      width: 200px;
+      @media screen and (max-width: 767px) {
+        padding: 2rem;
+        font-size: 1.5rem;
+        font-weight: 100;
+        background-color: transparent;
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+  }
+}
