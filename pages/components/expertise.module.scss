@@ -1,6 +1,7 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 @import '../../styles/animations.scss';
+
 .container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -9,6 +10,9 @@
   background-color: rgba(lighten($color: #4c5651, $amount: 60%), 0.8);
   opacity: 0;
   transition: opacity 1 ease-in-out;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
   .heading {
     @include applyExpertiseItemFlex;
     margin-top: 1.5rem;
@@ -44,6 +48,8 @@
     margin-right: 5px;
     margin-top: 5px;
     @include mobileScreen;
+    @media screen and (max-width: 767px) {
+    }
   }
   .expertiseItem-1 {
     @include applyExpertiseItemFlex;
@@ -140,10 +146,27 @@
     }
   }
   @media screen and (max-width: 767px) {
-    display: flex;
-    flex-direction: column;
+    display: none;
   }
 }
 .container .show {
   opacity: 1;
+}
+.sliderContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: red;
+
+  @media screen and (min-width: 767px) {
+    display: none;
+  }
+  .mobileContainer {
+    display: none;
+    flex-direction: column;
+    width: 90%;
+    height: 5rem;
+  }
 }

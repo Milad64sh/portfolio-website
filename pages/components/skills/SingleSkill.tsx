@@ -8,7 +8,7 @@ interface SingleSkillProp {
     title: string;
     description: string;
   };
-  style?: string;
+  style?: any;
   index: number;
 }
 const SingleSkill: React.FC<SingleSkillProp> = ({ skill, style, index }) => {
