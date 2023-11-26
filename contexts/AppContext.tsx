@@ -17,15 +17,12 @@ interface AppContextType {
 }
 interface AppProviderProps {
   children: React.ReactNode;
+  value: AppContextType;
 }
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
-  return (
-    <AppContext.Provider value={{ skillsData, videosData }}>
-      {children}
-    </AppContext.Provider>
-  );
+const AppProvider: React.FC<AppProviderProps> = ({ children, value }) => {
+  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
 
 export const useAppContext = () => {
