@@ -12,7 +12,7 @@ interface SingleSkill {
 const SingleSkillMobile: React.FC<SingleSkill> = ({ skill, index }) => {
   return (
     <>
-      <div className={styles.container}>
+      <div className={`styles.container_${index}`}>
         <div className={styles.container__content}>
           <div className={styles.container__content__title}>{skill.title}</div>
           <div className={styles.container__content__desc}>

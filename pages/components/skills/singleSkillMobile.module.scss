@@ -1,42 +1,46 @@
 @import '../../../styles/variables.scss';
-.container {
+@import '../../../styles/mixins.scss';
+
+.container_1 {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
   margin-top: 1.5rem;
   background-color: $skill-mobile-bcg;
+  transition: all 0.3s ease-in-out;
+  z-index: 0;
+  width: 60%;
   .container__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    width: 70vw;
-    height: 300px;
-    margin-top: 5px;
+    @include container__content;
     .container__content__title {
-      color: white;
-      text-transform: uppercase;
-      font-size: 1.5rem;
-      letter-spacing: 2px;
-      width: 100%;
-      font-weight: 100;
-      text-align: center;
+      @include container__content__title;
     }
     .container__content__desc {
-      color: white;
-      padding: 5px 10px;
+      @include container__content__desc;
     }
   }
   .container__btn {
-    width: 90%;
-    padding: 5px 0;
-    border: none;
-    border-radius: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    @include container__btn;
+  }
+}
+.container_2 {
+  left: 27%;
+  opacity: 1;
+  width: 55%;
+  z-index: 1;
+  opacity: 0.7;
+  .container__content {
+    @include container__content;
+    .container__content__title {
+      @include container__content__title;
+    }
+    .container__content__desc {
+      @include container__content__desc;
+    }
+  }
+  .container__btn {
+    @include container__btn;
   }
 }

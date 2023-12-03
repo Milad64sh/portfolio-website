@@ -65,19 +65,17 @@ const SkillsMobile: React.FC = () => {
     <>
       <Heading name='skills' />
       <div className={styles.container}>
-        <div className={styles.container__btns}>
-          <button
-            className={styles.container__btns__btn}
-            onClick={prevBtnClicked}
-          ></button>
-          <button
-            className={styles.container__btns__btn}
-            onClick={nextBtnClicked}
-          ></button>
+        <button className={styles.container__btnPrev} onClick={prevBtnClicked}>
+          previous
+        </button>
+        <button className={styles.container__btnNext} onClick={nextBtnClicked}>
+          next
+        </button>
+        <div className={styles.container__skills}>
+          {skillsData.map((skill: any, index: number) => (
+            <SingleSkillMobile key={skill.id} skill={skill} index={index} />
+          ))}
         </div>
-        {skillsData.map((skill: any, index: number) => (
-          <SingleSkillMobile key={skill.id} skill={skill} index={index} />
-        ))}
       </div>
     </>
   );
