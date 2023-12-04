@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useAppContext } from '../../../contexts/AppContext';
 import SingleSkillMobile from './SingleSkillMobile';
 import Heading from '../Heading';
@@ -12,68 +12,66 @@ interface Skill {
 
 const SkillsMobile: React.FC = () => {
   const { skillsData } = useAppContext();
-  const [skills, setSkills] = useState<Skill[]>();
+  const [skills, setSkills] = useState<Skill[]>(skillsData);
   const [positions, setPositions] = useState<number[]>(() => [
     1, 2, 3, 4, 5, 6, 7, 8,
   ]);
 
-  useEffect(() => {
-    setSkills(skillsData);
-  }, [skillsData]);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const prevBtnClicked = () => {
-    setSkills((prevSkills: Skill[] | undefined) => {
-      if (!prevSkills) {
-        return prevSkills;
-      }
-      const newSkills = [...prevSkills];
-      newSkills.unshift(newSkills.pop() as Skill);
-      return newSkills;
-    });
+    const updatedSkillsData = [...skills];
+    const updatedPositions = [...positions];
 
-    setPositions((prevPositions) => {
-      if (!prevPositions) {
-        return prevPositions;
-      }
-      const newPositions = [...prevPositions];
-      newPositions.push(newPositions.shift() as number);
-      return newPositions;
-    });
+    if (updatedSkillsData.length > 0) {
+      updatedSkillsData.unshift(updatedSkillsData.pop()!);
+      updatedPositions.push(updatedPositions.shift()!);
+    }
+    setSkills(updatedSkillsData);
+    setPositions(updatedPositions);
+    if (containerRef) {
+      positions.forEach((position, index) => {
+        if (containerRef.current) {
+          const child = containerRef.current.children[index];
+          if (child) {
+            child.className = `container__skills skill-${position}`;
+          }
+        }
+      });
+    }
   };
 
   const nextBtnClicked = () => {
-    setSkills((prevSkills: Skill[] | undefined) => {
-      if (!prevSkills) {
-        return prevSkills;
-      }
-      const newSkills = [...prevSkills];
-      newSkills.push(newSkills.shift() as Skill);
-      return newSkills;
-    });
-
-    setPositions((prevPositions) => {
-      if (!prevPositions) {
-        return prevPositions;
-      }
-      const newPositions = [...prevPositions];
-      newPositions.unshift(newPositions.pop() as number);
-      return newPositions;
-    });
+    const updatedSkillsData = [...skills];
+    const updatedPositions = [...positions];
+    if (updatedSkillsData.length > 0) {
+      updatedSkillsData.push(updatedSkillsData.shift()!);
+      updatedPositions.unshift(updatedPositions.pop()!);
+    }
+    setSkills(updatedSkillsData);
+    setPositions(updatedPositions);
   };
 
   return (
     <>
       <Heading name='skills' />
       <div className={styles.container}>
-        <button className={styles.container__btnPrev} onClick={prevBtnClicked}>
-          previous
-        </button>
-        <button className={styles.container__btnNext} onClick={nextBtnClicked}>
-          next
-        </button>
-        <div className={styles.container__skills}>
+        <button
+          className={styles.container__btnPrev}
+          onClick={prevBtnClicked}
+        ></button>
+        <button
+          className={styles.container__btnNext}
+          onClick={nextBtnClicked}
+        ></button>
+        <div ref={containerRef} className={styles.container__skills}>
           {skillsData.map((skill: any, index: number) => (
-            <SingleSkillMobile key={skill.id} skill={skill} index={index} />
+            <SingleSkillMobile
+              key={skill.id}
+              skill={skill}
+              index={index}
+              style={styles[`skill-${index}`]}
+            />
           ))}
         </div>
       </div>

@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
 .container {
   position: relative;
   display: flex;
@@ -5,10 +7,22 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 50vh;
-  .container__btn--prev {
+  height: 65vh;
+  .container__btnPrev {
+    z-index: 5;
+    width: 25%;
+    height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
-  .container__btn--next {
+  .container__btnNext {
+    z-index: 5;
+    width: 25%;
+    height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
   .container__skills {
     position: absolute;
@@ -17,5 +31,56 @@
     align-items: center;
     width: 100%;
     z-index: 0;
+
+    .skill-0 {
+      z-index: 4;
+      opacity: 1;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.6),
+        0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25),
+        0 0 100px rgba(255, 255, 255, 0.1);
+      width: 70%;
+      height: 65vh;
+    }
+    .skill-1 {
+      left: 36%;
+      width: 55%;
+      height: 60vh;
+      z-index: 3;
+      opacity: 1;
+    }
+    .skill-2 {
+      left: 40%;
+      width: 55%;
+      height: 57vh;
+      z-index: 2;
+      background-color: lighten($skill-mobile-bcg, $amount: 10%);
+    }
+    .skill-3 {
+      left: 42%;
+      width: 55%;
+      height: 54vh;
+      z-index: 1;
+      background-color: lighten($skill-mobile-bcg, $amount: 15%);
+    }
+    .skill-4 {
+      left: 3%;
+      width: 55%;
+      height: 54vh;
+      z-index: 0;
+      background-color: lighten($skill-mobile-bcg, $amount: 20%);
+    }
+    .skill-5 {
+      left: 5%;
+      width: 55%;
+      height: 57vh;
+      z-index: 2;
+      background-color: lighten($skill-mobile-bcg, $amount: 15%);
+    }
+    .skill-6 {
+      left: 9%;
+      width: 55%;
+      height: 60vh;
+      z-index: 3;
+    }
   }
 }
