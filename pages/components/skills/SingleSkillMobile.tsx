@@ -8,9 +8,8 @@ interface SingleSkill {
     description: string;
   };
   style?: any;
-  index: number;
 }
-const SingleSkillMobile: React.FC<SingleSkill> = ({ skill, index, style }) => {
+const SingleSkillMobile: React.FC<SingleSkill> = ({ skill, style }) => {
   return (
     <>
       <div className={`${styles.container} ${style}`}>
@@ -20,7 +19,6 @@ const SingleSkillMobile: React.FC<SingleSkill> = ({ skill, index, style }) => {
             {skill.description}
           </div>
         </div>
-        {/* <button className={styles.container__btn}>details</button> */}
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
+@import '../../../styles/animations.scss';
 
 .container {
   position: absolute;
@@ -11,7 +12,7 @@
   background-color: $skill-mobile-bcg;
   transition: all 0.3s ease-in-out;
   z-index: 0;
-  width: 60%;
+  width: 40%;
   .container__content {
     @include container__content;
     .container__content__title {

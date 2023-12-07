@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useAppContext } from '../../../contexts/AppContext';
 import SingleSkillMobile from './SingleSkillMobile';
 import Heading from '../Heading';
@@ -13,37 +13,25 @@ interface Skill {
 const SkillsMobile: React.FC = () => {
   const { skillsData } = useAppContext();
   const [skills, setSkills] = useState<Skill[]>(skillsData);
-  const [positions, setPositions] = useState<number[]>(() => [
-    1, 2, 3, 4, 5, 6, 7, 8,
-  ]);
+  const [positions, setPositions] = useState<number[]>(() => [1, 2, 3, 4, 5]);
+
+  const updatedSkillsData = [...skills];
+  const updatedPositions = [...positions];
 
   const containerRef = useRef<HTMLDivElement>(null);
 
   const prevBtnClicked = () => {
-    const updatedSkillsData = [...skills];
-    const updatedPositions = [...positions];
-
     if (updatedSkillsData.length > 0) {
       updatedSkillsData.unshift(updatedSkillsData.pop()!);
       updatedPositions.push(updatedPositions.shift()!);
     }
+
+    console.log(containerRef.current?.children);
     setSkills(updatedSkillsData);
     setPositions(updatedPositions);
-    if (containerRef) {
-      positions.forEach((position, index) => {
-        if (containerRef.current) {
-          const child = containerRef.current.children[index];
-          if (child) {
-            child.className = `container__skills skill-${position}`;
-          }
-        }
-      });
-    }
   };
 
   const nextBtnClicked = () => {
-    const updatedSkillsData = [...skills];
-    const updatedPositions = [...positions];
     if (updatedSkillsData.length > 0) {
       updatedSkillsData.push(updatedSkillsData.shift()!);
       updatedPositions.unshift(updatedPositions.pop()!);
@@ -65,11 +53,10 @@ const SkillsMobile: React.FC = () => {
           onClick={nextBtnClicked}
         ></button>
         <div ref={containerRef} className={styles.container__skills}>
-          {skillsData.map((skill: any, index: number) => (
+          {skills.map((skill: any, index: number) => (
             <SingleSkillMobile
               key={skill.id}
               skill={skill}
-              index={index}
               style={styles[`skill-${index}`]}
             />
           ))}
