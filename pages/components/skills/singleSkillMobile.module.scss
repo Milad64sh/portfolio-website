@@ -3,16 +3,8 @@
 @import '../../../styles/animations.scss';
 
 .container {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  margin-top: 1.5rem;
-  background-color: $skill-mobile-bcg;
-  transition: all 0.3s ease-in-out;
-  z-index: 0;
-  width: 40%;
+  border: 1px solid black;
+  display: inline-block;
   .container__content {
     @include container__content;
     .container__content__title {

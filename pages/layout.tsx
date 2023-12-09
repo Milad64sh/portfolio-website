@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react';
 import Header from './components/header';
-import Footer from './components/footer';
-import Skills from './components/skills/Skills';
-import ProjectsList from './components/projects/ProjectsList';
 import { ReactNode } from 'react';
 import Navigation from './components/Navigation';
 import MobileNav from './components/MobileNav';
@@ -38,7 +35,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <div className={styles.layout}>
-        {scroll ? (
+        {/* {scroll ? (
           <div className={styles.sideNav}>
             <div className={styles.logo}>
               <Link href='/' legacyBehavior>
@@ -70,23 +67,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
         ) : (
           ''
-        )}
+        )} */}
         <header className={styles.header}>
           {isMobile ? <MobileNav /> : <Navigation scroll={scroll} />}
           <Header />
         </header>
-        <main>
-          <section id='sectionCourses'>
-            <Skills />
-          </section>
-          <section id='sectionProjects'>
-            <ProjectsList />
-          </section>
-          {children}
-        </main>
-        <footer className={styles.footer}>
-          <Footer />
-        </footer>
+        <main>{children}</main>
       </div>
     </>
   );

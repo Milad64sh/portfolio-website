@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './header.module.scss';
-import Button from './Button';
 
 const header = () => {
   return (
@@ -31,12 +30,8 @@ const header = () => {
               </h3>
             </div>
           </div>
-          <div className={styles.headerBtn}>
-            <Button targetSectionId='sectionCourses' />
-          </div>
         </div>
       </header>
-      <main></main>
     </>
   );
 };

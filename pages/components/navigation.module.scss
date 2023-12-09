@@ -34,8 +34,12 @@
       .menuItem {
         padding: 20px;
         letter-spacing: 3px;
+        font-size: 1.5rem;
         @include Link;
-        color: #000f08;
+        color: #777;
+        a:hover {
+          transform: scale(1.1);
+        }
       }
     }
   }

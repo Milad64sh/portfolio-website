@@ -57,11 +57,10 @@
   align-items: center;
   gap: 5px;
   width: 85%;
-  height: 300px;
   margin-top: 5px;
 }
 @mixin container__content__title {
-  color: white;
+  color: grey;
   text-transform: uppercase;
   font-size: 1.5rem;
   letter-spacing: 2px;
@@ -70,7 +69,7 @@
   text-align: center;
 }
 @mixin container__content__desc {
-  color: white;
+  color: grey;
   padding: 5px 10px;
 }
 

@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import styles from './mobileNav.module.scss';
+import { SiAboutdotme } from 'react-icons/si';
+import { GoMail } from 'react-icons/go';
 import Link from 'next/link';
 
 const MobileNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showIcons, setShowIcons] = useState(false);
   const toggleMenu = () => {
+    setShowIcons((showIcons) => !showIcons);
     setIsMenuOpen((prev) => !prev);
   };
 
@@ -20,6 +24,32 @@ const MobileNav = () => {
               </a>
             </Link>
           </div>
+          <div className={`${styles.navList} ${isMenuOpen && styles.open}`}>
+            <ul className={styles.menu}>
+              <li
+                className={`${styles.menuLi} ${
+                  showIcons ? styles.visible : ''
+                }`}
+              >
+                <Link href='/about' legacyBehavior>
+                  <a className={styles.menuItem}>
+                    <SiAboutdotme />
+                  </a>
+                </Link>
+              </li>
+              <li
+                className={`${styles.menuLi} ${
+                  showIcons ? styles.visible : ''
+                }`}
+              >
+                <Link href='/contact' legacyBehavior>
+                  <a className={styles.menuItem}>
+                    <GoMail />
+                  </a>
+                </Link>
+              </li>
+            </ul>
+          </div>
           <div
             className={`${styles.menuIcon} ${isMenuOpen && styles.open}`}
             onClick={toggleMenu}
@@ -28,34 +58,6 @@ const MobileNav = () => {
             <div className={styles.iconBar} />
             <div className={styles.iconBar} />
           </div>
-        </div>
-        <div className={`${styles.navList} ${isMenuOpen && styles.open}`}>
-          <ul className={styles.menu}>
-            <li className={styles.menuLi}>
-              <Link href='/home' legacyBehavior>
-                <a className={styles.menuItem}>
-                  Home
-                  <span className={styles.linkBorder}></span>
-                </a>
-              </Link>
-            </li>
-            <li className={styles.menuLi}>
-              <Link href='/about' legacyBehavior>
-                <a className={styles.menuItem}>
-                  About
-                  <span className={styles.linkBorder}></span>
-                </a>
-              </Link>
-            </li>
-            <li className={styles.menuLi}>
-              <Link href='/contact' legacyBehavior>
-                <a className={styles.menuItem}>
-                  Contact
-                  <span className={styles.linkBorder}></span>
-                </a>
-              </Link>
-            </li>
-          </ul>
         </div>
       </nav>
     </>
