@@ -1,15 +1,7 @@
 @import '../../../styles/mixins.scss';
-
-.expertiseItemContent {
-  @include applyExpertiseItemFlex;
-  width: 70%;
-  color: $light;
-  h4 {
-    margin: 0.5rem 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  p {
-    margin: 0;
-  }
+.skill {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }

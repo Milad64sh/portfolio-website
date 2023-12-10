@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './mobileNav.module.scss';
 import { SiAboutdotme } from 'react-icons/si';
 import { GoMail } from 'react-icons/go';
+import { FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
 
 const MobileNav = () => {
@@ -45,6 +46,17 @@ const MobileNav = () => {
                 <Link href='/contact' legacyBehavior>
                   <a className={styles.menuItem}>
                     <GoMail />
+                  </a>
+                </Link>
+              </li>
+              <li
+                className={`${styles.menuLi} ${
+                  showIcons ? styles.visible : ''
+                }`}
+              >
+                <Link href='/contact' legacyBehavior>
+                  <a className={styles.menuItem}>
+                    <FaGithub />
                   </a>
                 </Link>
               </li>

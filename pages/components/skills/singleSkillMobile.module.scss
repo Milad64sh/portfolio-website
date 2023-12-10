@@ -1,20 +1,3 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
 @import '../../../styles/animations.scss';
-
-.container {
-  border: 1px solid black;
-  display: inline-block;
-  .container__content {
-    @include container__content;
-    .container__content__title {
-      @include container__content__title;
-    }
-    .container__content__desc {
-      @include container__content__desc;
-    }
-  }
-  .container__btn {
-    @include container__btn;
-  }
-}

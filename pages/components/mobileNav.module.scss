@@ -9,6 +9,7 @@
   background-color: rgba(#f7f1f8, 0.8);
   animation: fadeIn 1s ease-in-out;
   position: relative;
+  z-index: 50000;
   .logoMenu {
     display: flex;
     flex-direction: row;
@@ -33,6 +34,7 @@
     justify-content: center;
     margin-top: 5px;
     margin-right: 10px;
+    z-index: 1000;
     .iconBar {
       width: 30px;
       height: 2px;
@@ -93,19 +95,30 @@
         }
       }
       .menuLi:nth-child(1) {
-        transform: translateX(100px);
+        transform: translateX(80px);
         opacity: 0;
-        transition: right 0.6s ease-in-out, opacity 0.6s ease-in-out;
+        transition: all 0.6s ease-in-out;
         &.visible {
           opacity: 1;
+          transform: translateX(-80px);
         }
       }
       .menuLi:nth-child(2) {
-        right: -100%;
-        transition: right 0.4s ease-in-out, opacity 0.4s ease-in-out;
+        transform: translateX(50px);
+        transition: all 0.4s ease-in-out;
         opacity: 0;
         &.visible {
           opacity: 1;
+          transform: translateX(-50px);
+        }
+      }
+      .menuLi:nth-child(3) {
+        transform: translateX(20px);
+        transition: all 0.2s ease-in-out;
+        opacity: 0;
+        &.visible {
+          opacity: 1;
+          transform: translateX(-20px);
         }
       }
     }

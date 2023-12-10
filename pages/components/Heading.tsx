@@ -7,10 +7,8 @@ interface HeadingName {
 
 const Heading: React.FC<HeadingName> = ({ name }) => {
   return (
-    <div className={styles.container}>
-      <div className={styles.heading}>
-        <h3>{name}</h3>
-      </div>
+    <div className={styles.heading}>
+      <h3 className={styles.headingH3}>{name}</h3>
     </div>
   );
 };

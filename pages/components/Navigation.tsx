@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './navigation.module.scss';
 import { SiAboutdotme } from 'react-icons/si';
 import { BiLogoGmail } from 'react-icons/bi';
+import { FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
 
 interface NavbarProps {
@@ -33,6 +34,13 @@ const navigation: React.FC<NavbarProps> = () => {
               <Link href='/contact' legacyBehavior>
                 <a className={styles.menuItem}>
                   <BiLogoGmail />
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/contact' legacyBehavior>
+                <a className={styles.menuItem}>
+                  <FaGithub />
                 </a>
               </Link>
             </li>
