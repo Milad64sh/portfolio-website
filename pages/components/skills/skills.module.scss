@@ -14,40 +14,114 @@
     padding: 5px 10px;
     border-radius: 4px;
   }
-  .skill-0 {
+  .skill-0--showSkill {
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
     margin-top: 0px;
     margin-left: 5px;
   }
-  .skill-1 {
+  .skill-0--closeSkill {
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    margin-top: 0px;
+    margin-left: 5px;
+  }
+  .skill-1--showSkill {
+    transition: all 0.6s ease-in-out;
     margin-top: 0px;
     margin-left: 75px;
+    opacity: 1;
   }
-  .skill-2 {
+  .skill-1--closeSkill {
+    transition: all 0.4s ease-in-out;
+    margin-top: 0px;
+    margin-left: 5px;
+    opacity: 0;
+  }
+  .skill-2--showSkill {
+    transition: all 0.7s ease-in-out;
     margin-top: 0px;
     margin-left: 140px;
+    opacity: 1;
   }
-  .skill-3 {
+  .skill-2--closeSkill {
+    transition: all 0.4s ease-in-out;
+    margin-top: 0px;
+    margin-left: 5px;
+    opacity: 5;
+  }
+  .skill-3--showSkill {
+    transition: all 0.8s ease-in-out;
     margin-top: 0px;
     margin-left: 270px;
+    opacity: 1;
   }
-  .skill-4 {
+  .skill-3--closeSkill {
+    transition: all 0.4s ease-in-out;
+    margin-top: 0px;
+    margin-left: 5px;
+    opacity: 0;
+  }
+  .skill-4--showSkill {
+    transition: all 0.9s ease-in-out;
     margin-top: 40px;
     margin-left: 5px;
+    opacity: 1;
   }
-  .skill-5 {
+  .skill-4--closeSkill {
+    transition: all 0.3s ease-in-out;
+    margin-top: 0px;
+    margin-left: 5px;
+    opacity: 0;
+  }
+
+  .skill-5--showSkill {
+    transition: all 0.9s ease-in-out;
     margin-top: 40px;
     margin-left: 130px;
+    opacity: 1;
   }
-  .skill-6 {
+  .skill-5--closeSkill {
+    transition: all 0.3s ease-in-out;
+    margin-top: 0px;
+    margin-left: 5px;
+    opacity: 0;
+  }
+  .skill-6--showSkill {
+    transition: all 1s ease-in-out;
     margin-top: 40px;
     margin-left: 250px;
+    opacity: 1;
   }
-  .skill-7 {
+  .skill-6--closeSkill {
+    transition: all 0.3s ease-in-out;
+    margin-top: 0px;
+    margin-left: 5px;
+    opacity: 0;
+  }
+  .skill-7--showSkill {
+    transition: all 1.1s ease-in-out;
     margin-top: 80px;
     margin-left: 5px;
+    opacity: 1;
   }
-  .skill-8 {
+  .skill-7--closeSkill {
+    transition: all 0.3s ease-in-out;
+    margin-top: 0px;
+    margin-left: 5px;
+    opacity: 0;
+  }
+
+  .skill-8--showSkill {
+    transition: all 1.2s ease-in-out;
     margin-top: 80px;
     margin-left: 75px;
+    opacity: 1;
+  }
+  .skill-8--closeSkill {
+    transition: all 0.2s ease-in-out;
+    margin-top: 0px;
+    margin-left: 5px;
+    opacity: 0;
   }
 }

@@ -189,14 +189,17 @@
       }
       .section__skills__container {
         opacity: 0;
-        transition: $transition;
         height: 0;
-        width: 100%;
+        width: 0;
         &.showContainer {
+          animation: openingSkills 0.4s forwards;
           border: 1px solid $light;
           border-radius: 5px;
-          opacity: 1;
-          height: 150px;
+        }
+        &.closeContainer {
+          animation: closingSkills 0.4s forwards;
+          border: 1px solid $light;
+          border-radius: 5px;
         }
       }
     }

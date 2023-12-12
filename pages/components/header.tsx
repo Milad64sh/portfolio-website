@@ -34,10 +34,10 @@ const header = () => {
                 </div>
                 <div
                   className={`${styles.section__skills__container} ${
-                    toggleIcon ? styles.showContainer : ''
+                    toggleIcon ? styles.showContainer : styles.closeContainer
                   }`}
                 >
-                  <Skills />
+                  <Skills toggle={toggleIcon} />
                 </div>
               </div>
               <div className={styles.section__projects}>

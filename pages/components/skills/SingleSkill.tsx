@@ -7,10 +7,10 @@ interface SingleSkillProp {
     title: string;
     description: string;
   };
-  style?: any;
+  style?: string;
   index: number;
 }
-const SingleSkill: React.FC<SingleSkillProp> = ({ skill, style, index }) => {
+const SingleSkill: React.FC<SingleSkillProp> = ({ skill, style }) => {
   return (
     <>
       <div className={styles.skill}>
