@@ -158,6 +158,17 @@
         .headerH3Span:nth-child(5) {
           animation: fadeIn 1s ease-in-out forwards, slideFromLeft 1s;
         }
+        .headerH3Span__span {
+          display: flex;
+          margin-top: 5px;
+          color: $light;
+          height: 10px;
+          transition: $transition;
+          cursor: pointer;
+          &.rotate {
+            transform: rotateX(180deg);
+          }
+        }
       }
     }
   }

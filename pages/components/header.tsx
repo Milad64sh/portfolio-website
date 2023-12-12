@@ -6,9 +6,13 @@ import Heading from './Heading';
 
 const header = () => {
   const [toggleIcon, setToggleIcon] = useState(true);
+  const [toggleMoreIcon, setToggleMoreIcon] = useState(true);
 
   const handleClick = () => {
     setToggleIcon((prevToggleIcon) => !prevToggleIcon);
+  };
+  const handleMore = () => {
+    setToggleMoreIcon((prevToggle) => !prevToggle);
   };
 
   return (
@@ -62,6 +66,16 @@ const header = () => {
                 <span className={styles.headerH3Span}>designer</span>
                 <span className={styles.headerH3Span}>creative</span>
                 <span className={styles.headerH3Span}>artist</span>
+                <div className={styles.headerH3Span}>
+                  <span
+                    onClick={handleMore}
+                    className={`${styles.headerH3Span__span} ${
+                      toggleMoreIcon ? styles.rotate : ''
+                    }`}
+                  >
+                    <IoIosArrowDown />
+                  </span>
+                </div>
               </h3>
             </div>
           </div>
