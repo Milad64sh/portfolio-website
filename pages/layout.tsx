@@ -35,39 +35,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <div className={styles.layout}>
-        {/* {scroll ? (
-          <div className={styles.sideNav}>
-            <div className={styles.logo}>
-              <Link href='/' legacyBehavior>
-                <a className={styles.logoLink}>
-                  <span className={styles.logoSpan}>Milad</span>
-                  <span className={styles.logoSpan}>Shalikarian</span>
-                </a>
-              </Link>
-            </div>
-            <div className={styles.navList}>
-              <ul className={styles.menu}>
-                <li>
-                  <Link href='/home' legacyBehavior>
-                    <a className={styles.menuItem}>Home</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href='/about' legacyBehavior>
-                    <a className={styles.menuItem}>About</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href='/contact' legacyBehavior>
-                    <a className={styles.menuItem}>Contact</a>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        ) : (
-          ''
-        )} */}
         <header className={styles.header}>
           {isMobile ? <MobileNav /> : <Navigation scroll={scroll} />}
           <Header />

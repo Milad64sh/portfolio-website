@@ -15,15 +15,21 @@
   transition: $transition;
   animation: fadeIn 1s ease-in-out;
   height: 5rem;
-
-  .logoLink {
-    padding: 10px;
-    @include Link;
-    .logoSpan {
-      display: block;
-      letter-spacing: 3px;
-      padding-left: 10px;
-      color: #777;
+  .logo {
+    display: block;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+    .logoLink {
+      padding: 10px;
+      @include Link;
+      width: 100%;
+      .logoSpan {
+        display: block;
+        letter-spacing: 3px;
+        padding-left: 10px;
+        color: #777;
+      }
     }
   }
   .navList {

@@ -20,7 +20,6 @@ const navigation: React.FC<NavbarProps> = () => {
             </a>
           </Link>
         </div>
-
         <div className={styles.navList}>
           <ul className={styles.menu}>
             <li>
