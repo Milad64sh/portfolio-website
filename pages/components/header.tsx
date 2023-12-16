@@ -29,42 +29,50 @@ const Header = () => {
             <div className={styles.HBGDarkGrey}></div>
           </div>
           <div className={styles.vertical}>
-            <p className={styles.more__mobile__p}>
-              I'm Milad Shalikarian, a self-taught front-end web developer based
-              in Reading, Berkshire, UK. With a strong track record in
-              developing E-commerce projects and compelling landing pages, I am
-              passionate about expanding my expertise in front-end technologies.
-              Committed to constant growth, I stay abreast of industry trends to
-              deliver innovative solutions in every project I undertake.
-            </p>
-            <div className={styles.title}>
-              <h2 className={styles.headerH2}>Milad</h2>
-              <h3 className={styles.headerH3}>
-                <span className={styles.headerH3Span}>
-                  fullstack (<div className={styles.loadingTxt}>loading</div>
-                  <div className={styles.loadingContainer}>
-                    <div className={styles.loadingSpan}></div>
-                    <div className={styles.loadingSpan}></div>
-                    <div className={styles.loadingSpan}></div>)
-                  </div>
-                </span>
-                <span className={styles.headerH3Span}>frontend developer</span>
-                <span className={styles.headerH3Span}>designer</span>
-                <span className={styles.headerH3Span}>creative</span>
-                <span className={styles.headerH3Span}>artist</span>
-                <div className={styles.headerH3Span}>
-                  <span
-                    onClick={handleMore}
-                    className={`${styles.headerH3Span__span} ${
-                      toggleMoreIcon ? styles.rotate : ''
-                    }`}
-                  >
-                    <IoIosArrowDown />
+            <div className={styles.titleSection}>
+              <div className={styles.titleSection__title}>
+                <h2 className={styles.headerH2}>Milad</h2>
+                <h3 className={styles.headerH3}>
+                  <span className={styles.headerH3Span}>
+                    fullstack (<div className={styles.loadingTxt}>loading</div>
+                    <div className={styles.loadingContainer}>
+                      <div className={styles.loadingSpan}></div>
+                      <div className={styles.loadingSpan}></div>
+                      <div className={styles.loadingSpan}></div>)
+                    </div>
                   </span>
-                </div>
-              </h3>
+                  <span className={styles.headerH3Span}>
+                    frontend developer
+                  </span>
+                  <span className={styles.headerH3Span}>designer</span>
+                  <span className={styles.headerH3Span}>creative</span>
+                  <span className={styles.headerH3Span}>artist</span>
+                  <div className={styles.headerH3Span}>
+                    <span
+                      onClick={handleMore}
+                      className={`${styles.headerH3Span__span} ${
+                        toggleMoreIcon ? styles.rotate : ''
+                      }`}
+                    >
+                      <IoIosArrowDown />
+                    </span>
+                  </div>
+                </h3>
+              </div>
+              <p
+                className={`${styles.titleSection__mobile__p} ${
+                  showMore ? styles.show__p : styles.close__p
+                }`}
+              >
+                I'm Milad Shalikarian, a self-taught front-end web developer
+                based in Reading, Berkshire, UK. With a strong track record in
+                developing E-commerce projects and compelling landing pages, I
+                am passionate about expanding my expertise in front-end
+                technologies. Committed to constant growth, I stay abreast of
+                industry trends to deliver innovative solutions in every project
+                I undertake.
+              </p>
             </div>
-
             <div className={styles.sections}>
               <div className={styles.section__content}>
                 <div onClick={handleClick} className={styles.section__skills}>

@@ -10,6 +10,9 @@
   animation: fadeIn 1s ease-in-out;
   position: relative;
   z-index: 50000;
+  @media screen and (max-width: 767px) {
+    height: 4.5rem;
+  }
   .logoMenu {
     display: flex;
     flex-direction: row;
