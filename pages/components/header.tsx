@@ -1,22 +1,73 @@
-import React, { useState } from 'react';
+import React, { useState, useReducer } from 'react';
 import styles from './header.module.scss';
 import Skills from './skills/Skills';
 import { IoIosArrowDown } from 'react-icons/io';
 import Heading from './Heading';
 
-const Header = () => {
-  const [toggleIcon, setToggleIcon] = useState(false);
-  const [toggleMoreIcon, setToggleMoreIcon] = useState(false);
-  const [showLines, setShowLines] = useState(false);
-  const [showMore, setShowMore] = useState(false);
+type State = {
+  toggleSkillsIcon: boolean;
+  toggleProjectsIcon: boolean;
+  toggleMoreIcon: boolean;
+  showLines: boolean;
+  showMore: boolean;
+};
 
-  const handleClick = () => {
-    setToggleIcon((prevToggleIcon) => !prevToggleIcon);
+type Action =
+  | { type: 'TOGGLE_SKILLS_ICON' }
+  | { type: 'TOGGLE_PROJECTS_ICON' }
+  | { type: 'TOGGLE_MORE_ICON' };
+
+const initialState: State = {
+  toggleSkillsIcon: false,
+  toggleProjectsIcon: false,
+  toggleMoreIcon: false,
+  showLines: false,
+  showMore: false,
+};
+const reducer = (state: State, action: Action): State => {
+  switch (action.type) {
+    case 'TOGGLE_SKILLS_ICON':
+      return {
+        ...state,
+        toggleSkillsIcon: !state.toggleSkillsIcon,
+        toggleProjectsIcon: false,
+        showMore: false,
+        toggleMoreIcon: false,
+      };
+    case 'TOGGLE_PROJECTS_ICON':
+      return {
+        ...state,
+        toggleProjectsIcon: !state.toggleProjectsIcon,
+        toggleSkillsIcon: false,
+        showMore: false,
+        toggleMoreIcon: false,
+      };
+    case 'TOGGLE_MORE_ICON':
+      return {
+        ...state,
+        toggleMoreIcon: !state.toggleMoreIcon,
+        toggleSkillsIcon: false,
+        toggleProjectsIcon: false,
+        showLines: !state.showLines,
+        showMore: !state.showMore,
+      };
+    default:
+      return state;
+  }
+};
+const Header = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const handleSkillsClick = () => {
+    dispatch({ type: 'TOGGLE_SKILLS_ICON' });
   };
+
+  const handleProjectsClick = () => {
+    dispatch({ type: 'TOGGLE_PROJECTS_ICON' });
+  };
+
   const handleMore = () => {
-    setToggleMoreIcon((prevToggle) => !prevToggle);
-    setShowLines((prevState) => !prevState);
-    setShowMore((prevState) => !prevState);
+    dispatch({ type: 'TOGGLE_MORE_ICON' });
   };
 
   return (
@@ -27,6 +78,7 @@ const Header = () => {
             <div className={styles.HBGLightGrey}></div>
             <div className={styles.HBGMediumGrey}></div>
             <div className={styles.HBGDarkGrey}></div>
+            <div className={styles.HBGYellow}></div>
           </div>
           <div className={styles.vertical}>
             <div className={styles.titleSection}>
@@ -51,7 +103,7 @@ const Header = () => {
                     <span
                       onClick={handleMore}
                       className={`${styles.headerH3Span__span} ${
-                        toggleMoreIcon ? styles.rotate : ''
+                        state.toggleMoreIcon ? styles.rotate : ''
                       }`}
                     >
                       <IoIosArrowDown />
@@ -61,7 +113,7 @@ const Header = () => {
               </div>
               <p
                 className={`${styles.titleSection__mobile__p} ${
-                  showMore ? styles.show__p : styles.close__p
+                  state.showMore ? styles.show__p : styles.close__p
                 }`}
               >
                 I'm Milad Shalikarian, a self-taught front-end web developer
@@ -75,11 +127,14 @@ const Header = () => {
             </div>
             <div className={styles.sections}>
               <div className={styles.section__content}>
-                <div onClick={handleClick} className={styles.section__skills}>
+                <div
+                  onClick={handleSkillsClick}
+                  className={styles.section__skills}
+                >
                   <Heading name='skills' />{' '}
                   <span
                     className={`${styles.section__span} ${
-                      toggleIcon ? styles.rotate : ''
+                      state.toggleSkillsIcon ? styles.rotate : ''
                     }`}
                   >
                     <IoIosArrowDown />
@@ -87,15 +142,24 @@ const Header = () => {
                 </div>
                 <div
                   className={`${styles.section__skills__container} ${
-                    toggleIcon ? styles.showContainer : styles.closeContainer
+                    state.toggleSkillsIcon
+                      ? styles.showContainer
+                      : styles.closeContainer
                   }`}
                 >
-                  <Skills toggle={toggleIcon} />
+                  <Skills toggle={state.toggleSkillsIcon} />
                 </div>
               </div>
-              <div className={styles.section__projects}>
+              <div
+                onClick={handleProjectsClick}
+                className={styles.section__projects}
+              >
                 <Heading name='projects' />
-                <span className={styles.section__span}>
+                <span
+                  className={`${styles.section__span} ${
+                    state.toggleProjectsIcon ? styles.rotate : ''
+                  }`}
+                >
                   <IoIosArrowDown />
                 </span>
               </div>
@@ -105,24 +169,24 @@ const Header = () => {
             <div className={styles.lines__twoFirstLine}>
               <div
                 className={`${styles.lines__twoFirstLine__firstVerticalLine} ${
-                  showLines ? styles.showLine : ''
+                  state.showLines ? styles.showLine : ''
                 }`}
               ></div>
               <div
                 className={`${styles.lines__twoFirstLine__horizontalLine} ${
-                  showLines ? styles.showLine : styles.closeLine
+                  state.showLines ? styles.showLine : styles.closeLine
                 }`}
               ></div>
             </div>
             <div
               className={`${styles.lines__secVerticalLine} ${
-                showLines ? styles.showLine : styles.closeLine
+                state.showLines ? styles.showLine : styles.closeLine
               }`}
             ></div>
           </div>
           <div
             className={`${styles.more} ${
-              showMore ? styles.showMore : styles.closeMore
+              state.showMore ? styles.showMore : styles.closeMore
             }`}
           >
             <p className={styles.more__p}>

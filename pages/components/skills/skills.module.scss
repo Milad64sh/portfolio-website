@@ -10,7 +10,7 @@
   h4 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
-    border: 1px solid $light;
+    border: 1px solid $light-green;
     padding: 5px 10px;
     border-radius: 4px;
   }
@@ -67,6 +67,10 @@
     margin-top: 0px;
     margin-left: 310px;
     opacity: 1;
+    @media screen and (max-width: 860px) {
+      margin-top: 80px;
+      margin-left: 5px;
+    }
   }
   .skill-4--closeSkill {
     transition: all 0.3s ease-in-out;
@@ -129,6 +133,10 @@
     margin-top: 40px;
     margin-left: 322px;
     opacity: 1;
+    @media screen and (max-width: 860px) {
+      margin-top: 80px;
+      margin-left: 113px;
+    }
   }
   .skill-9--closeSkill {
     transition: all 0.1s ease-in-out;

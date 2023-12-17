@@ -16,7 +16,7 @@
   background-size: cover;
   background-position: center;
   @media screen and (max-width: 767px) {
-    height: 100vh;
+    height: 88vh;
   }
   .HBG {
     display: flex;
@@ -52,7 +52,7 @@
       z-index: 1000;
       margin-top: 0px;
       width: 100%;
-      height: 110%;
+      height: 100%;
     }
     .HBGMediumGrey {
       flex: 1;
@@ -113,8 +113,43 @@
       z-index: 1;
       width: 100%;
       height: 100%;
+
       @media screen and (min-width: 767px) {
         background-color: rgba(#000f08, 0.5);
+      }
+    }
+    .HBGYellow {
+      flex: 1;
+      position: absolute;
+      display: block;
+      -webkit-clip-path: polygon(
+        100% 0,
+        67% 4%,
+        43% 8%,
+        22% 17%,
+        0 39%,
+        0 100%,
+        100% 100%
+      );
+      clip-path: polygon(
+        100% 20%,
+        67% 10%,
+        43% 8%,
+        22% 20%,
+        0% 25%,
+        10% 70%,
+        40% 70%,
+        95% 80%
+      );
+      overflow: visible;
+      z-index: 1000;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(#ffec51, 0.3);
+      transition: all 0.4s ease-in-out;
+      @media screen and (min-width: 767px) {
+        -webkit-clip-path: polygon(100% 20%, 0 25%, 0% 70%, 100% 80%);
+        clip-path: polygon(100% 20%, 0 25%, 0% 70%, 100% 80%);
       }
     }
   }
@@ -125,13 +160,13 @@
     justify-content: space-around;
     align-items: center;
     z-index: 2500;
-    width: 100%;
+    width: 95%;
     margin-top: 0;
     @media screen and (max-width: 767px) {
       flex-direction: column-reverse;
-      justify-content: center;
+      justify-content: start;
       align-items: start;
-      margin-top: 0;
+      top: 10%;
     }
     .titleSection {
       display: flex;
@@ -160,14 +195,15 @@
         .headerH3 {
           font-weight: 100;
           letter-spacing: 2px;
-          padding-left: 25px;
+          padding-left: 5px;
           margin-left: 5px;
           width: 100%;
-          border-top: 1px solid #888;
+          border-top: 1px solid rgba($light, 0.7);
           animation: fadeIn 1s ease-in-out forwards;
           .headerH3Span {
             display: block;
             padding: 5px;
+            padding-left: 0;
 
             @media screen and (max-width: 767px) {
               font-size: medium;
@@ -246,7 +282,6 @@
         &.close__p {
           @media screen and (max-width: 767px) {
             animation: closeParagraph 0.5s forwards;
-            display: none;
           }
         }
       }
@@ -287,13 +322,14 @@
           width: 0;
           &.showContainer {
             animation: openingSkills 0.4s forwards;
-            border: 1px solid $light;
+            border: 1px solid $light-green;
             border-radius: 5px;
+            @media screen and (max-width: 860px) {
+              animation: openSkillsMobile 0.4s forwards;
+            }
           }
           &.closeContainer {
             animation: closingSkills 0.4s forwards;
-            border: 1px solid $light;
-            border-radius: 5px;
           }
         }
       }
@@ -320,17 +356,18 @@
   }
   .lines {
     position: absolute;
-    margin-top: 17.2%;
-    margin-left: 32.2%;
+    margin-top: 17%;
+    margin-left: 28.25%;
     width: 350px;
     height: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: end;
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1600px) {
       display: none;
     }
+
     .lines__twoFirstLine {
       position: absolute;
       width: 350px;
@@ -367,7 +404,7 @@
     }
     .lines__secVerticalLine {
       position: absolute;
-      width: 2px;
+      width: 1px;
       height: 20px;
       background-color: $light;
       left: 0;
@@ -392,17 +429,25 @@
     z-index: 2000;
     color: $light;
     width: 50%;
-    border-left: 3px solid $light;
+    border-left: 3px solid rgba($yellow, 0.5);
     padding-left: 5px;
     display: flex;
     opacity: 0;
-    transition: all 0.4s ease-in-out 0.6s;
+    transition: all 0.4s ease-in-out 0.4s;
     @media screen and (max-width: 767px) {
       box-sizing: border-box;
       border-left: none;
       padding-left: 5px;
       margin-top: 100%;
       width: 100%;
+    }
+    @media only screen and (min-width: 999px) and (max-width: 1441px) {
+      width: 70%;
+      margin-top: 35%;
+    }
+    @media only screen and (min-width: 767px) and (max-width: 1080px) {
+      width: 70%;
+      margin-top: 55%;
     }
     &.showMore {
       opacity: 1;
