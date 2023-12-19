@@ -5,10 +5,7 @@ import { BiLogoGmail } from 'react-icons/bi';
 import { FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
 
-interface NavbarProps {
-  scroll: boolean;
-}
-const navigation: React.FC<NavbarProps> = () => {
+const navigation: React.FC = () => {
   return (
     <>
       <nav className={styles.nav}>

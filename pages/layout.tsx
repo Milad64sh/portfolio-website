@@ -4,7 +4,6 @@ import { ReactNode } from 'react';
 import Navigation from './components/Navigation';
 import MobileNav from './components/MobileNav';
 import styles from './index.module.scss';
-import Link from 'next/link';
 
 interface LayoutProps {
   children: ReactNode;
@@ -13,30 +12,27 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('resize', () => {
+    const handleResize = () => {
       setIsMobile(window.innerWidth <= 767);
-    });
-  }, []);
-  const [scroll, setScroll] = useState(false);
-  const handleScroll = () => {
-    if (window.scrollY > 0) {
-      setScroll(true);
-    } else {
-      setScroll(false);
-    }
-  };
+    };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    // Initial call to set the initial state
+    handleResize();
+
+    // Attach event listener
+    window.addEventListener('resize', handleResize);
+
+    // Detach event listener when the component unmounts
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
+
   return (
     <>
       <div className={styles.layout}>
         <header className={styles.header}>
-          {isMobile ? <MobileNav /> : <Navigation scroll={scroll} />}
+          {isMobile ? <MobileNav /> : <Navigation />}
           <Header />
         </header>
         <main>{children}</main>

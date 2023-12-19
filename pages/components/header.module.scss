@@ -118,10 +118,14 @@
         background-color: rgba(#000f08, 0.5);
       }
     }
+    transition: all 0.4s ease-in-out;
     .HBGYellow {
+      @media screen and (max-width: 767px) {
+        animation: yellowPart 2s forwards 0.7s;
+      }
       flex: 1;
       position: absolute;
-      display: block;
+      opacity: 0;
       -webkit-clip-path: polygon(
         100% 0,
         67% 4%,
@@ -148,6 +152,7 @@
       background-color: rgba(#ffec51, 0.3);
       transition: all 0.4s ease-in-out;
       @media screen and (min-width: 767px) {
+        opacity: 1;
         -webkit-clip-path: polygon(100% 20%, 0 25%, 0% 70%, 100% 80%);
         clip-path: polygon(100% 20%, 0 25%, 0% 70%, 100% 80%);
       }

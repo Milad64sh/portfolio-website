@@ -20,7 +20,10 @@ const MobileNav = () => {
           <div className={styles.logo}>
             <Link href='/' legacyBehavior>
               <a className={styles.logoLink}>
-                <span className={styles.logoSpan}>M</span>
+                <span className={styles.logoSpan__m}>m</span>
+                <span className={styles.logoSpan__s}>s</span>
+                <span className={styles.logoSpan__h}>h</span>
+                <span className={styles.logoSpan__dot}>.</span>
               </a>
             </Link>
           </div>

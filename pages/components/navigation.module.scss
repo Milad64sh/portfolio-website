@@ -28,7 +28,7 @@
         display: block;
         letter-spacing: 3px;
         padding-left: 10px;
-        color: #777;
+        color: #828350;
       }
     }
   }
@@ -42,7 +42,7 @@
         letter-spacing: 3px;
         font-size: 1.5rem;
         @include Link;
-        color: #777;
+        color: #828350;
         a:hover {
           transform: scale(1.1);
         }
