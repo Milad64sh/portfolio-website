@@ -13,4 +13,15 @@
     background-size: cover;
     background-position: center;
   }
+  .footer {
+    color: $light;
+    position: absolute;
+    top: calc(100% - 18.75px);
+    left: calc(100% - 159.767px);
+    padding-right: 10px;
+    z-index: 20000;
+    @media screen and (max-width: 767px) {
+      top: 101.5%;
+    }
+  }
 }

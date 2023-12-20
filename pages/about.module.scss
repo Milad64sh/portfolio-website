@@ -118,12 +118,9 @@
     }
     transition: all 0.4s ease-in-out;
     .HBGYellow {
-      @media screen and (max-width: 767px) {
-        animation: yellowPart 2s forwards 0.7s;
-      }
       flex: 1;
       position: absolute;
-      opacity: 0;
+      opacity: 1;
       -webkit-clip-path: polygon(
         100% 0,
         67% 4%,
@@ -134,13 +131,13 @@
         100% 100%
       );
       clip-path: polygon(
-        100% 20%,
-        67% 10%,
-        43% 8%,
+        100% 10%,
+        67% 7%,
+        43% 5%,
         22% 20%,
         0% 25%,
-        10% 70%,
-        40% 70%,
+        10% 80%,
+        40% 80%,
         95% 80%
       );
       overflow: visible;
@@ -149,6 +146,9 @@
       height: 100%;
       background-color: rgba(#ffec51, 0.3);
       transition: all 0.4s ease-in-out;
+      @media screen and (max-width: 767px) {
+        margin-top: 4%;
+      }
       @media screen and (min-width: 767px) {
         opacity: 1;
         -webkit-clip-path: polygon(100% 20%, 0 25%, 0% 70%, 100% 80%);
@@ -157,7 +157,33 @@
     }
   }
 }
-
-.aboutP {
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  margin-top: -100px;
+  z-index: 10000;
+  .aboutH3 {
+    flex: 1;
+    margin-left: 40%;
+    color: $light;
+    padding-left: 50px;
+    font-size: 1.5rem;
+  }
+  .aboutP {
+    color: $light;
+    padding-left: 40px;
+    padding-right: 30px;
+    font-weight: 200;
+  }
+}
+.footer {
+  position: absolute;
+  left: calc(100% - 159.767px);
+  top: calc(100% - 18.75px);
   color: $light;
+  text-align: end;
+  padding-right: 10px;
+  z-index: 20000;
 }

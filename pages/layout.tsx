@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 import Navigation from './components/Navigation';
 import MobileNav from './components/MobileNav';
 import styles from './index.module.scss';
+import Footer from './components/Footer';
 
 interface LayoutProps {
   children: ReactNode;
@@ -36,6 +37,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <Header />
         </header>
         <main>{children}</main>
+        <footer className={styles.footer}>
+          <Footer />
+        </footer>
       </div>
     </>
   );

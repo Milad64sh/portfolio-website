@@ -4,6 +4,7 @@ import Navigation from './components/Navigation';
 import styles from './about.module.scss';
 import layout from './index.module.scss';
 import AboutContent from './AboutContent';
+import Footer from './components/Footer';
 
 const About = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -30,6 +31,9 @@ const About = () => {
       <div className={styles.header}>
         <AboutContent />
       </div>
+      <footer className={styles.footer}>
+        <Footer />
+      </footer>
     </>
   );
 };

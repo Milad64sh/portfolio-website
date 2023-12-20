@@ -6,6 +6,15 @@ import { FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
 
 const navigation: React.FC = () => {
+  const myEmailAddress = 'm.shalikarian@gmail.com';
+  const githubProfileLink = 'https://github.com/Milad64sh';
+
+  const handleLinkClick = () => {
+    const mailToLink = `mailto:${myEmailAddress}`;
+    window.open(mailToLink, '_blank');
+    console.log('email pop up opened');
+  };
+
   return (
     <>
       <nav className={styles.nav}>
@@ -27,15 +36,15 @@ const navigation: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Link href='/contact' legacyBehavior>
-                <a className={styles.menuItem}>
+              <Link href='#' legacyBehavior passHref>
+                <a className={styles.menuItem} onClick={handleLinkClick}>
                   <BiLogoGmail />
                 </a>
               </Link>
             </li>
             <li>
-              <Link href='/contact' legacyBehavior>
-                <a className={styles.menuItem}>
+              <Link href={githubProfileLink} legacyBehavior passHref>
+                <a className={styles.menuItem} target='_blank'>
                   <FaGithub />
                 </a>
               </Link>

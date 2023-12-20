@@ -1,7 +1,25 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
+  "/AboutContent": "pages/AboutContent.js",
+  "/components/Footer": "pages/components/Footer.js",
+  "/components/Heading": "pages/components/Heading.js",
+  "/components/MobileNav": "pages/components/MobileNav.js",
+  "/components/Navigation": "pages/components/Navigation.js",
+  "/components/header": "pages/components/header.js",
   "/about": "pages/about.js",
-  "/": "pages/index.js"
+  "/components/projects/ProjectsListMobile": "pages/components/projects/ProjectsListMobile.js",
+  "/components/projects/ProjectsList": "pages/components/projects/ProjectsList.js",
+  "/components/projects/SingleProjectMobile": "pages/components/projects/SingleProjectMobile.js",
+  "/components/projects/[projectId]": "pages/components/projects/[projectId].js",
+  "/components/Button": "pages/components/Button.js",
+  "/_error": "pages/_error.js",
+  "/components/projects/SingleProject": "pages/components/projects/SingleProject.js",
+  "/contact": "pages/contact.js",
+  "/": "pages/index.js",
+  "/components/skills/SingleSkill": "pages/components/skills/SingleSkill.js",
+  "/components/skills/Skills": "pages/components/skills/Skills.js",
+  "/components/skills/SingleSkillMobile": "pages/components/skills/SingleSkillMobile.js",
+  "/components/skills/SkillsMobile": "pages/components/skills/SkillsMobile.js",
+  "/layout": "pages/layout.js",
+  "/_document": "pages/_document.js"
 }

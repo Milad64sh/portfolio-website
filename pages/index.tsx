@@ -1,4 +1,5 @@
 // pages/index.js
+import Footer from './components/footer';
 import styles from './index.module.scss';
 import Layout from './layout';
 

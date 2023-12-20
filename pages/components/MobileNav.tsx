@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import styles from './mobileNav.module.scss';
 import { SiAboutdotme } from 'react-icons/si';
-import { GoMail } from 'react-icons/go';
+import { BiLogoGmail } from 'react-icons/bi';
 import { FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
 
 const MobileNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showIcons, setShowIcons] = useState(false);
+
+  const myEmailAddress = 'm.shalikarian@gmail.com';
+  const githubProfileLink = 'https://github.com/Milad64sh';
+
+  const handleLinkClick = () => {
+    const mailToLink = `mailto:${myEmailAddress}`;
+    window.open(mailToLink, '_blank');
+    console.log('email pop up opened');
+  };
   const toggleMenu = () => {
     setShowIcons((showIcons) => !showIcons);
     setIsMenuOpen((prev) => !prev);
@@ -45,9 +54,9 @@ const MobileNav = () => {
                   showIcons ? styles.visible : ''
                 }`}
               >
-                <Link href='/contact' legacyBehavior>
-                  <a className={styles.menuItem}>
-                    <GoMail />
+                <Link href='#' legacyBehavior passHref>
+                  <a className={styles.menuItem} onClick={handleLinkClick}>
+                    <BiLogoGmail />
                   </a>
                 </Link>
               </li>
@@ -56,8 +65,8 @@ const MobileNav = () => {
                   showIcons ? styles.visible : ''
                 }`}
               >
-                <Link href='/contact' legacyBehavior>
-                  <a className={styles.menuItem}>
+                <Link href={githubProfileLink} legacyBehavior passHref>
+                  <a className={styles.menuItem} target='_blank'>
                     <FaGithub />
                   </a>
                 </Link>
