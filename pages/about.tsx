@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import MobileNav from './components/MobileNav';
 import Navigation from './components/Navigation';
 import styles from './about.module.scss';
-import layout from './index.module.scss';
 import AboutContent from './AboutContent';
 import Footer from './components/Footer';
 
