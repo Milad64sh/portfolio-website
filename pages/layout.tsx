@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 import Navigation from './components/Navigation';
 import MobileNav from './components/MobileNav';
 import styles from './index.module.scss';
+import Footer from './components/Footer';
 
 interface LayoutProps {
   children: ReactNode;
@@ -37,7 +38,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </header>
         <main>{children}</main>
         <footer className={styles.footer}>
-          <div>&copy; {new Date().getFullYear()} Milad.S1985</div>
+          <Footer />
         </footer>
       </div>
     </>

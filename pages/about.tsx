@@ -3,6 +3,7 @@ import MobileNav from './components/MobileNav';
 import Navigation from './components/Navigation';
 import styles from './about.module.scss';
 import AboutContent from './AboutContent';
+import Footer from './components/Footer';
 
 const About = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -30,7 +31,7 @@ const About = () => {
         <AboutContent />
       </div>
       <footer className={styles.footer}>
-        <div>&copy; {new Date().getFullYear()} Milad.S1985</div>
+        <Footer />
       </footer>
     </>
   );
