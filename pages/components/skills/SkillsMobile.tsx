@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { useAppContext } from '../../../contexts/AppContext';
 import SingleSkillMobile from './SingleSkillMobile';
 import Heading from '../Heading';
@@ -19,13 +19,16 @@ const SkillsMobile: React.FC = () => {
       <Heading name='skills' />
       <div className={styles.container}>
         <div className={styles.container__skills}>
-          {skills.map((skill: any, index: number) => (
-            <SingleSkillMobile
-              key={skill.id}
-              skill={skill}
-              style={styles[`skill-${index}`]}
-            />
-          ))}
+          {skillsData.map((skill: Skill, index: number) =>
+            // Check if skill has the expected structure before rendering
+            skill && skill.id && skill.title && skill.description ? (
+              <SingleSkillMobile
+                key={skill.id}
+                skill={skill}
+                style={styles[`skill-${index}`]}
+              />
+            ) : null
+          )}
         </div>
       </div>
     </>

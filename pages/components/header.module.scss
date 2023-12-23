@@ -387,9 +387,12 @@
         opacity: 0;
         background-color: $light;
         transition: all 0.4s ease-in-out;
-        &.showLine {
+        &.showLines {
           opacity: 1;
           height: 30px;
+        }
+        &.closeLines {
+          opacity: 0;
         }
       }
       .lines__twoFirstLine__horizontalLine {

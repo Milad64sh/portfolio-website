@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './SingleSkill.module.scss';
 
 interface SingleSkillProp {
-  skill: {
+  skill?: {
     id: number;
     title: string;
     description: string;
@@ -11,6 +11,9 @@ interface SingleSkillProp {
   index: number;
 }
 const SingleSkill: React.FC<SingleSkillProp> = ({ skill, style }) => {
+  if (!skill) {
+    return <div>Error: Skill data not provided</div>;
+  }
   return (
     <>
       <div className={styles.skill}>

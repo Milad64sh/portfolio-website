@@ -15,6 +15,7 @@ type State = {
 type Action =
   | { type: 'TOGGLE_SKILLS_ICON' }
   | { type: 'TOGGLE_PROJECTS_ICON' }
+  | { type: 'TOGGLE_LINES' }
   | { type: 'TOGGLE_MORE_ICON' };
 
 const initialState: State = {
@@ -33,6 +34,7 @@ const reducer = (state: State, action: Action): State => {
         toggleProjectsIcon: false,
         showMore: false,
         toggleMoreIcon: false,
+        showLines: false,
       };
     case 'TOGGLE_PROJECTS_ICON':
       return {
@@ -41,6 +43,7 @@ const reducer = (state: State, action: Action): State => {
         toggleSkillsIcon: false,
         showMore: false,
         toggleMoreIcon: false,
+        showLines: false,
       };
     case 'TOGGLE_MORE_ICON':
       return {
@@ -169,7 +172,7 @@ const Header = () => {
             <div className={styles.lines__twoFirstLine}>
               <div
                 className={`${styles.lines__twoFirstLine__firstVerticalLine} ${
-                  state.showLines ? styles.showLine : ''
+                  state.showLines ? styles.showLines : styles.closeLines
                 }`}
               ></div>
               <div

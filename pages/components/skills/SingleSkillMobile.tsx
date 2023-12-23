@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './singleSkillMobile.module.scss';
 
 interface SingleSkill {
-  skill: {
+  skill?: {
     id: number;
     title: string;
     description: string;
@@ -10,14 +10,14 @@ interface SingleSkill {
   style?: any;
 }
 const SingleSkillMobile: React.FC<SingleSkill> = ({ skill, style }) => {
+  if (!skill) {
+    return <div>Error: Skill data not provided</div>;
+  }
   return (
     <>
       <div className={`${styles.container} ${style}`}>
         <div className={styles.container__content}>
           <div className={styles.container__content__title}>{skill.title}</div>
-          {/* <div className={styles.container__content__desc}>
-            {skill.description}
-          </div> */}
         </div>
       </div>
     </>

@@ -12,18 +12,21 @@ const Skills: React.FC<SkillsProp> = ({ toggle }) => {
   return (
     <>
       <div className={styles.container}>
-        {skillsData.map((skill: any, index: number) => (
-          <SingleSkill
-            key={skill.id}
-            skill={skill}
-            index={index}
-            style={
-              toggle
-                ? styles[`skill-${index}--showSkill`]
-                : styles[`skill-${index}--closeSkill`]
-            }
-          />
-        ))}
+        {skillsData.map((skill: any, index: number) =>
+          // Check if skill has the expected structure before rendering
+          skill && skill.id && skill.title && skill.description ? (
+            <SingleSkill
+              key={skill.id}
+              skill={skill}
+              index={index}
+              style={
+                toggle
+                  ? styles[`skill-${index}--showSkill`]
+                  : styles[`skill-${index}--closeSkill`]
+              }
+            />
+          ) : null
+        )}
       </div>
     </>
   );
