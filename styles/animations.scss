@@ -30,6 +30,7 @@
   }
 }
 
+// Animation for SKILLS section
 @keyframes openingSkills {
   0% {
     width: 100px;
@@ -120,6 +121,54 @@
     opacity: 0;
   }
 }
+
+// Animation for PROJECTS section
+@keyframes openingProjects {
+  0% {
+    width: 100px;
+    height: 10px;
+    opacity: 0;
+  }
+  25% {
+    width: 200px;
+    height: 20px;
+    opacity: 0.25;
+  }
+  50% {
+    width: 300px;
+    height: 30px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 435px;
+    height: 40px;
+    opacity: 1;
+  }
+}
+@keyframes closingProjects {
+  0% {
+    width: 345px;
+    height: 40px;
+    opacity: 1;
+  }
+  25% {
+    width: 300px;
+    height: 30px;
+    opacity: 0.5;
+  }
+  50% {
+    width: 200px;
+    height: 20px;
+    opacity: 0.25;
+  }
+  100% {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+}
+
+// Animation for PARAGRAPH
 @keyframes showParagraph {
   0% {
     opacity: 0;

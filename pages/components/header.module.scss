@@ -338,22 +338,42 @@
           }
         }
       }
-      .section__projects {
+      .section__content {
         display: flex;
-        flex-direction: row;
-        justify-content: start;
-        align-items: center;
-        z-index: 5000;
-        margin-left: 10px;
-        width: 100%;
-        cursor: pointer;
-        .section__span {
-          color: $light;
-          height: 15px;
-          padding-left: 2px;
-          transition: $transition;
-          &.rotate {
-            transform: rotateX(180deg);
+        flex-direction: column;
+        .section__projects {
+          display: flex;
+          flex-direction: row;
+          justify-content: start;
+          align-items: center;
+          z-index: 5000;
+          margin-left: 10px;
+          width: 100%;
+          cursor: pointer;
+          .section__span {
+            color: $light;
+            height: 15px;
+            padding-left: 2px;
+            transition: $transition;
+            &.rotate {
+              transform: rotateX(180deg);
+            }
+          }
+        }
+        .section__projects__container {
+          opacity: 0;
+          height: 0;
+          width: 0;
+          &.showContainer {
+            animation: openingProjects 0.4s forwards;
+            border: 1px solid $light-green;
+            border-radius: 5px;
+            @media screen and (max-width: 860px) {
+              animation: openSkillsMobile 0.4s forwards;
+            }
+          }
+          &.closeContainer {
+            animation: closingProjects 0.4s forwards;
           }
         }
       }

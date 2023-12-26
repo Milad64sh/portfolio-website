@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 
 import skillsData from '../data/skillsListData.json';
-import { videosData } from '../data/projects';
+import projects from '../data/projects.json';
 
 interface AppContextType {
   skillsData: Array<{
@@ -9,10 +9,10 @@ interface AppContextType {
     title: string;
     description: string;
   }>;
-  videosData: Array<{
-    id: string;
+  projects: Array<{
+    id: number;
     title: string;
-    vidSrc: string;
+    prjDesc: string;
   }>;
 }
 interface AppProviderProps {

@@ -3,6 +3,7 @@ import styles from './header.module.scss';
 import Skills from './skills/Skills';
 import { IoIosArrowDown } from 'react-icons/io';
 import Heading from './Heading';
+import Projects from './projects/Projects';
 
 type State = {
   toggleSkillsIcon: boolean;
@@ -153,18 +154,29 @@ const Header = () => {
                   <Skills toggle={state.toggleSkillsIcon} />
                 </div>
               </div>
-              <div
-                onClick={handleProjectsClick}
-                className={styles.section__projects}
-              >
-                <Heading name='projects' />
-                <span
-                  className={`${styles.section__span} ${
-                    state.toggleProjectsIcon ? styles.rotate : ''
+              <div className={styles.section__content}>
+                <div
+                  onClick={handleProjectsClick}
+                  className={styles.section__projects}
+                >
+                  <Heading name='projects' />
+                  <span
+                    className={`${styles.section__span} ${
+                      state.toggleProjectsIcon ? styles.rotate : ''
+                    }`}
+                  >
+                    <IoIosArrowDown />
+                  </span>
+                </div>
+                <div
+                  className={`${styles.section__projects__container} ${
+                    state.toggleProjectsIcon
+                      ? styles.showContainer
+                      : styles.closeContainer
                   }`}
                 >
-                  <IoIosArrowDown />
-                </span>
+                  <Projects toggle={state.toggleProjectsIcon} />
+                </div>
               </div>
             </div>
           </div>
