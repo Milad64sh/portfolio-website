@@ -18,6 +18,9 @@
   @media screen and (max-width: 767px) {
     height: 88vh;
   }
+  @media screen and (height: 915px) {
+    height: 92vh;
+  }
   .HBG {
     display: flex;
     position: absolute;
@@ -370,6 +373,18 @@
             border-radius: 5px;
             @media screen and (max-width: 860px) {
               animation: openProjectsMobile 0.4s forwards;
+            }
+            @media screen and (width: 412px) {
+              animation: openProjectsMobileGlx 0.4s forwards;
+              height: 80%;
+            }
+            @media screen and (width: 375px) {
+              animation: openProjectsMobileGlx 0.4s forwards;
+              height: 80%;
+            }
+            @media screen and (width: 360px) {
+              animation: openProjectsMobile360 0.4s forwards;
+              height: 80%;
             }
           }
           &.closeContainer {

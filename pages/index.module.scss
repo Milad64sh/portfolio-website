@@ -23,5 +23,8 @@
     @media screen and (max-width: 767px) {
       top: 101.5%;
     }
+    @media screen and (width: 360px) and (height: 760px) {
+      top: 106%;
+    }
   }
 }

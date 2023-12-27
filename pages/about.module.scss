@@ -154,6 +154,19 @@
         -webkit-clip-path: polygon(100% 20%, 0 25%, 0% 70%, 100% 80%);
         clip-path: polygon(100% 20%, 0 25%, 0% 70%, 100% 80%);
       }
+      @media screen and (width: 360px) and (height: 760px) {
+        margin-top: 20px;
+        clip-path: polygon(
+          100% 10%,
+          67% 7%,
+          43% 5%,
+          22% 20%,
+          0% 25%,
+          10% 90%,
+          40% 90%,
+          95% 90%
+        );
+      }
     }
   }
 }
@@ -164,12 +177,19 @@
   align-items: start;
   margin-top: -100px;
   z-index: 10000;
+  @media screen and (width: 360px) and (height: 760px) {
+    margin-top: 80px;
+  }
   .aboutH3 {
     flex: 1;
     margin-left: 40%;
     color: $light;
     padding-left: 50px;
     font-size: 1.5rem;
+    @media screen and (width: 360px) and (height: 760px) {
+      margin-left: 20%;
+      margin-bottom: -10px;
+    }
   }
   .aboutP {
     color: $light;

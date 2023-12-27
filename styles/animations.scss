@@ -214,6 +214,52 @@
   }
 }
 
+// PROJECTS animation for mobile screen Galaxy
+@keyframes openProjectsMobileGlx {
+  0% {
+    width: 50px;
+    height: 10px;
+    opacity: 0;
+  }
+  25% {
+    width: 100px;
+    height: 30px;
+    opacity: 0.25;
+  }
+  50% {
+    width: 150px;
+    height: 60px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 200px;
+    height: 90px;
+    opacity: 1;
+  }
+}
+@keyframes openProjectsMobile360 {
+  0% {
+    width: 100px;
+    height: 10px;
+    opacity: 0;
+  }
+  25% {
+    width: 200px;
+    height: 30px;
+    opacity: 0.25;
+  }
+  50% {
+    width: 300px;
+    height: 60px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 320px;
+    height: 80px;
+    opacity: 1;
+  }
+}
+
 // Animation for PARAGRAPH
 @keyframes showParagraph {
   0% {

@@ -4,6 +4,7 @@ import Skills from './skills/Skills';
 import { IoIosArrowDown } from 'react-icons/io';
 import Heading from './Heading';
 import Projects from './projects/Projects';
+import Footer from './Footer';
 
 type State = {
   toggleSkillsIcon: boolean;
