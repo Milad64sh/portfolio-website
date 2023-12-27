@@ -131,34 +131,80 @@
   }
   25% {
     width: 200px;
-    height: 20px;
+    height: 30px;
     opacity: 0.25;
   }
   50% {
     width: 300px;
-    height: 30px;
+    height: 60px;
     opacity: 0.5;
   }
   100% {
     width: 435px;
-    height: 40px;
+    height: 80px;
     opacity: 1;
   }
 }
 @keyframes closingProjects {
   0% {
     width: 345px;
-    height: 40px;
+    height: 80px;
     opacity: 1;
   }
   25% {
     width: 300px;
-    height: 30px;
+    height: 60px;
     opacity: 0.5;
   }
   50% {
     width: 200px;
-    height: 20px;
+    height: 30px;
+    opacity: 0.25;
+  }
+  100% {
+    width: 0px;
+    height: 10px;
+    opacity: 0;
+  }
+}
+
+// PROJECTS animation for mobile screen
+@keyframes openProjectsMobile {
+  0% {
+    width: 100px;
+    height: 10px;
+    opacity: 0;
+  }
+  25% {
+    width: 200px;
+    height: 30px;
+    opacity: 0.25;
+  }
+  50% {
+    width: 300px;
+    height: 60px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 370px;
+    height: 80px;
+    opacity: 1;
+  }
+}
+@keyframes closeProjectsMobile {
+  0% {
+    width: 360px;
+    height: 80px;
+    opacity: 1;
+  }
+  25% {
+    width: 300px;
+    height: 60px;
+    opacity: 0.5;
+  }
+  50% {
+    width: 200px;
+    height: 30px;
     opacity: 0.25;
   }
   100% {

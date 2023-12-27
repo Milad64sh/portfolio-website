@@ -1,8 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
 
-import skillsData from '../data/skillsListData.json';
-import projects from '../data/projects.json';
-
 interface AppContextType {
   skillsData: Array<{
     id: number;
@@ -13,6 +10,7 @@ interface AppContextType {
     id: number;
     title: string;
     prjDesc: string;
+    prjLink: string;
   }>;
 }
 interface AppProviderProps {

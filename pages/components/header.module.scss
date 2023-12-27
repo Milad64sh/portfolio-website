@@ -341,10 +341,10 @@
       .section__content {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         .section__projects {
           display: flex;
           flex-direction: row;
-          justify-content: start;
           align-items: center;
           z-index: 5000;
           margin-left: 10px;
@@ -369,7 +369,7 @@
             border: 1px solid $light-green;
             border-radius: 5px;
             @media screen and (max-width: 860px) {
-              animation: openSkillsMobile 0.4s forwards;
+              animation: openProjectsMobile 0.4s forwards;
             }
           }
           &.closeContainer {

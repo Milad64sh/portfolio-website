@@ -2,11 +2,13 @@
   {
     "id": 1,
     "title": "real-estate",
-    "prjDesc": "First Project description"
+    "prjDesc": "First Project description",
+    "prjLink": "https://real-state-react-app.vercel.app/"
   },
   {
     "id": 2,
     "title": "ecommerce",
-    "prjDesc": "Second Project description"
+    "prjDesc": "Second Project description",
+    "prjLink": "https://ecommerce-website-six-fawn.vercel.app/"
   }
 ]
