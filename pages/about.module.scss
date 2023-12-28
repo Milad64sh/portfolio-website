@@ -167,6 +167,9 @@
           95% 90%
         );
       }
+      @media screen and (width: 375px) and (height: 812px) {
+        margin-top: 20px;
+      }
     }
   }
 }
@@ -179,6 +182,9 @@
   z-index: 10000;
   @media screen and (width: 360px) and (height: 760px) {
     margin-top: 80px;
+  }
+  @media screen and (width: 375px) and (height: 812px) {
+    margin-top: -30px;
   }
   .aboutH3 {
     flex: 1;
