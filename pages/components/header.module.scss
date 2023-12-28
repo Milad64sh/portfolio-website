@@ -378,12 +378,12 @@
               animation: openProjectsMobileGlx 0.4s forwards;
               height: 80%;
             }
-            @media screen and (width: 375px) {
+            @media screen and (max-width: 375px) {
               animation: openProjectsMobileGlx 0.4s forwards;
               height: 80%;
             }
             @media screen and (width: 360px) {
-              animation: openProjectsMobile360 0.4s forwards;
+              animation: openProjectsMobileGlx 0.4s forwards;
               height: 80%;
             }
           }
