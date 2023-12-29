@@ -386,7 +386,15 @@
               animation: openProjectsMobileGlx 0.4s forwards;
               height: 80%;
             }
+            @media screen and (max-width: 390px) {
+              animation: openProjectsMobileGlx 0.4s forwards;
+              height: 80%;
+            }
             @media screen and (width: 360px) {
+              animation: openProjectsMobileGlxS20 0.4s forwards;
+              height: 80%;
+            }
+            @media screen and (width: 375px) {
               animation: openProjectsMobileGlxS20 0.4s forwards;
               height: 80%;
             }
