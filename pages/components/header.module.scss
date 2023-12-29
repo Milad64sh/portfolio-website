@@ -374,6 +374,10 @@
             @media screen and (max-width: 860px) {
               animation: openProjectsMobile 0.4s forwards;
             }
+            @media screen and (width: 412px) and (height: 915px) {
+              animation: openProjectsMobileGlxS20 0.4s forwards;
+              height: 80%;
+            }
             @media screen and (width: 412px) {
               animation: openProjectsMobileGlx 0.4s forwards;
               height: 80%;
@@ -383,7 +387,7 @@
               height: 80%;
             }
             @media screen and (width: 360px) {
-              animation: openProjectsMobileGlx 0.4s forwards;
+              animation: openProjectsMobileGlxS20 0.4s forwards;
               height: 80%;
             }
           }

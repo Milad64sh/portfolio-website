@@ -21,10 +21,34 @@
     padding-right: 10px;
     z-index: 20000;
     @media screen and (max-width: 767px) {
-      top: 101.5%;
+      top: 120%;
+    }
+    @media screen and (width: 360px) and (height: 740px) {
+      top: 108%;
     }
     @media screen and (width: 360px) and (height: 760px) {
       top: 106%;
+    }
+    @media screen and (width: 360px) and (height: 800px) {
+      top: 102%;
+    }
+    @media screen and (width: 375px) and (height: 812px) {
+      top: 100%;
+    }
+    @media screen and (width: 390px) and (height: 844px) {
+      top: 100%;
+    }
+    @media screen and (width: 384px) and (height: 854px) {
+      top: 100%;
+    }
+    @media screen and (width: 412px) and (height: 883px) {
+      top: 102%;
+    }
+    @media screen and (width: 414px) and (height: 896px) {
+      top: 102%;
+    }
+    @media screen and (width: 412px) and (height: 915px) {
+      top: 98%;
     }
   }
 }

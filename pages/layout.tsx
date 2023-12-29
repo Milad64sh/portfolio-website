@@ -37,9 +37,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <Header />
         </header>
         <main>{children}</main>
-        <footer className={styles.footer}>
+        {/* <footer className={styles.footer}>
           <Footer />
-        </footer>
+        </footer> */}
       </div>
     </>
   );

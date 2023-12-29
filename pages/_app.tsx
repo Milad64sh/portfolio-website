@@ -5,6 +5,7 @@ import AppProvider from '../contexts/AppContext';
 import { AppProps } from 'next/app';
 import projects from '../data/projects.json';
 import skillsData from '../data/skillsListData.json';
+// import Footer from './components/Footer';
 import Head from 'next/head';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {

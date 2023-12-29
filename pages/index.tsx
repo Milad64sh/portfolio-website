@@ -8,6 +8,9 @@ const Home = () => {
     <>
       <Layout>
         <div className={styles.container}></div>
+        <div className={styles.footer}>
+          <Footer />
+        </div>
       </Layout>
     </>
   );
