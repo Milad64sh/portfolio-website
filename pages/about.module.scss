@@ -247,6 +247,19 @@
           95% 70%
         );
       }
+      @media screen and (width: 430px) and (height: 932px) {
+        margin-top: 23px;
+        clip-path: polygon(
+          100% 10%,
+          67% 7%,
+          43% 5%,
+          22% 20%,
+          0% 25%,
+          10% 70%,
+          40% 70%,
+          95% 70%
+        );
+      }
     }
   }
 }
