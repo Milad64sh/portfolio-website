@@ -1,28 +1,38 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState, useReducer, useContext } from 'react';
 import styles from './header.module.scss';
 import Skills from './skills/Skills';
 import { IoIosArrowDown } from 'react-icons/io';
 import Heading from './Heading';
 import Projects from './projects/Projects';
-import Footer from './Footer';
-
+import { useAppContext } from '../../contexts/AppContext';
 type State = {
   toggleSkillsIcon: boolean;
   toggleProjectsIcon: boolean;
   toggleMoreIcon: boolean;
+  toggleProjectDetail: boolean;
   showLines: boolean;
   showMore: boolean;
+};
+
+type ToggleProjectDetailAction = {
+  type: 'TOGGLE_PROJECT_DETAIL';
+  payload?: {
+    id: number;
+  };
 };
 
 type Action =
   | { type: 'TOGGLE_SKILLS_ICON' }
   | { type: 'TOGGLE_PROJECTS_ICON' }
   | { type: 'TOGGLE_LINES' }
+  | { type: 'TOGGLE_PROJECT_DETAIL' }
+  | ToggleProjectDetailAction
   | { type: 'TOGGLE_MORE_ICON' };
 
 const initialState: State = {
   toggleSkillsIcon: false,
   toggleProjectsIcon: false,
+  toggleProjectDetail: false,
   toggleMoreIcon: false,
   showLines: false,
   showMore: false,
@@ -56,11 +66,24 @@ const reducer = (state: State, action: Action): State => {
         showLines: !state.showLines,
         showMore: !state.showMore,
       };
+    case 'TOGGLE_PROJECT_DETAIL':
+      const { payload } = action as ToggleProjectDetailAction;
+      const id = payload?.id;
+      return {
+        ...state,
+        toggleProjectDetail: !state.toggleProjectDetail,
+        toggleMoreIcon: false,
+        toggleSkillsIcon: false,
+        toggleProjectsIcon: false,
+        showLines: !state.showLines,
+        showMore: !state.showMore,
+      };
     default:
       return state;
   }
 };
 const Header = () => {
+  const { projects } = useAppContext();
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleSkillsClick = () => {
@@ -69,6 +92,9 @@ const Header = () => {
 
   const handleProjectsClick = () => {
     dispatch({ type: 'TOGGLE_PROJECTS_ICON' });
+  };
+  const handleProjectDetail = (id: number) => {
+    dispatch({ type: 'TOGGLE_PROJECT_DETAIL', payload: { id } });
   };
 
   const handleMore = () => {
@@ -176,7 +202,10 @@ const Header = () => {
                       : styles.closeContainer
                   }`}
                 >
-                  <Projects toggle={state.toggleProjectsIcon} />
+                  <Projects
+                    toggle={state.toggleProjectsIcon}
+                    handleProjectDetail={handleProjectDetail}
+                  />
                 </div>
               </div>
             </div>

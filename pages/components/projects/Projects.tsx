@@ -3,10 +3,11 @@ import styles from './projects.module.scss';
 import { useAppContext } from '../../../contexts/AppContext';
 import Project from './Project';
 
-interface ProjectsProp {
+interface ProjectsProps {
   toggle: boolean;
+  handleProjectDetail: (id: number) => void;
 }
-const Projects: React.FC<ProjectsProp> = ({ toggle }) => {
+const Projects: React.FC<ProjectsProps> = ({ toggle, handleProjectDetail }) => {
   const { projects } = useAppContext();
   return (
     <div className={styles.container}>
@@ -16,6 +17,7 @@ const Projects: React.FC<ProjectsProp> = ({ toggle }) => {
             key={project.id}
             project={project}
             index={index}
+            handleDetail={handleProjectDetail}
             style={
               toggle
                 ? styles[`project-${index}--showProject`]

@@ -9,11 +9,12 @@ interface ProjectProp {
     prjDesc: string;
     prjLink: string;
   };
+  handleDetail: (id: number) => void;
   style?: string;
   index: number;
 }
 
-const Project: React.FC<ProjectProp> = ({ project, style }) => {
+const Project: React.FC<ProjectProp> = ({ project, style, handleDetail }) => {
   if (!project) {
     return <div>Error: Skill data not provided</div>;
   }
@@ -22,11 +23,14 @@ const Project: React.FC<ProjectProp> = ({ project, style }) => {
       <div className={styles.skill}>
         <div className={style}>
           <h4>
-            <Link href={project.prjLink} legacyBehavior>
-              <a className={styles.projectItem} target='_blank'>
-                {project.title}
-              </a>
-            </Link>
+            <button
+              className={styles.projectItem}
+              onClick={() => handleDetail(project.id)}
+            >
+              {project.title}
+            </button>
+            {/* <Link href={project.prjLink} legacyBehavior>
+            </Link> */}
           </h4>
         </div>
       </div>
