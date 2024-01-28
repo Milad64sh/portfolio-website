@@ -22,7 +22,6 @@
     border-radius: 4px;
     background-color: transparent;
     transition: all 0.5s ease-in-out;
-    background-color: red;
     &:hover {
       background-color: lighten($yellow-dark, 10%);
       border: 1px solid lighten($yellow-dark, 10%);
@@ -31,12 +30,15 @@
       letter-spacing: 3px;
     }
   }
-  a {
+  button {
+    border: none;
+    background-color: transparent;
     transition: all 0.5s ease-in-out;
     color: $light;
     text-decoration: none;
-    text-transform: capitalize;
-    letter-spacing: 1px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
 
     &:hover {
       letter-spacing: 3px;

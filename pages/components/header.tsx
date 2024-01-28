@@ -12,11 +12,16 @@ type State = {
   toggleProjectDetail: boolean;
   showLines: boolean;
   showMore: boolean;
+  selectedProjectId: number | null;
 };
 
 type ToggleProjectDetailAction = {
   type: 'TOGGLE_PROJECT_DETAIL';
-  payload?: {
+};
+
+type SelectProjectAction = {
+  type: 'SELECT_PROJECT';
+  payload: {
     id: number;
   };
 };
@@ -26,64 +31,66 @@ type Action =
   | { type: 'TOGGLE_PROJECTS_ICON' }
   | { type: 'TOGGLE_LINES' }
   | { type: 'TOGGLE_PROJECT_DETAIL' }
+  | SelectProjectAction
   | ToggleProjectDetailAction
   | { type: 'TOGGLE_MORE_ICON' };
 
-const initialState: State = {
-  toggleSkillsIcon: false,
-  toggleProjectsIcon: false,
-  toggleProjectDetail: false,
-  toggleMoreIcon: false,
-  showLines: false,
-  showMore: false,
-};
-const reducer = (state: State, action: Action): State => {
-  switch (action.type) {
-    case 'TOGGLE_SKILLS_ICON':
-      return {
-        ...state,
-        toggleSkillsIcon: !state.toggleSkillsIcon,
-        toggleProjectsIcon: false,
-        showMore: false,
-        toggleMoreIcon: false,
-        showLines: false,
-      };
-    case 'TOGGLE_PROJECTS_ICON':
-      return {
-        ...state,
-        toggleProjectsIcon: !state.toggleProjectsIcon,
-        toggleSkillsIcon: false,
-        showMore: false,
-        toggleMoreIcon: false,
-        showLines: false,
-      };
-    case 'TOGGLE_MORE_ICON':
-      return {
-        ...state,
-        toggleMoreIcon: !state.toggleMoreIcon,
-        toggleSkillsIcon: false,
-        toggleProjectsIcon: false,
-        showLines: !state.showLines,
-        showMore: !state.showMore,
-      };
-    case 'TOGGLE_PROJECT_DETAIL':
-      const { payload } = action as ToggleProjectDetailAction;
-      const id = payload?.id;
-      return {
-        ...state,
-        toggleProjectDetail: !state.toggleProjectDetail,
-        toggleMoreIcon: false,
-        toggleSkillsIcon: false,
-        toggleProjectsIcon: false,
-        showLines: !state.showLines,
-        showMore: !state.showMore,
-      };
-    default:
-      return state;
-  }
-};
 const Header = () => {
   const { projects } = useAppContext();
+
+  const initialState: State = {
+    toggleSkillsIcon: false,
+    toggleProjectsIcon: false,
+    toggleProjectDetail: true,
+    toggleMoreIcon: false,
+    showLines: false,
+    showMore: false,
+    selectedProjectId: null,
+  };
+  const reducer = (state: State, action: Action): State => {
+    switch (action.type) {
+      case 'TOGGLE_SKILLS_ICON':
+        return {
+          ...state,
+          toggleSkillsIcon: !state.toggleSkillsIcon,
+          toggleProjectsIcon: false,
+          showMore: false,
+          toggleMoreIcon: false,
+          showLines: false,
+        };
+      case 'TOGGLE_PROJECTS_ICON':
+        return {
+          ...state,
+          toggleProjectsIcon: !state.toggleProjectsIcon,
+          toggleSkillsIcon: false,
+          showMore: false,
+          toggleMoreIcon: false,
+          showLines: false,
+        };
+      case 'TOGGLE_MORE_ICON':
+        return {
+          ...state,
+          toggleMoreIcon: !state.toggleMoreIcon,
+          toggleSkillsIcon: false,
+          toggleProjectsIcon: false,
+          showLines: !state.showLines,
+          showMore: !state.showMore,
+        };
+      case 'TOGGLE_PROJECT_DETAIL':
+        return {
+          ...state,
+          toggleProjectDetail: !state.toggleProjectDetail,
+          toggleMoreIcon: false,
+          toggleSkillsIcon: false,
+          showLines: !state.showLines,
+          showMore: false,
+        };
+      case 'SELECT_PROJECT':
+        return { ...state, selectedProjectId: action.payload.id };
+      default:
+        return state;
+    }
+  };
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleSkillsClick = () => {
@@ -94,7 +101,8 @@ const Header = () => {
     dispatch({ type: 'TOGGLE_PROJECTS_ICON' });
   };
   const handleProjectDetail = (id: number) => {
-    dispatch({ type: 'TOGGLE_PROJECT_DETAIL', payload: { id } });
+    dispatch({ type: 'TOGGLE_PROJECT_DETAIL' });
+    dispatch({ type: 'SELECT_PROJECT', payload: { id } });
   };
 
   const handleMore = () => {
@@ -113,35 +121,64 @@ const Header = () => {
           </div>
           <div className={styles.vertical}>
             <div className={styles.titleSection}>
-              <div className={styles.titleSection__title}>
-                <h2 className={styles.headerH2}>Milad</h2>
-                <h3 className={styles.headerH3}>
-                  <span className={styles.headerH3Span}>
-                    fullstack (<div className={styles.loadingTxt}>loading</div>
-                    <div className={styles.loadingContainer}>
-                      <div className={styles.loadingSpan}></div>
-                      <div className={styles.loadingSpan}></div>
-                      <div className={styles.loadingSpan}></div>)
-                    </div>
-                  </span>
-                  <span className={styles.headerH3Span}>
-                    frontend developer
-                  </span>
-                  <span className={styles.headerH3Span}>designer</span>
-                  <span className={styles.headerH3Span}>creative</span>
-                  <span className={styles.headerH3Span}>artist</span>
-                  <div className={styles.headerH3Span}>
-                    <span
-                      onClick={handleMore}
-                      className={`${styles.headerH3Span__span} ${
-                        state.toggleMoreIcon ? styles.rotate : ''
-                      }`}
-                    >
-                      <IoIosArrowDown />
+              {state.toggleProjectDetail ? (
+                <div
+                  className={`${styles.titleSection__title} ${
+                    state.selectedProjectId ? styles.projectDetailVisible : ''
+                  }`}
+                >
+                  <h2 className={styles.headerH2}>Milad</h2>
+                  <h3 className={styles.headerH3}>
+                    <span className={styles.headerH3Span}>
+                      fullstack (
+                      <div className={styles.loadingTxt}>loading</div>
+                      <div className={styles.loadingContainer}>
+                        <div className={styles.loadingSpan}></div>
+                        <div className={styles.loadingSpan}></div>
+                        <div className={styles.loadingSpan}></div>)
+                      </div>
                     </span>
+                    <span className={styles.headerH3Span}>
+                      frontend developer
+                    </span>
+                    <span className={styles.headerH3Span}>designer</span>
+                    <span className={styles.headerH3Span}>creative</span>
+                    <span className={styles.headerH3Span}>artist</span>
+                    <div className={styles.headerH3Span}>
+                      <span
+                        onClick={handleMore}
+                        className={`${styles.headerH3Span__span} ${
+                          state.toggleMoreIcon ? styles.rotate : ''
+                        }`}
+                      >
+                        <IoIosArrowDown />
+                      </span>
+                    </div>
+                  </h3>
+                </div>
+              ) : (
+                state.selectedProjectId && (
+                  <div>
+                    {projects.map((project) =>
+                      project.id === state.selectedProjectId ? (
+                        <div
+                          key={project.id}
+                          className={`${styles.titleSection__descContainer} ${
+                            state.selectedProjectId
+                              ? styles.projectDetailVisible
+                              : ''
+                          }`}
+                        >
+                          <p className={styles.titleSection__descContainer__p}>
+                            {project.prjDesc}
+                          </p>
+                        </div>
+                      ) : null
+                    )}
                   </div>
-                </h3>
-              </div>
+                )
+              )}
+
               <p
                 className={`${styles.titleSection__mobile__p} ${
                   state.showMore ? styles.show__p : styles.close__p
