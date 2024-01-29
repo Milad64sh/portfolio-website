@@ -2,13 +2,13 @@
   {
     "id": 1,
     "title": "real-estate",
-    "prjDesc": "First Project description",
+    "prjDesc": "First Project description. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur culpa est nam labore dicta tempora inventore reiciendis deserunt dolor quidem, expedita quaerat eos dolorum optio aut, distinctio earum? Reiciendis, voluptates?",
     "prjLink": "https://real-state-react-app.vercel.app/"
   },
   {
     "id": 2,
     "title": "ecommerce",
-    "prjDesc": "Second Project description",
+    "prjDesc": "Second Project description. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur culpa est nam labore dicta tempora inventore reiciendis deserunt dolor quidem, expedita quaerat eos dolorum optio aut, distinctio earum? Reiciendis, voluptates?",
     "prjLink": "https://ecommerce-website-six-fawn.vercel.app/"
   }
 ]

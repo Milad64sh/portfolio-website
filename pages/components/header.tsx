@@ -121,63 +121,69 @@ const Header = () => {
           </div>
           <div className={styles.vertical}>
             <div className={styles.titleSection}>
-              {state.toggleProjectDetail ? (
-                <div
-                  className={`${styles.titleSection__title} ${
-                    state.selectedProjectId ? styles.projectDetailVisible : ''
-                  }`}
-                >
-                  <h2 className={styles.headerH2}>Milad</h2>
-                  <h3 className={styles.headerH3}>
-                    <span className={styles.headerH3Span}>
-                      fullstack (
-                      <div className={styles.loadingTxt}>loading</div>
-                      <div className={styles.loadingContainer}>
-                        <div className={styles.loadingSpan}></div>
-                        <div className={styles.loadingSpan}></div>
-                        <div className={styles.loadingSpan}></div>)
-                      </div>
-                    </span>
-                    <span className={styles.headerH3Span}>
-                      frontend developer
-                    </span>
-                    <span className={styles.headerH3Span}>designer</span>
-                    <span className={styles.headerH3Span}>creative</span>
-                    <span className={styles.headerH3Span}>artist</span>
-                    <div className={styles.headerH3Span}>
-                      <span
-                        onClick={handleMore}
-                        className={`${styles.headerH3Span__span} ${
-                          state.toggleMoreIcon ? styles.rotate : ''
-                        }`}
-                      >
-                        <IoIosArrowDown />
+              <div>
+                {state.toggleProjectDetail ? (
+                  <div
+                    className={`${styles.titleSection__title} ${
+                      state.selectedProjectId
+                        ? styles.titleSection__titleSlideOut
+                        : ''
+                    }`}
+                  >
+                    <h2 className={styles.headerH2}>Milad</h2>
+                    <h3 className={styles.headerH3}>
+                      <span className={styles.headerH3Span}>
+                        fullstack (
+                        <div className={styles.loadingTxt}>loading</div>
+                        <div className={styles.loadingContainer}>
+                          <div className={styles.loadingSpan}></div>
+                          <div className={styles.loadingSpan}></div>
+                          <div className={styles.loadingSpan}></div>)
+                        </div>
                       </span>
-                    </div>
-                  </h3>
-                </div>
-              ) : (
-                state.selectedProjectId && (
-                  <div>
-                    {projects.map((project) =>
-                      project.id === state.selectedProjectId ? (
-                        <div
-                          key={project.id}
-                          className={`${styles.titleSection__descContainer} ${
-                            state.selectedProjectId
-                              ? styles.projectDetailVisible
-                              : ''
+                      <span className={styles.headerH3Span}>
+                        frontend developer
+                      </span>
+                      <span className={styles.headerH3Span}>designer</span>
+                      <span className={styles.headerH3Span}>creative</span>
+                      <span className={styles.headerH3Span}>artist</span>
+                      <div className={styles.headerH3Span}>
+                        <span
+                          onClick={handleMore}
+                          className={`${styles.headerH3Span__span} ${
+                            state.toggleMoreIcon ? styles.rotate : ''
                           }`}
                         >
-                          <p className={styles.titleSection__descContainer__p}>
-                            {project.prjDesc}
-                          </p>
-                        </div>
-                      ) : null
-                    )}
+                          <IoIosArrowDown />
+                        </span>
+                      </div>
+                    </h3>
                   </div>
-                )
-              )}
+                ) : (
+                  state.selectedProjectId && (
+                    <div>
+                      {projects.map((project) =>
+                        project.id === state.selectedProjectId ? (
+                          <div
+                            key={project.id}
+                            className={`${
+                              state.selectedProjectId
+                                ? styles.projectDetailSlideIn
+                                : styles.titleSection__descContainer
+                            }`}
+                          >
+                            <p
+                              className={styles.titleSection__descContainer__p}
+                            >
+                              {project.prjDesc}
+                            </p>
+                          </div>
+                        ) : null
+                      )}
+                    </div>
+                  )
+                )}
+              </div>
 
               <p
                 className={`${styles.titleSection__mobile__p} ${
