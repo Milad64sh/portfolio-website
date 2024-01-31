@@ -29,6 +29,7 @@
     "typescript": "^5.1.6"
   },
   "devDependencies": {
+    "@types/react-transition-group": "^4.4.10",
     "@types/swiper": "^6.0.0",
     "file-loader": "^6.2.0"
   }

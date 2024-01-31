@@ -1,4 +1,5 @@
 import React, { useState, useReducer, useContext } from 'react';
+
 import styles from './header.module.scss';
 import Skills from './skills/Skills';
 import { IoIosArrowDown } from 'react-icons/io';
@@ -123,13 +124,7 @@ const Header = () => {
             <div className={styles.titleSection}>
               <div>
                 {state.toggleProjectDetail ? (
-                  <div
-                    className={`${styles.titleSection__title} ${
-                      state.selectedProjectId
-                        ? styles.titleSection__titleSlideOut
-                        : ''
-                    }`}
-                  >
+                  <div className={styles.titleSection__title}>
                     <h2 className={styles.headerH2}>Milad</h2>
                     <h3 className={styles.headerH3}>
                       <span className={styles.headerH3Span}>
@@ -160,28 +155,24 @@ const Header = () => {
                     </h3>
                   </div>
                 ) : (
-                  state.selectedProjectId && (
-                    <div>
-                      {projects.map((project) =>
-                        project.id === state.selectedProjectId ? (
-                          <div
-                            key={project.id}
-                            className={`${
-                              state.selectedProjectId
-                                ? styles.projectDetailSlideIn
-                                : styles.titleSection__descContainer
-                            }`}
-                          >
-                            <p
-                              className={styles.titleSection__descContainer__p}
-                            >
-                              {project.prjDesc}
-                            </p>
-                          </div>
-                        ) : null
-                      )}
-                    </div>
-                  )
+                  <div>
+                    {projects.map((project) =>
+                      project.id === state.selectedProjectId ? (
+                        <div
+                          key={project.id}
+                          className={`${styles.titleSection__descContainer} ${
+                            !state.toggleProjectDetail
+                              ? styles.projectDetailSlideIn
+                              : styles.projectDetailSlideOut
+                          }`}
+                        >
+                          <p className={styles.titleSection__descContainer__p}>
+                            {project.prjDesc}
+                          </p>
+                        </div>
+                      ) : null
+                    )}
+                  </div>
                 )}
               </div>
 
