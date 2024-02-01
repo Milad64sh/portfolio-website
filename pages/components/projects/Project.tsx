@@ -25,12 +25,12 @@ const Project: React.FC<ProjectProp> = ({ project, style, handleDetail }) => {
           <h4>
             <button
               className={styles.projectItem}
-              onClick={() => handleDetail(project.id)}
+              onClick={() => {
+                handleDetail(project.id);
+              }}
             >
               {project.title}
             </button>
-            {/* <Link href={project.prjLink} legacyBehavior>
-            </Link> */}
           </h4>
         </div>
       </div>

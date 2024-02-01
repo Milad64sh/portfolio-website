@@ -46,7 +46,7 @@
 @keyframes ProjectDetailSlideIn {
   from {
     opacity: 0;
-    transform: translateX(40%);
+    transform: translateX(70%);
   }
   to {
     opacity: 1;
@@ -242,7 +242,7 @@
   }
   100% {
     width: 370px;
-    height: 80px;
+    height: 75px;
     opacity: 1;
   }
 }

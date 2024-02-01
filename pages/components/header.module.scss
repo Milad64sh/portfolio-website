@@ -7,6 +7,7 @@
 }
 .header {
   position: relative;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -193,7 +194,8 @@
         text-transform: uppercase;
         border-left: none;
         border-right: none;
-        width: 100%;
+        margin-left: 20px;
+        margin-top: 10px;
         transition: transform 0.3s ease-out;
         .headerH2 {
           letter-spacing: 5px;
@@ -201,6 +203,7 @@
           font-size: 3rem;
           padding-left: 25px;
           margin: 0;
+          margin-bottom: -10px;
           animation: fadeIn 1s ease-in-out forwards,
             slideFromLeft 1s ease-in-out;
         }
@@ -275,6 +278,12 @@
             }
           }
         }
+        &.active {
+          animation: titleSlideIn 1s ease-in-out forwards;
+        }
+        &.inactive {
+          animation: titleSlideOut 1s ease-in-out forwards;
+        }
       }
       .titleSection__descContainer {
         position: absolute;
@@ -285,32 +294,36 @@
         margin-left: 1.25rem;
         margin-right: -10rem;
         width: 91%;
-        animation: ProjectDetailSlideIn 1s ease-in-out forwards;
         &__p {
-          color: #fff;
+          color: $light-green;
           padding: 0 10px;
         }
-      }
-      .projectDetailSlideIn {
-        position: absolute;
-        display: block;
-        border: 1px solid $light-green;
-        border-radius: 4px;
-        margin-top: 3%;
-        margin-left: 1.3rem;
-        width: 91%;
-        animation: ProjectDetailSlideIn 1s ease-in-out forwards;
-      }
-      .projectDetailSlideOut {
-        animation: ProjectDetailSlideOut 1s ease-in-out forwards;
+        &.active {
+          position: absolute;
+          display: block;
+          border: 1px solid $light-green;
+          border-radius: 4px;
+          margin-top: 5%;
+          margin-left: 1.3rem;
+          width: 91%;
+          animation: ProjectDetailSlideIn 1s ease-in-out forwards;
+        }
+        &.inactive {
+          animation: ProjectDetailSlideOut 1s ease-in-out forwards;
+        }
       }
 
       .titleSection__mobile__p {
-        margin-top: 0;
+        position: absolute;
+        margin-top: 160%;
         font-family: 'Montserrat', sans-serif;
         color: $light;
         font-weight: 200;
+        width: 85%;
+        margin-left: 20px;
         display: none;
+        border: 1px solid rgba($light-green, 0.7);
+        border-radius: 4px;
         transition: all 0.4s ease-in-out;
         padding: 5px 10px;
         opacity: 0;

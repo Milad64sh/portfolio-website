@@ -6,6 +6,7 @@ import { IoIosArrowDown } from 'react-icons/io';
 import Heading from './Heading';
 import Projects from './projects/Projects';
 import { useAppContext } from '../../contexts/AppContext';
+import ProjectDetailDesc from './ProjectDetailDesc';
 type State = {
   toggleSkillsIcon: boolean;
   toggleProjectsIcon: boolean;
@@ -104,6 +105,8 @@ const Header = () => {
   const handleProjectDetail = (id: number) => {
     dispatch({ type: 'TOGGLE_PROJECT_DETAIL' });
     dispatch({ type: 'SELECT_PROJECT', payload: { id } });
+    console.log(state.toggleProjectDetail);
+    console.log(state.selectedProjectId);
   };
 
   const handleMore = () => {
@@ -123,57 +126,57 @@ const Header = () => {
           <div className={styles.vertical}>
             <div className={styles.titleSection}>
               <div>
-                {state.toggleProjectDetail ? (
-                  <div className={styles.titleSection__title}>
-                    <h2 className={styles.headerH2}>Milad</h2>
-                    <h3 className={styles.headerH3}>
-                      <span className={styles.headerH3Span}>
-                        fullstack (
-                        <div className={styles.loadingTxt}>loading</div>
-                        <div className={styles.loadingContainer}>
-                          <div className={styles.loadingSpan}></div>
-                          <div className={styles.loadingSpan}></div>
-                          <div className={styles.loadingSpan}></div>)
-                        </div>
-                      </span>
-                      <span className={styles.headerH3Span}>
-                        frontend developer
-                      </span>
-                      <span className={styles.headerH3Span}>designer</span>
-                      <span className={styles.headerH3Span}>creative</span>
-                      <span className={styles.headerH3Span}>artist</span>
-                      <div className={styles.headerH3Span}>
-                        <span
-                          onClick={handleMore}
-                          className={`${styles.headerH3Span__span} ${
-                            state.toggleMoreIcon ? styles.rotate : ''
-                          }`}
-                        >
-                          <IoIosArrowDown />
-                        </span>
+                <div
+                  className={`${styles.titleSection__title} ${
+                    state.toggleProjectDetail ? styles.active : styles.inactive
+                  } `}
+                >
+                  <h2 className={styles.headerH2}>Milad</h2>
+                  <h3 className={styles.headerH3}>
+                    <span className={styles.headerH3Span}>
+                      fullstack (
+                      <div className={styles.loadingTxt}>loading</div>
+                      <div className={styles.loadingContainer}>
+                        <div className={styles.loadingSpan}></div>
+                        <div className={styles.loadingSpan}></div>
+                        <div className={styles.loadingSpan}></div>)
                       </div>
-                    </h3>
-                  </div>
-                ) : (
-                  <div>
-                    {projects.map((project) =>
-                      project.id === state.selectedProjectId ? (
-                        <div
-                          key={project.id}
-                          className={`${styles.titleSection__descContainer} ${
-                            !state.toggleProjectDetail
-                              ? styles.projectDetailSlideIn
-                              : styles.projectDetailSlideOut
-                          }`}
-                        >
-                          <p className={styles.titleSection__descContainer__p}>
-                            {project.prjDesc}
-                          </p>
-                        </div>
-                      ) : null
-                    )}
-                  </div>
-                )}
+                    </span>
+                    <span className={styles.headerH3Span}>
+                      frontend developer
+                    </span>
+                    <span className={styles.headerH3Span}>designer</span>
+                    <span className={styles.headerH3Span}>creative</span>
+                    <span className={styles.headerH3Span}>artist</span>
+                    <div className={styles.headerH3Span}>
+                      <span
+                        onClick={handleMore}
+                        className={`${styles.headerH3Span__span} ${
+                          state.toggleMoreIcon ? styles.rotate : ''
+                        }`}
+                      >
+                        <IoIosArrowDown />
+                      </span>
+                    </div>
+                  </h3>
+                </div>
+
+                <div>
+                  {projects.map((project) =>
+                    project.id === state.selectedProjectId ? (
+                      <div
+                        key={project.id}
+                        className={`${styles.titleSection__descContainer} ${
+                          !state.toggleProjectDetail
+                            ? styles.active
+                            : styles.inactive
+                        } `}
+                      >
+                        <ProjectDetailDesc project={project} />
+                      </div>
+                    ) : null
+                  )}
+                </div>
               </div>
 
               <p
