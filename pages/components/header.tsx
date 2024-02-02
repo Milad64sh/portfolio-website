@@ -14,11 +14,14 @@ type State = {
   toggleProjectDetail: boolean;
   showLines: boolean;
   showMore: boolean;
-  selectedProjectId: number | null;
+  selectedProjectId: number;
 };
 
 type ToggleProjectDetailAction = {
   type: 'TOGGLE_PROJECT_DETAIL';
+  payload: {
+    id: number;
+  };
 };
 
 type SelectProjectAction = {
@@ -32,7 +35,7 @@ type Action =
   | { type: 'TOGGLE_SKILLS_ICON' }
   | { type: 'TOGGLE_PROJECTS_ICON' }
   | { type: 'TOGGLE_LINES' }
-  | { type: 'TOGGLE_PROJECT_DETAIL' }
+  // | { type: 'TOGGLE_PROJECT_DETAIL' }
   | SelectProjectAction
   | ToggleProjectDetailAction
   | { type: 'TOGGLE_MORE_ICON' };
@@ -47,7 +50,7 @@ const Header = () => {
     toggleMoreIcon: false,
     showLines: false,
     showMore: false,
-    selectedProjectId: null,
+    selectedProjectId: 0,
   };
   const reducer = (state: State, action: Action): State => {
     switch (action.type) {
@@ -55,6 +58,8 @@ const Header = () => {
         return {
           ...state,
           toggleSkillsIcon: !state.toggleSkillsIcon,
+          toggleProjectDetail: false,
+          selectedProjectId: 0,
           toggleProjectsIcon: false,
           showMore: false,
           toggleMoreIcon: false,
@@ -64,6 +69,8 @@ const Header = () => {
         return {
           ...state,
           toggleProjectsIcon: !state.toggleProjectsIcon,
+          toggleProjectDetail: false,
+          selectedProjectId: 0,
           toggleSkillsIcon: false,
           showMore: false,
           toggleMoreIcon: false,
@@ -73,6 +80,8 @@ const Header = () => {
         return {
           ...state,
           toggleMoreIcon: !state.toggleMoreIcon,
+
+          selectedProjectId: 0,
           toggleSkillsIcon: false,
           toggleProjectsIcon: false,
           showLines: !state.showLines,
@@ -81,6 +90,7 @@ const Header = () => {
       case 'TOGGLE_PROJECT_DETAIL':
         return {
           ...state,
+          selectedProjectId: action.payload.id,
           toggleProjectDetail: !state.toggleProjectDetail,
           toggleMoreIcon: false,
           toggleSkillsIcon: false,
@@ -88,7 +98,10 @@ const Header = () => {
           showMore: false,
         };
       case 'SELECT_PROJECT':
-        return { ...state, selectedProjectId: action.payload.id };
+        return {
+          ...state,
+          selectedProjectId: action.payload.id,
+        };
       default:
         return state;
     }
@@ -103,14 +116,19 @@ const Header = () => {
     dispatch({ type: 'TOGGLE_PROJECTS_ICON' });
   };
   const handleProjectDetail = (id: number) => {
-    dispatch({ type: 'TOGGLE_PROJECT_DETAIL' });
+    dispatch({
+      type: 'TOGGLE_PROJECT_DETAIL',
+      payload: { id },
+    });
     dispatch({ type: 'SELECT_PROJECT', payload: { id } });
-    console.log(state.toggleProjectDetail);
-    console.log(state.selectedProjectId);
+    console.log('handle project-detail:', state.toggleProjectDetail);
+    console.log('handle project-id:', state.selectedProjectId);
   };
 
   const handleMore = () => {
     dispatch({ type: 'TOGGLE_MORE_ICON' });
+    console.log('handle more-detail:', state.toggleProjectDetail);
+    console.log('handle more-id:', state.selectedProjectId);
   };
 
   return (
@@ -128,7 +146,7 @@ const Header = () => {
               <div>
                 <div
                   className={`${styles.titleSection__title} ${
-                    state.toggleProjectDetail ? styles.active : styles.inactive
+                    !state.toggleProjectDetail ? styles.active : styles.inactive
                   } `}
                 >
                   <h2 className={styles.headerH2}>Milad</h2>
@@ -167,7 +185,7 @@ const Header = () => {
                       <div
                         key={project.id}
                         className={`${styles.titleSection__descContainer} ${
-                          !state.toggleProjectDetail
+                          state.toggleProjectDetail && state.selectedProjectId
                             ? styles.active
                             : styles.inactive
                         } `}
