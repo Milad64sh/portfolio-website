@@ -371,7 +371,7 @@
     transform: translateY(-40%);
   }
 }
-@keyframes s740 {
+@keyframes showParagraphHeight740 {
   from {
     opacity: 0;
     transform: translateY(50%);
@@ -392,6 +392,17 @@
   }
 }
 
+@keyframes showParagraph {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-26%);
+  }
+}
+
 @keyframes showParagraphHeight812 {
   from {
     opacity: 0;
@@ -409,7 +420,7 @@
   }
   to {
     opacity: 1;
-    transform: translateY(-50%);
+    transform: translateY(-41%);
   }
 }
 @keyframes showParagraphHeight854 {

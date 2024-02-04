@@ -362,34 +362,38 @@
         opacity: 0;
         transform: translateY(0);
         &.show__p {
-          @media screen and (max-width: 767px) {
+          @media screen and (width: 767px) {
             animation: showParagraph 0.5s forwards;
           }
-          @media screen and (max-width: 360px) {
-            animation: showParagraph 0.5s forwards;
+          @media screen and (width: 360px) and (height: 800px) {
+            animation: showParagraphHeight800 0.5s forwards;
           }
-          @media screen and (max-width: 360px) and (max-height: 740px) {
-            animation: s740 0.5s forwards;
+          @media screen and (width: 360px) and (height: 740px) {
+            animation: showParagraphHeight740 0.5s forwards;
           }
-          @media screen and (max-width: 412px) {
+          @media screen and (width: 360px) and (height: 760px) {
             animation: showParagraphHeight760 0.5s forwards;
           }
-          @media screen and (max-width: 412px) and (max-height: 915px) {
-            animation: showParagraphHeight915 0.5s forwards;
-          }
-          @media screen and (max-width: 375px) and (max-height: 812px) {
+
+          @media screen and (width: 375px) and (height: 812px) {
             animation: showParagraphHeight812 0.5s forwards;
           }
-          @media screen and (max-width: 390px) and (max-height: 844px) {
+          @media screen and (width: 390px) and (height: 844px) {
             animation: showParagraphHeight844 0.5s forwards;
           }
-          @media screen and (max-width: 384px) and (max-height: 854px) {
+          @media screen and (width: 384px) and (height: 854px) {
             animation: showParagraphHeight854 0.5s forwards;
           }
-          @media screen and (max-width: 414px) and (max-height: 896px) {
+          @media screen and (width: 412px) {
+            animation: showParagraphHeight760 0.5s forwards;
+          }
+          @media screen and (width: 414px) and (height: 896px) {
             animation: showParagraphHeight896 0.5s forwards;
           }
-          @media screen and (max-width: 428px) and (max-height: 926px) {
+          @media screen and (width: 412px) and (height: 915px) {
+            animation: showParagraphHeight915 0.5s forwards;
+          }
+          @media screen and (width: 428px) and (height: 926px) {
             animation: showParagraphHeight926 0.5s forwards;
           }
         }
