@@ -2,7 +2,7 @@ import React, { useState, useReducer, useContext } from 'react';
 
 import styles from './header.module.scss';
 import Skills from './skills/Skills';
-import { IoIosArrowDown } from 'react-icons/io';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import Heading from './Heading';
 import Projects from './projects/Projects';
 import { useAppContext } from '../../contexts/AppContext';
@@ -13,6 +13,7 @@ type State = {
   toggleMoreIcon: boolean;
   toggleProjectDetail: boolean;
   toggleTitleSection: boolean;
+  toggleTitleItems: boolean;
   showLines: boolean;
   showMore: boolean;
   selectedProjectId: number;
@@ -37,6 +38,7 @@ type Action =
   | { type: 'TOGGLE_PROJECTS_ICON' }
   | { type: 'TOGGLE_LINES' }
   | { type: 'RESET_TOGGLE_TITLE_SECTION' }
+  | { type: 'TOGGLE_TITLE_ITEMS' }
   | SelectProjectAction
   | ToggleProjectDetailAction
   | { type: 'TOGGLE_MORE_ICON' };
@@ -49,6 +51,7 @@ const Header = () => {
     toggleProjectsIcon: false,
     toggleProjectDetail: false,
     toggleTitleSection: true,
+    toggleTitleItems: false,
     toggleMoreIcon: false,
     showLines: false,
     showMore: false,
@@ -62,6 +65,7 @@ const Header = () => {
           toggleSkillsIcon: !state.toggleSkillsIcon,
           toggleProjectDetail: false,
           toggleTitleSection: true,
+          toggleTitleItems: false,
           selectedProjectId: 0,
           toggleProjectsIcon: false,
           showMore: false,
@@ -75,6 +79,7 @@ const Header = () => {
           selectedProjectId: 0,
           toggleSkillsIcon: false,
           toggleTitleSection: true,
+          toggleTitleItems: false,
           showMore: false,
           toggleMoreIcon: false,
           showLines: false,
@@ -86,6 +91,7 @@ const Header = () => {
           selectedProjectId: 0,
           toggleSkillsIcon: false,
           toggleProjectsIcon: false,
+          toggleTitleSection: true,
           showLines: !state.showLines,
           showMore: !state.showMore,
         };
@@ -112,6 +118,11 @@ const Header = () => {
           ...state,
           toggleTitleSection: false,
         };
+      case 'TOGGLE_TITLE_ITEMS':
+        return {
+          ...state,
+          toggleTitleItems: !state.toggleTitleItems,
+        };
       default:
         return state;
     }
@@ -137,6 +148,7 @@ const Header = () => {
   };
 
   const handleMore = () => {
+    dispatch({ type: 'TOGGLE_TITLE_ITEMS' });
     dispatch({ type: 'TOGGLE_MORE_ICON' });
   };
 
@@ -158,8 +170,21 @@ const Header = () => {
                     state.toggleTitleSection ? styles.active : styles.inactive
                   } `}
                 >
-                  <h2 className={styles.headerH2}>Milad</h2>
-                  <h3 className={styles.headerH3}>
+                  <h2 className={styles.headerH2} onClick={handleMore}>
+                    Milad{' '}
+                    <span
+                      className={`${styles.headerH2__span} ${
+                        state.toggleTitleItems ? styles.active : styles.inactive
+                      }`}
+                    >
+                      <IoIosArrowUp />
+                    </span>
+                  </h2>
+                  <h3
+                    className={`${styles.headerH3} ${
+                      state.toggleTitleItems ? styles.moveUp : styles.moveDown
+                    }`}
+                  >
                     <span className={styles.headerH3Span}>
                       fullstack (
                       <div className={styles.loadingTxt}>loading</div>

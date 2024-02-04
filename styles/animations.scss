@@ -223,7 +223,9 @@
   }
 }
 
-// PROJECTS animation for mobile screen
+// PROJECTS MOBILE SCREENS
+
+// PROJECTS MOBILE SCREENS__IPHONE PRO 12/13
 @keyframes openProjectsMobile {
   0% {
     width: 100px;
@@ -339,42 +341,164 @@
   }
 }
 
-// Animation for PARAGRAPH
-@keyframes showParagraph {
-  0% {
+// Animation for TOGGLE ARROW IN H2
+@keyframes showH2Span {
+  from {
     opacity: 0;
   }
-  25% {
-    opacity: 0.25;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  75% {
-    opacity: 0.75;
-  }
-  100% {
+  to {
     opacity: 1;
   }
 }
-@keyframes closeParagraph {
-  0% {
+@keyframes hideH2Span {
+  from {
     opacity: 1;
   }
-  25% {
-    opacity: 0.75;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  75% {
-    opacity: 0.25;
-  }
-  100% {
+  to {
     opacity: 0;
   }
 }
 
+// Animation for PARAGRAPH
+
+@keyframes showParagraph {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-40%);
+  }
+}
+@keyframes s740 {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-25%);
+  }
+}
+@keyframes showParagraphHeight760 {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-25%);
+  }
+}
+
+@keyframes showParagraphHeight812 {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-35%);
+  }
+}
+@keyframes showParagraphHeight844 {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+@keyframes showParagraphHeight854 {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-40%);
+  }
+}
+@keyframes showParagraphHeight896 {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-58%);
+  }
+}
+
+@keyframes showParagraphHeight883 {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-58%);
+  }
+}
+
+@keyframes showParagraphHeight915 {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-58%);
+  }
+}
+@keyframes showParagraphHeight926 {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-63%);
+  }
+}
+@keyframes closeParagraph {
+  from {
+    opacity: 1;
+    transform: translateY(-40%);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+}
+
+// ANIMATION TOGGLE TITLE ITEMS
+
+@keyframes toggleTitleItemsDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes toggleTitleItemsUp {
+  from {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+}
+
+// ANIMATION ROTATE YELLOW PART
 @keyframes yellowPart {
   0% {
     flex: 1;

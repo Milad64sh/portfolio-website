@@ -16,6 +16,10 @@
   height: 90.5vh;
   background-size: cover;
   background-position: center;
+
+  @media screen and (max-width: 360px) {
+    height: 90vh;
+  }
   @media screen and (max-width: 767px) {
     height: 88vh;
   }
@@ -204,8 +208,21 @@
           padding-left: 25px;
           margin: 0;
           margin-bottom: -10px;
+          border-bottom: 1px solid rgba($light, 0.7);
+          cursor: pointer;
           animation: fadeIn 1s ease-in-out forwards,
             slideFromLeft 1s ease-in-out;
+          &__span {
+            font-size: 1rem;
+            opacity: 0;
+            &.active {
+              cursor: pointer;
+              animation: showH2Span 1s ease-in-out forwards;
+            }
+            &.inactive {
+              animation: hideH2Span 0.5s ease-in-out forwards;
+            }
+          }
         }
         .headerH3 {
           font-weight: 100;
@@ -213,8 +230,9 @@
           padding-left: 5px;
           margin-left: 5px;
           width: 100%;
-          border-top: 1px solid rgba($light, 0.7);
+          opacity: 1;
           animation: fadeIn 1s ease-in-out forwards;
+          transform: translateY(0);
           .headerH3Span {
             display: block;
             padding: 5px;
@@ -277,6 +295,12 @@
               transform: rotateX(180deg);
             }
           }
+          &.moveUp {
+            animation: toggleTitleItemsUp 1s ease-in-out forwards;
+          }
+          &.moveDown {
+            animation: toggleTitleItemsDown 1s ease-in-out forwards;
+          }
         }
         &.active {
           animation: titleSlideIn 1s ease-in-out forwards;
@@ -297,6 +321,9 @@
         &__p {
           color: $light-green;
           padding: 0 10px;
+          @media screen and (max-width: 412px) {
+            padding: 0 10px;
+          }
         }
         &.active {
           position: absolute;
@@ -307,30 +334,63 @@
           margin-left: 1.3rem;
           width: 91%;
           animation: ProjectDetailSlideIn 1s ease-in-out forwards;
+          @media screen and (max-width: 412px) {
+            width: 87%;
+          }
         }
         &.inactive {
           animation: ProjectDetailSlideOut 1s ease-in-out forwards;
+          @media screen and (max-width: 412px) {
+            width: 87%;
+          }
         }
       }
-
       .titleSection__mobile__p {
         position: absolute;
+        display: flex;
+        flex-direction: column;
         margin-top: 160%;
         font-family: 'Montserrat', sans-serif;
         color: $light;
         font-weight: 200;
         width: 85%;
         margin-left: 20px;
-        display: none;
         border: 1px solid rgba($light-green, 0.7);
         border-radius: 4px;
         transition: all 0.4s ease-in-out;
         padding: 5px 10px;
         opacity: 0;
+        transform: translateY(0);
         &.show__p {
           @media screen and (max-width: 767px) {
             animation: showParagraph 0.5s forwards;
-            display: block;
+          }
+          @media screen and (max-width: 360px) {
+            animation: showParagraph 0.5s forwards;
+          }
+          @media screen and (max-width: 360px) and (max-height: 740px) {
+            animation: s740 0.5s forwards;
+          }
+          @media screen and (max-width: 412px) {
+            animation: showParagraphHeight760 0.5s forwards;
+          }
+          @media screen and (max-width: 412px) and (max-height: 915px) {
+            animation: showParagraphHeight915 0.5s forwards;
+          }
+          @media screen and (max-width: 375px) and (max-height: 812px) {
+            animation: showParagraphHeight812 0.5s forwards;
+          }
+          @media screen and (max-width: 390px) and (max-height: 844px) {
+            animation: showParagraphHeight844 0.5s forwards;
+          }
+          @media screen and (max-width: 384px) and (max-height: 854px) {
+            animation: showParagraphHeight854 0.5s forwards;
+          }
+          @media screen and (max-width: 414px) and (max-height: 896px) {
+            animation: showParagraphHeight896 0.5s forwards;
+          }
+          @media screen and (max-width: 428px) and (max-height: 926px) {
+            animation: showParagraphHeight926 0.5s forwards;
           }
         }
         &.close__p {
@@ -359,6 +419,9 @@
           z-index: 5000;
           margin-left: 10px;
           width: 100%;
+          border-bottom: 1px solid rgba($light, 0.6);
+          margin-bottom: 10px;
+          padding-bottom: -5px;
           cursor: pointer;
           .section__span {
             color: $light;
@@ -376,6 +439,7 @@
           width: 0;
           &.showContainer {
             animation: openingSkills 0.4s forwards;
+            border: none;
             border: 1px solid $light-green;
             border-radius: 5px;
             @media screen and (max-width: 860px) {
@@ -398,6 +462,8 @@
           z-index: 5000;
           margin-left: 10px;
           width: 100%;
+          border-bottom: 1px solid rgba($light, 0.6);
+          margin-bottom: 10px;
           cursor: pointer;
           .section__span {
             color: $light;
