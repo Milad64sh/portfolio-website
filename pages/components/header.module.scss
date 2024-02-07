@@ -170,11 +170,31 @@
     position: absolute;
     display: flex;
     flex-direction: row-reverse;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     z-index: 2500;
     width: 95%;
     margin-top: 0;
+
+    @media screen and (max-width: 1400px) {
+      flex-direction: row-reverse;
+      justify-content: start;
+      align-items: start;
+      // top: ;
+    }
+    @media screen and (max-width: 1200px) {
+      flex-direction: row-reverse;
+      justify-content: start;
+      align-items: start;
+      // top: ;
+    }
+    @media screen and (max-width: 990px) {
+      flex-direction: row-reverse;
+      justify-content: start;
+      align-items: start;
+      // top: ;
+    }
     @media screen and (max-width: 767px) {
       flex-direction: column-reverse;
       justify-content: start;
@@ -186,7 +206,7 @@
       flex-direction: column;
       align-items: start;
       justify-content: center;
-
+      width: 100%;
       .titleSection__title {
         position: absolute;
         display: flex;
@@ -202,10 +222,10 @@
         margin-top: 10px;
         transition: transform 0.3s ease-out;
         .headerH2 {
+          // position: absolute;
           letter-spacing: 5px;
           font-weight: 100;
           font-size: 3rem;
-          padding-left: 25px;
           margin: 0;
           margin-bottom: -10px;
           border-bottom: 1px solid rgba($light, 0.7);
@@ -365,41 +385,20 @@
           @media screen and (width: 767px) {
             animation: showParagraph 0.5s forwards;
           }
-          @media screen and (max-width: 360px) and (height: 800px) {
-            animation: showParagraphHeight800 0.5s forwards;
+          @media screen and (max-width: 767px) {
+            animation: showParagraphMaxWidth767 0.5s forwards;
           }
-          @media screen and (width: 375px) and (height: 667px) {
-            animation: showParagraphHeight667 0.5s forwards;
+          @media screen and (max-width: 640px) {
+            animation: showParagraphMaxWidth666 0.5s forwards;
           }
-          @media screen and (width: 360px) and (height: 740px) {
-            animation: showParagraphHeight740 0.5s forwards;
+          @media screen and (max-width: 600px) {
+            animation: showParagraphMaxWidth600 0.5s forwards;
           }
-          @media screen and (width: 360px) and (height: 760px) {
-            animation: showParagraphHeight760 0.5s forwards;
+          @media screen and (max-width: 480px) {
+            animation: showParagraphMaxWidth480 0.5s forwards;
           }
 
-          @media screen and (width: 375px) and (height: 812px) {
-            animation: showParagraphHeight812 0.5s forwards;
-          }
-          @media screen and (width: 390px) and (height: 844px) {
-            animation: showParagraphHeight844 0.5s forwards;
-          }
-          @media screen and (width: 384px) and (height: 854px) {
-            animation: showParagraphHeight854 0.5s forwards;
-          }
-          @media screen and (width: 412px) {
-            animation: showParagraphHeight760 0.5s forwards;
-          }
-          @media screen and (width: 414px) and (height: 896px) {
-            animation: showParagraphHeight896 0.5s forwards;
-          }
-          @media screen and (width: 412px) and (height: 915px) {
-            animation: showParagraphHeight915 0.5s forwards;
-          }
-          @media screen and (width: 428px) and (height: 926px) {
-            animation: showParagraphHeight926 0.5s forwards;
-          }
-          @media screen and (max-width: 460px) and (max-height: 950px) {
+          @media screen and (max-width: 460px) and (max-height: 990px) {
             animation: showParagraphHeight932 0.5s forwards;
           }
         }
