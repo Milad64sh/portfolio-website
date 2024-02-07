@@ -1,11 +1,10 @@
-// pages / _app.js;
 import React from 'react';
 import '../styles/global.scss';
 import AppProvider from '../contexts/AppContext';
 import { AppProps } from 'next/app';
 import projects from '../data/projects.json';
 import skillsData from '../data/skillsListData.json';
-// import Footer from './components/Footer';
+
 import Head from 'next/head';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
@@ -30,7 +29,11 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           href='/favicon-16x16.png'
         />
         <link rel='manifest' href='/site.webmanifest' />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        {/* <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
+        /> */}
+        <meta name='viewport' content='viewport-fit=cover' />
       </Head>
       <AppProvider value={{ skillsData, projects }}>
         <Component {...pageProps} />
