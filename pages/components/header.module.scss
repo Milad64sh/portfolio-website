@@ -378,7 +378,7 @@
           @media screen and (width: 375px) and (height: 812px) {
             animation: showParagraphHeight812 0.5s forwards;
           }
-          @media screen and (width: 390px) and (height: 844px) {
+          @media screen and (max-width: 390px) and (max-height: 844px) {
             animation: showParagraphHeight844 0.5s forwards;
           }
           @media screen and (width: 384px) and (height: 854px) {
