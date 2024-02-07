@@ -368,6 +368,9 @@
           @media screen and (width: 360px) and (height: 800px) {
             animation: showParagraphHeight800 0.5s forwards;
           }
+          @media screen and (width: 375px) and (height: 667px) {
+            animation: showParagraphHeight667 0.5s forwards;
+          }
           @media screen and (width: 360px) and (height: 740px) {
             animation: showParagraphHeight740 0.5s forwards;
           }
@@ -379,9 +382,6 @@
             animation: showParagraphHeight812 0.5s forwards;
           }
           @media screen and (width: 390px) and (height: 844px) {
-            animation: showParagraphHeight844 0.5s forwards;
-          }
-          @media screen and (min-width: 390px) and (max-width: 400px) {
             animation: showParagraphHeight844 0.5s forwards;
           }
           @media screen and (width: 384px) and (height: 854px) {
@@ -399,8 +399,8 @@
           @media screen and (width: 428px) and (height: 926px) {
             animation: showParagraphHeight926 0.5s forwards;
           }
-          @media screen and (width: 393px) and (height: 852px) {
-            animation: showParagraphHeight854 0.5s forwards;
+          @media screen and (width: 430px) and (height: 930px) {
+            animation: showParagraphHeight926 0.5s forwards;
           }
         }
         &.close__p {

@@ -371,6 +371,16 @@
     transform: translateY(-40%);
   }
 }
+@keyframes showParagraphHeight667 {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-43%);
+  }
+}
 @keyframes showParagraphHeight740 {
   from {
     opacity: 0;
