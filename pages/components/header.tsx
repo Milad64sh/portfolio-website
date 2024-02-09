@@ -162,90 +162,8 @@ const Header = () => {
             <div className={styles.HBGDarkGrey}></div>
             <div className={styles.HBGYellow}></div>
           </div>
-          <div className={styles.vertical}>
-            <div className={styles.titleSection}>
-              <div>
-                <div
-                  className={`${styles.titleSection__title} ${
-                    state.toggleTitleSection ? styles.active : styles.inactive
-                  } `}
-                >
-                  <h2 className={styles.headerH2} onClick={handleMore}>
-                    Milad{' '}
-                    <span
-                      className={`${styles.headerH2__span} ${
-                        state.toggleTitleItems ? styles.active : styles.inactive
-                      }`}
-                    >
-                      <IoIosArrowUp />
-                    </span>
-                  </h2>
-                  <h3
-                    className={`${styles.headerH3} ${
-                      state.toggleTitleItems ? styles.moveUp : styles.moveDown
-                    }`}
-                  >
-                    <span className={styles.headerH3Span}>
-                      fullstack (
-                      <div className={styles.loadingTxt}>loading</div>
-                      <div className={styles.loadingContainer}>
-                        <div className={styles.loadingSpan}></div>
-                        <div className={styles.loadingSpan}></div>
-                        <div className={styles.loadingSpan}></div>)
-                      </div>
-                    </span>
-                    <span className={styles.headerH3Span}>
-                      frontend developer
-                    </span>
-                    <span className={styles.headerH3Span}>designer</span>
-                    <span className={styles.headerH3Span}>creative</span>
-                    <span className={styles.headerH3Span}>artist</span>
-                    <div className={styles.headerH3Span}>
-                      <span
-                        onClick={handleMore}
-                        className={`${styles.headerH3Span__span} ${
-                          state.toggleMoreIcon ? styles.rotate : ''
-                        }`}
-                      >
-                        <IoIosArrowDown />
-                      </span>
-                    </div>
-                  </h3>
-                </div>
-
-                <div>
-                  {projects.map((project) =>
-                    project.id === state.selectedProjectId ? (
-                      <div
-                        key={project.id}
-                        className={`${styles.titleSection__descContainer} ${
-                          !state.toggleTitleSection && state.selectedProjectId
-                            ? styles.active
-                            : styles.inactive
-                        } `}
-                      >
-                        <ProjectDetailDesc project={project} />
-                      </div>
-                    ) : null
-                  )}
-                </div>
-              </div>
-
-              <p
-                className={`${styles.titleSection__mobile__p} ${
-                  state.showMore ? styles.show__p : styles.close__p
-                }`}
-              >
-                I'm Milad Shalikarian, a self-taught front-end web developer
-                based in Reading, Berkshire, UK. With a strong track record in
-                developing E-commerce projects and compelling landing pages, I
-                am passionate about expanding my expertise in front-end
-                technologies. Committed to constant growth, I stay abreast of
-                industry trends to deliver innovative solutions in every project
-                I undertake.
-              </p>
-            </div>
-            <div className={styles.sections}>
+          <div className={styles.container}>
+            <div className={styles.container__sections}>
               <div className={styles.section__content}>
                 <div
                   onClick={handleSkillsClick}
@@ -298,25 +216,85 @@ const Header = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className={styles.lines}>
-            <div className={styles.lines__twoFirstLine}>
+            <div className={styles.container__titleSection}>
               <div
-                className={`${styles.lines__twoFirstLine__firstVerticalLine} ${
-                  state.showLines ? styles.showLines : styles.closeLines
+                className={`${styles.titleSection__title} ${
+                  state.toggleTitleSection ? styles.active : styles.inactive
+                } `}
+              >
+                <h2 className={styles.headerH2} onClick={handleMore}>
+                  Milad{' '}
+                  <span
+                    className={`${styles.headerH2__span} ${
+                      state.toggleTitleItems ? styles.active : styles.inactive
+                    }`}
+                  >
+                    <IoIosArrowUp />
+                  </span>
+                </h2>
+                <h3
+                  className={`${styles.headerH3} ${
+                    state.toggleTitleItems ? styles.moveUp : styles.moveDown
+                  }`}
+                >
+                  <span className={styles.headerH3Span}>
+                    fullstack (<div className={styles.loadingTxt}>loading</div>
+                    <div className={styles.loadingContainer}>
+                      <div className={styles.loadingSpan}></div>
+                      <div className={styles.loadingSpan}></div>
+                      <div className={styles.loadingSpan}></div>)
+                    </div>
+                  </span>
+                  <span className={styles.headerH3Span}>
+                    frontend developer
+                  </span>
+                  <span className={styles.headerH3Span}>designer</span>
+                  <span className={styles.headerH3Span}>creative</span>
+                  <span className={styles.headerH3Span}>artist</span>
+                  <div className={styles.headerH3Span}>
+                    <span
+                      onClick={handleMore}
+                      className={`${styles.headerH3Span__span} ${
+                        state.toggleMoreIcon ? styles.rotate : ''
+                      }`}
+                    >
+                      <IoIosArrowDown />
+                    </span>
+                  </div>
+                </h3>
+              </div>
+
+              <div>
+                {projects.map((project) =>
+                  project.id === state.selectedProjectId ? (
+                    <div
+                      key={project.id}
+                      className={`${styles.titleSection__descContainer} ${
+                        !state.toggleTitleSection && state.selectedProjectId
+                          ? styles.active
+                          : styles.inactive
+                      } `}
+                    >
+                      <ProjectDetailDesc project={project} />
+                    </div>
+                  ) : null
+                )}
+              </div>
+
+              <p
+                className={`${styles.titleSection__mobile__p} ${
+                  state.showMore ? styles.show__p : styles.close__p
                 }`}
-              ></div>
-              <div
-                className={`${styles.lines__twoFirstLine__horizontalLine} ${
-                  state.showLines ? styles.showLine : styles.closeLine
-                }`}
-              ></div>
+              >
+                I'm Milad Shalikarian, a self-taught front-end web developer
+                based in Reading, Berkshire, UK. With a strong track record in
+                developing E-commerce projects and compelling landing pages, I
+                am passionate about expanding my expertise in front-end
+                technologies. Committed to constant growth, I stay abreast of
+                industry trends to deliver innovative solutions in every project
+                I undertake.
+              </p>
             </div>
-            <div
-              className={`${styles.lines__secVerticalLine} ${
-                state.showLines ? styles.showLine : styles.closeLine
-              }`}
-            ></div>
           </div>
           <div
             className={`${styles.more} ${

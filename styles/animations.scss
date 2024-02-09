@@ -50,7 +50,7 @@
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0%);
   }
 }
 @keyframes ProjectDetailSlideOut {
@@ -60,7 +60,27 @@
   }
   to {
     opacity: 0;
-    transform: translateX(90%);
+    transform: translateX(70%);
+  }
+}
+@keyframes ProjectDetailSlideInMaxWidth1920 {
+  from {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-158%);
+  }
+}
+@keyframes ProjectDetailSlideOutMaxWidth1920 {
+  from {
+    opacity: 1;
+    transform: translateX(-158%);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-30%);
   }
 }
 
@@ -134,7 +154,7 @@
 // skills animation for mobile screen
 @keyframes openSkillsMobile {
   0% {
-    width: 100px;
+    width: 10%;
     height: 10px;
     opacity: 0;
   }
@@ -149,7 +169,7 @@
     opacity: 0.5;
   }
   100% {
-    width: 320px;
+    width: 95%;
     height: 150px;
     opacity: 1;
   }
@@ -180,7 +200,7 @@
 // Animation for PROJECTS section
 @keyframes openingProjects {
   0% {
-    width: 100px;
+    width: 10%;
     height: 10px;
     opacity: 0;
   }
@@ -195,7 +215,7 @@
     opacity: 0.5;
   }
   100% {
-    width: 435px;
+    width: 90%;
     height: 80px;
     opacity: 1;
   }
@@ -228,7 +248,7 @@
 // PROJECTS MOBILE SCREENS__IPHONE PRO 12/13
 @keyframes openProjectsMobile {
   0% {
-    width: 100px;
+    width: 10%;
     height: 10px;
     opacity: 0;
   }
@@ -243,14 +263,14 @@
     opacity: 0.5;
   }
   100% {
-    width: 390px;
+    width: 95%;
     height: 75px;
     opacity: 1;
   }
 }
 @keyframes closeProjectsMobile {
   0% {
-    width: 360px;
+    width: 95%;
     height: 80px;
     opacity: 1;
   }
@@ -265,7 +285,7 @@
     opacity: 0.25;
   }
   100% {
-    width: 0px;
+    width: 0%;
     height: 0px;
     opacity: 0;
   }
@@ -371,178 +391,26 @@
     transform: translateY(-40%);
   }
 }
-@keyframes showParagraphHeight667 {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-43%);
-  }
-}
-@keyframes showParagraphHeight740 {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-25%);
-  }
-}
-@keyframes showParagraphHeight760 {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-25%);
-  }
-}
 
-@keyframes showParagraph {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-26%);
-  }
-}
-
-@keyframes showParagraphHeight812 {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-35%);
-  }
-}
-@keyframes showParagraphHeight844 {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-41%);
-  }
-}
-@keyframes showParagraphHeight854 {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-40%);
-  }
-}
-@keyframes showParagraphHeight896 {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-58%);
-  }
-}
-
-@keyframes showParagraphHeight883 {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-58%);
-  }
-}
-
-@keyframes showParagraphHeight915 {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-58%);
-  }
-}
-@keyframes showParagraphHeight926 {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-63%);
-  }
-}
-@keyframes showParagraphHeight932 {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-40%);
-  }
-}
 @keyframes showParagraphMaxWidth767 {
   from {
     opacity: 0;
-    transform: translateY(50%);
+    transform: translateY(100%);
   }
   to {
     opacity: 1;
-    transform: translateY(-250%);
+    transform: translateY(53%);
   }
 }
-@keyframes showParagraphMaxWidth666 {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-220%);
-  }
-}
-@keyframes showParagraphMaxWidth600 {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-100%);
-  }
-}
-@keyframes showParagraphMaxWidth480 {
-  from {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-100%);
-  }
-}
+
 @keyframes closeParagraph {
   from {
     opacity: 1;
-    transform: translateY(-40%);
+    transform: translateY(53%);
   }
   to {
     opacity: 0;
-    transform: translateY(50%);
+    transform: translateY(100%);
   }
 }
 
@@ -598,7 +466,7 @@
     z-index: 1000;
     width: 100%;
     height: 100%;
-    background-color: rgba($yellow, 0.3);
+    // background-color: rgba($yellow, 0.3);
   }
   100% {
     flex: 1;
@@ -627,6 +495,28 @@
     z-index: 1000;
     width: 100%;
     height: 100%;
-    background-color: rgba($yellow, 0.3);
+    // background-color: rgba($yellow, 0.3);
+  }
+}
+
+// SHOW MORE ANIMATION
+@keyframes showMoreAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(10%);
+  }
+}
+@keyframes closeMoreAnimation {
+  from {
+    opacity: 1;
+    transform: translateY(10%);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(50%);
   }
 }
