@@ -3,6 +3,9 @@
 @import '../styles/mixins.scss';
 @import '../styles/animations.scss';
 
+.navBackground {
+  background-color: $high-dark;
+}
 .header {
   position: relative;
   display: flex;
