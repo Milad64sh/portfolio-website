@@ -169,6 +169,7 @@
       flex-direction: column;
       justify-content: start;
       align-items: start;
+      margin-top: -40%;
     }
     &__titleSection {
       position: relative;
@@ -415,7 +416,7 @@
       margin-right: auto;
       width: 100%;
       @media screen and (max-width: 767px) {
-        margin-top: 20%;
+        // margin-top: 20%;
         // margin-left: 5%;
       }
       .section__content {
@@ -528,78 +529,7 @@
       }
     }
   }
-  // .lines {
-  //   position: absolute;
-  //   margin-top: 17%;
-  //   margin-left: 28.25%;
-  //   width: 350px;
-  //   height: 50px;
-  //   display: flex;
-  //   z-index: 10000;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   align-items: end;
-  //   @media screen and (max-width: 1600px) {
-  //     display: none;
-  //   }
 
-  //   .lines__twoFirstLine {
-  //     position: absolute;
-  //     width: 350px;
-  //     height: 30px;
-  //     display: flex;
-  //     flex-direction: column;
-  //     justify-content: center;
-  //     align-items: end;
-  //     .lines__twoFirstLine__firstVerticalLine {
-  //       width: 1px;
-  //       height: 0;
-  //       opacity: 0;
-  //       background-color: $light;
-  //       transition: all 0.4s ease-in-out;
-  //       &.showLines {
-  //         opacity: 1;
-  //         height: 30px;
-  //       }
-  //       &.closeLines {
-  //         opacity: 0;
-  //       }
-  //     }
-  //     .lines__twoFirstLine__horizontalLine {
-  //       width: 0px;
-  //       height: 1px;
-  //       opacity: 0;
-  //       background-color: $light;
-  //       transition: all 0.4s ease-in-out 0.2s;
-  //       &.showLine {
-  //         opacity: 1;
-  //         width: 350px;
-  //       }
-  //       &.closeLine {
-  //         opacity: 0;
-  //       }
-  //     }
-  //   }
-  //   .lines__secVerticalLine {
-  //     position: absolute;
-  //     width: 1px;
-  //     height: 20px;
-  //     background-color: $light;
-  //     left: 0;
-  //     top: 40px;
-  //     transition: all 0.4s ease-in-out 0.4s;
-  //     &.showLine {
-  //       opacity: 1;
-  //       height: 20px;
-  //     }
-  //     &.closeLine {
-  //       opacity: 0;
-  //       transition-delay: 0s;
-  //       transition-duration: 0s;
-  //       height: 0;
-  //     }
-  //   }
-  // }
   .more {
     position: absolute;
     flex-direction: column;

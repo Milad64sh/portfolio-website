@@ -9,6 +9,7 @@
   flex-direction: column;
   position: relative;
   font-family: 'Montserrat', sans-serif;
+  height: 100vh;
 
   .header {
     background-size: cover;
@@ -20,13 +21,13 @@
     position: absolute;
     padding-right: 10px;
     z-index: 20000;
-    @media screen and (max-width: 767px) {
-      left: 0;
-      top: 120%;
-    }
     @media screen and (max-width: 1920px) {
       left: 0;
-      top: 98%;
+      top: 105%;
+    }
+    @media screen and (max-width: 767px) {
+      left: 0;
+      top: 105%;
     }
   }
 }
