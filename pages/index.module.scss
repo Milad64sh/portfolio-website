@@ -18,16 +18,16 @@
   .footer {
     position: absolute;
     color: $light;
-    position: absolute;
     padding-right: 10px;
     z-index: 20000;
     @media screen and (max-width: 1920px) {
       left: 0;
-      top: 105%;
+      top: 98%;
     }
     @media screen and (max-width: 767px) {
+      color: $high-dark;
       left: 0;
-      top: 105%;
+      top: 98%;
     }
   }
 }

@@ -6,11 +6,11 @@
   position: relative;
   display: flex;
   flex-direction: row;
-  color: $light;
   h4 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
-    border: 1px solid $light-green;
+    color: $high-light;
+    font-weight: 400;
+    border: 1px solid $high-light;
     padding: 5px 10px;
     border-radius: 4px;
   }

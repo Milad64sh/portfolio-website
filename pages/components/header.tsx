@@ -157,10 +157,10 @@ const Header = () => {
       <header>
         <div className={styles.header}>
           <div className={styles.HBG}>
-            <div className={styles.HBGLightGrey}></div>
-            <div className={styles.HBGMediumGrey}></div>
-            <div className={styles.HBGDarkGrey}></div>
-            <div className={styles.HBGYellow}></div>
+            <div className={styles.square}></div>
+            <div className={styles.triangle2}></div>
+            <div className={styles.triangle3}></div>
+            <div className={styles.triangle4}></div>
           </div>
           <div className={styles.container}>
             <div className={styles.container__sections}>
@@ -223,7 +223,7 @@ const Header = () => {
                 } `}
               >
                 <h2 className={styles.headerH2} onClick={handleMore}>
-                  Milad{' '}
+                  Mish{' '}
                   <span
                     className={`${styles.headerH2__span} ${
                       state.toggleTitleItems ? styles.active : styles.inactive

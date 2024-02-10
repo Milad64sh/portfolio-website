@@ -5,10 +5,10 @@ const AboutContent = () => {
   return (
     <>
       <div className={styles.HBG}>
-        <div className={styles.HBGLightGrey}></div>
-        <div className={styles.HBGMediumGrey}></div>
-        <div className={styles.HBGDarkGrey}></div>
-        <div className={styles.HBGYellow}></div>
+        <div className={styles.square}></div>
+        <div className={styles.triangle2}></div>
+        <div className={styles.triangle3}></div>
+        <div className={styles.triangle4}></div>
       </div>
       <div className={styles.content}>
         <h3 className={styles.aboutH3}>I am</h3>

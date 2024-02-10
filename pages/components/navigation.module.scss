@@ -11,12 +11,13 @@
   align-items: center;
   visibility: visible;
   background-color: transparent;
-  background-color: rgba(#f7f1f8, 0.8);
+  background-color: $high-dark;
   transition: $transition;
   animation: fadeIn 1s ease-in-out;
   height: 5rem;
   .logo {
     display: block;
+    margin-left: 10px;
     @media screen and (max-width: 767px) {
       display: none;
     }
@@ -24,11 +25,12 @@
       padding: 10px;
       @include Link;
       width: 100%;
+      padding-bottom: 0;
       .logoSpan {
         display: block;
         letter-spacing: 3px;
-        padding-left: 10px;
-        color: #828350;
+        font-weight: 400;
+        color: $light;
       }
     }
   }
@@ -42,7 +44,7 @@
         letter-spacing: 3px;
         font-size: 1.5rem;
         @include Link;
-        color: #828350;
+        color: $light;
         a:hover {
           transform: scale(1.1);
         }

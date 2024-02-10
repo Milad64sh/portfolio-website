@@ -6,7 +6,7 @@
 }
 .mobileNav {
   height: 5rem;
-  background-color: rgba(#f7f1f8, 0.8);
+  background-color: $high-dark;
   animation: fadeIn 1s ease-in-out;
   position: relative;
   z-index: 50000;
@@ -21,31 +21,27 @@
   }
   .logoLink {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 10px;
-    // @include Link;
     text-decoration: none;
+    text-transform: uppercase;
     padding-left: 10px;
     .logoSpan__m {
       display: block;
-      letter-spacing: -1px;
-      color: #828350;
-      font-weight: 700;
-      font-size: 1.25rem;
+      letter-spacing: 3px;
+      padding-left: 10px;
+      color: $light;
     }
     .logoSpan__s {
       display: block;
-      letter-spacing: -3px;
-      color: #828350;
-      font-weight: 700;
-      font-size: 1.5rem;
-      margin-top: -5px;
-      margin-left: -2px;
+      letter-spacing: 3px;
+      padding-left: 10px;
+      color: $light;
     }
     .logoSpan__h {
       display: block;
       letter-spacing: -3px;
-      color: #828350;
+      color: $light;
       font-weight: 700;
       font-size: 2rem;
       margin-top: -12px;
@@ -54,7 +50,7 @@
     .logoSpan__dot {
       display: block;
       letter-spacing: -1px;
-      color: #828350;
+      color: $light;
       font-weight: 700;
       font-size: 2rem;
       margin-top: -12px;
@@ -73,7 +69,7 @@
     .iconBar {
       width: 30px;
       height: 2px;
-      background-color: #828350;
+      background-color: $light;
       margin: 4px;
       transition: all 0.4s ease-in;
     }
@@ -124,7 +120,7 @@
           text-decoration: none;
           text-transform: uppercase;
           padding-right: 20px;
-          color: #828350;
+          color: $light;
           letter-spacing: 2px;
           font-size: 1.5rem;
         }

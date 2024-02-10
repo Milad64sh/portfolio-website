@@ -1,11 +1,12 @@
 @import '../../styles/variables.scss';
 
 .heading {
-  color: $light;
+  color: $high-dark;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-weight: 200;
   padding: 0px;
   .headingH3 {
-    font-weight: 200;
+    font-weight: 400;
   }
 }

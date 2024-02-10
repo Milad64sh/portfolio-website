@@ -21,8 +21,8 @@ const navigation: React.FC = () => {
         <div className={styles.logo}>
           <Link href='/' legacyBehavior>
             <a className={styles.logoLink}>
-              <span className={styles.logoSpan}>Milad</span>
-              <span className={styles.logoSpan}>Shalikarian</span>
+              <span className={styles.logoSpan}>Mi</span>
+              <span className={styles.logoSpan}>Sh</span>
             </a>
           </Link>
         </div>

@@ -1,8 +1,11 @@
 $transition: all 0.4s ease-in;
-$light: #f7f1f8;
-$dark: #000f08;
-$light-green: #a1aca7;
-$dark-green: #4c5651;
+$light: #fca311;
+$dark: rgba(#000000, 0.8);
+$high-dark: #000000;
+$medium-dark: rgba(#000000, 0.7);
+$high-light: lighten(#ffb703, 10%);
+$light-green: #ffb703;
+$dark-green: #ffb703;
 $yellow: #ffec51;
 $yellow-dark: #828350;
 $skill-mobile-bcg: rgba(52, 59, 56);
