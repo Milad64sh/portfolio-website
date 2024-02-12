@@ -2,11 +2,14 @@
 
 .heading {
   color: $high-dark;
+  font-family: 'Jost', sans-serif;
   text-transform: uppercase;
-  letter-spacing: 2px;
   font-weight: 200;
   padding: 0px;
+  @media screen and (max-width: 767px) {
+    color: $high-dark;
+  }
   .headingH3 {
-    font-weight: 400;
+    font-weight: 700;
   }
 }

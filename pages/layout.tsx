@@ -4,7 +4,6 @@ import { ReactNode } from 'react';
 import Navigation from './components/Navigation';
 import MobileNav from './components/MobileNav';
 import styles from './index.module.scss';
-import Footer from './components/Footer';
 
 interface LayoutProps {
   children: ReactNode;

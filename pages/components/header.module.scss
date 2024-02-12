@@ -110,12 +110,12 @@
     align-items: center;
     z-index: 2500;
     width: 95%;
-    margin-top: -20%;
+    margin-top: 0;
     @media screen and (max-width: 767px) {
       flex-direction: column;
       justify-content: start;
       align-items: start;
-      margin-top: -100%;
+      margin-top: -80%;
     }
     &__titleSection {
       position: relative;
@@ -139,7 +139,6 @@
         justify-content: start;
         align-items: start;
         font-family: 'Jost', sans-serif;
-
         z-index: 1000;
         color: $dark;
         text-transform: uppercase;
@@ -149,7 +148,6 @@
         margin-top: 30px;
         transition: transform 0.3s ease-out;
         .headerH2 {
-          letter-spacing: 5px;
           font-weight: 700;
           font-size: 5rem;
           color: #fff;
@@ -410,7 +408,9 @@
           cursor: pointer;
           .section__span {
             color: $high-dark;
-            height: 15px;
+            font-weight: 900;
+            font-size: 1.25rem;
+            height: 19px;
             padding-left: 2px;
             transition: $transition;
             &.rotate {
@@ -454,7 +454,9 @@
           cursor: pointer;
           .section__span {
             color: $high-dark;
-            height: 15px;
+            font-weight: 900;
+            font-size: 1.25rem;
+            height: 19px;
             padding-left: 2px;
             transition: $transition;
             &.rotate {
@@ -528,17 +530,17 @@
       width: 100%;
     }
 
-    @media only screen and (min-width: 767px) and (max-width: 1080px) {
-      width: 60%;
-      margin-top: 10%;
+    @media only screen and (max-width: 1920px) {
+      width: 50%;
+      margin-top: 5%;
     }
     @media only screen and (min-width: 999px) and (max-width: 1441px) {
       width: 60%;
       margin-top: 10%;
     }
-    @media only screen and (max-width: 1920px) {
+    @media only screen and (min-width: 767px) and (max-width: 999px) {
       width: 60%;
-      margin-top: 0%;
+      margin-top: 10%;
     }
     &.showMore {
       animation: showMoreAnimation 0.5s ease-in-out forwards;

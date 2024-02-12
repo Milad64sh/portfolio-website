@@ -17,7 +17,7 @@
   h4 {
     font-family: 'Jost', sans-serif;
     font-weight: 200;
-    border: 1px solid $light-green;
+    border: 1px solid $high-dark;
     padding: 5px 10px;
     border-radius: 4px;
     background-color: transparent;
@@ -35,7 +35,10 @@
     border: none;
     background-color: transparent;
     transition: all 0.5s ease-in-out;
-    color: $light;
+    color: $high-dark;
+    font: inherit;
+    font-size: 0.75rem;
+    font-weight: 200;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -43,6 +46,7 @@
 
     &:hover {
       letter-spacing: 3px;
+      color: $high-light;
     }
   }
   .project-0--showProject {
