@@ -2,13 +2,19 @@
   {
     "id": 1,
     "title": "real-estate",
-    "prjDesc": "First Project description. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur culpa est nam labore dicta tempora inventore reiciendis deserunt dolor quidem, expedita quaerat eos dolorum optio aut, distinctio earum? Reiciendis, voluptates?",
+    "prjDesc": "Real Estate project is a responsive web application built using React.js and powered by a firebase database. It allows users to explore real estate listings, view property details, and connect with sellers. Features include: Responsive Design, Listings, Authentication and Authorization and smooth navigation",
     "prjLink": "https://real-state-react-app.vercel.app/"
   },
   {
     "id": 2,
     "title": "ecommerce",
-    "prjDesc": "Second Project description. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur culpa est nam labore dicta tempora inventore reiciendis deserunt dolor quidem, expedita quaerat eos dolorum optio aut, distinctio earum? Reiciendis, voluptates?",
+    "prjDesc": "Technology stack: React.js, Router-Dom, Pagination, React Hooks, SASS. Key features: Responsive design, Product Listing to display a curated collection of products, User interface components, Shopping bag functionality including: adding Items, Removing Items, Quantity Management, Total Price calculation.",
     "prjLink": "https://ecommerce-website-six-fawn.vercel.app/"
+  },
+  {
+    "id": 3,
+    "title": "Handover-App",
+    "prjDesc": "MERN stack project, MongoDB, Express, React and Node.js. Features: CRUD Operations, Different Access types (manager, Admin, Employee), Authentication and Authorization, Filters for Search Option, Pagination, Responsive Design, Deployment (firebase for static part, Heroku for backend)",
+    "prjLink": "https://handovers-5d5e8.web.app/auth"
   }
 ]

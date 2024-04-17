@@ -21,18 +21,18 @@ const Project: React.FC<ProjectProp> = ({ project, style, handleDetail }) => {
   return (
     <>
       <div className={styles.skill}>
-        <div className={style}>
-          <h4>
-            <button
-              className={styles.projectItem}
-              onClick={() => {
-                handleDetail(project.id);
-              }}
-            >
-              {project.title}
-            </button>
-          </h4>
-        </div>
+        {/* <div className={style}> */}
+        <h4>
+          <button
+            className={styles.projectItem}
+            onClick={() => {
+              handleDetail(project.id);
+            }}
+          >
+            {project.title}
+          </button>
+        </h4>
+        {/* </div> */}
       </div>
     </>
   );
