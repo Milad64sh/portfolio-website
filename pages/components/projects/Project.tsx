@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './project.module.scss';
-import Link from 'next/link';
 
 interface ProjectProp {
   project?: {
@@ -20,19 +19,19 @@ const Project: React.FC<ProjectProp> = ({ project, style, handleDetail }) => {
   }
   return (
     <>
-      <div className={styles.skill}>
-        {/* <div className={style}> */}
-        <h4>
-          <button
-            className={styles.projectItem}
-            onClick={() => {
-              handleDetail(project.id);
-            }}
-          >
-            {project.title}
-          </button>
-        </h4>
-        {/* </div> */}
+      <div className={styles.container}>
+        <div className={styles.container__title}>
+          <h4>
+            <button
+              className={styles.projectItem}
+              onClick={() => {
+                handleDetail(project.id);
+              }}
+            >
+              {project.title}
+            </button>
+          </h4>
+        </div>
       </div>
     </>
   );

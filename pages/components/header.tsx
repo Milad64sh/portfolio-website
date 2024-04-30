@@ -164,6 +164,7 @@ const Header = () => {
           </div>
           <div className={styles.container}>
             <div className={styles.container__sections}>
+              {/* SKILLS */}
               <div className={styles.section__content}>
                 <div
                   onClick={handleSkillsClick}
@@ -188,6 +189,7 @@ const Header = () => {
                   <Skills toggle={state.toggleSkillsIcon} />
                 </div>
               </div>
+              {/* PROJECTS */}
               <div className={styles.section__content}>
                 <div
                   onClick={handleProjectsClick}
