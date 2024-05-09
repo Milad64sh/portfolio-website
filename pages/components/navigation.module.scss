@@ -30,7 +30,8 @@
         display: block;
         letter-spacing: 3px;
         font-weight: 400;
-        color: $light;
+        // color: $light;
+        color: darken($main-color, 20%);
       }
     }
   }
@@ -44,7 +45,8 @@
         letter-spacing: 3px;
         font-size: 1.5rem;
         @include Link;
-        color: $light;
+        // color: $light;
+        color: darken($main-color, 20%);
         a:hover {
           transform: scale(1.1);
         }

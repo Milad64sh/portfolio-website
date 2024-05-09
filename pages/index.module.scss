@@ -18,7 +18,8 @@
   }
   .footer {
     position: absolute;
-    color: $light;
+    // color: $light;
+    color: $headings;
     padding-right: 10px;
     z-index: 20000;
     @media screen and (max-width: 1920px) {
@@ -26,7 +27,8 @@
       top: 98%;
     }
     @media screen and (max-width: 767px) {
-      color: $high-dark;
+      // color: $high-dark;
+      color: $headings;
       left: 0;
       top: 98%;
     }

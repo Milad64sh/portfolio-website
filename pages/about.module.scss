@@ -35,7 +35,8 @@
       position: absolute;
       display: block;
       clip-path: polygon(0% 11%, 100% 11%, 100% 100%, 0% 100%);
-      background-color: rgba($light, 0.7);
+      // background-color: rgba($light, 0.7);
+      background-color: $main-color;
       overflow: visible;
       z-index: 1000;
       margin-top: 0px;
@@ -134,7 +135,8 @@
   .aboutH3 {
     flex: 1;
     // margin-left: 40%;
-    color: #fff;
+    // color: #fff;
+    color: $headings;
     padding-left: 50px;
     font-size: 1.5rem;
     @media screen and (width: 360px) and (height: 760px) {
@@ -151,10 +153,12 @@
     }
   }
   .aboutP {
-    color: #fff;
+    // color: #fff;
+    color: $headings;
     padding: 10px 20px;
     font-weight: 200;
-    border: 1px solid $high-dark;
+    // border: 1px solid $high-dark;
+    border: $section-border;
     border-radius: 4px;
     width: 70%;
     @media screen and (width: 360px) and (height: 800px) {
@@ -166,7 +170,8 @@
   position: absolute;
   left: calc(100% - 159.767px);
   top: calc(100% - 18.75px);
-  color: $light;
+  // color: $light;
+  color: $headings;
   text-align: end;
   padding-right: 10px;
   z-index: 20000;

@@ -6,7 +6,8 @@
 }
 .mobileNav {
   height: 5rem;
-  background-color: rgba($light, 0.7);
+  // background-color: rgba($light, 0.7);
+  background-color: $main-color;
   animation: fadeIn 1s ease-in-out;
   position: relative;
   z-index: 50000;
@@ -30,13 +31,15 @@
       display: block;
       letter-spacing: 3px;
       padding-left: 10px;
-      color: $high-dark;
+      // color: $high-dark;
+      color: $headings;
     }
     .logoSpan__s {
       display: block;
       letter-spacing: 3px;
       padding-left: 10px;
-      color: $high-dark;
+      // color: $high-dark;
+      color: $headings;
     }
   }
   .menuIcon {
@@ -51,7 +54,8 @@
     .iconBar {
       width: 30px;
       height: 2px;
-      background-color: $high-dark;
+      // background-color: $high-dark;
+      background-color: $headings;
       margin: 4px;
       transition: all 0.4s ease-in;
     }
@@ -102,7 +106,8 @@
           text-decoration: none;
           text-transform: uppercase;
           padding-right: 20px;
-          color: $high-dark;
+          // color: $high-dark;
+          color: $headings;
           letter-spacing: 2px;
           font-size: 1.5rem;
         }

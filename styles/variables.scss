@@ -1,7 +1,13 @@
 $transition: all 0.4s ease-in;
 $light: #fca311;
+$main-color: #bdede0;
 $dark: rgba(#000000, 0.8);
-$high-dark: #000000;
+$high-dark: #fff;
+$header-background: #fff;
+$headings: #0c0f0a;
+$arrow: #0c0f0a;
+$skills: #0c0f0a;
+$button-color: #0c0f0a;
 $medium-dark: rgba(#000000, 0.7);
 $high-light: lighten(#ffb703, 10%);
 $light-green: #ffb703;
@@ -9,6 +15,7 @@ $dark-green: #ffb703;
 $yellow: #ffec51;
 $yellow-dark: #828350;
 $skill-mobile-bcg: rgba(52, 59, 56);
+$section-border: 1px solid #000;
 $sectionTitle: (
   color: #f7f1f8,
   text-transform: uppercase,

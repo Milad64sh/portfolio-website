@@ -23,7 +23,7 @@
     width: 100%;
     height: 100%;
     animation: fadeIn 1s ease-in-out forwards;
-    background-color: $high-dark;
+    background-color: $header-background;
     opacity: 1;
     @media screen and (max-width: 767px) {
       // background-color: $light;
@@ -32,7 +32,8 @@
       position: absolute;
       display: block;
       clip-path: polygon(0% 11%, 100% 11%, 100% 100%, 0% 100%);
-      background-color: rgba($light, 0.7);
+      // background-color: rgba($light, 0.7);
+      background-color: $main-color;
       overflow: visible;
       z-index: 1000;
       margin-top: 0px;
@@ -51,7 +52,7 @@
       position: absolute;
       display: block;
       clip-path: polygon(45% 100%, 25% 100%, 25% 60%);
-      background-color: $high-dark;
+      background-color: $header-background;
       overflow: visible;
       opacity: 0;
       z-index: 2000;
@@ -69,7 +70,7 @@
       position: absolute;
       display: block;
       clip-path: polygon(50% 50%, 30% 10%, 70% 10%);
-      background-color: $high-dark;
+      background-color: $header-background;
       overflow: visible;
       z-index: 1000;
       width: 100%;
@@ -87,7 +88,7 @@
       position: absolute;
       display: block;
       clip-path: polygon(55% 100%, 75% 100%, 75% 60%);
-      background-color: $high-dark;
+      background-color: $header-background;
       overflow: visible;
       z-index: 1000;
       width: 100%;
@@ -140,7 +141,8 @@
         align-items: start;
         font-family: 'Jost', sans-serif;
         z-index: 1000;
-        color: $dark;
+        // color: $dark;
+        color: $headings;
         text-transform: uppercase;
         border-left: none;
         border-right: none;
@@ -150,7 +152,8 @@
         .headerH2 {
           font-weight: 700;
           font-size: 5rem;
-          color: #fff;
+          // color: #fff;
+          color: $headings;
           margin: 0;
           letter-spacing: -10px;
           margin-bottom: -10px;
@@ -159,7 +162,8 @@
           // animation: fadeIn 1s ease-in-out forwards,
           //   slideFromLeft 1s ease-in-out;
           @media screen and (max-width: 767px) {
-            color: $high-dark;
+            // color: $high-dark;
+            color: $headings;
             border-bottom: 1px solid $high-dark;
             font-size: 7rem;
             letter-spacing: -12px;
@@ -249,7 +253,8 @@
           .headerH3Span__span {
             display: flex;
             margin-top: 5px;
-            color: $high-dark;
+            color: #000000;
+            // color: $high-dark;
             height: 10px;
             transition: $transition;
             cursor: pointer;
@@ -278,7 +283,8 @@
       .titleSection__descContainer {
         position: absolute;
         display: block;
-        border: 1px solid $high-dark;
+        // border: 1px solid $high-dark;
+        border: $section-border;
         border-radius: 4px;
         margin-top: -45%;
         margin-left: 1.25rem;
@@ -294,7 +300,8 @@
           }
         }
         &.active {
-          border: 1px solid $high-dark;
+          // border: 1px solid $high-dark;
+          border: $section-border;
           border-radius: 4px;
           margin-top: 0;
           margin-left: 0;
@@ -352,11 +359,13 @@
         display: flex;
         flex-direction: column;
         font-family: 'Montserrat', sans-serif;
-        color: $high-light;
+        // color: $high-light;
+        color: $headings;
         font-weight: 400;
         font-size: 1rem;
         width: 85%;
-        border: 1px solid rgba($light-green, 0.7);
+        // border: 1px solid rgba($light-green, 0.7);
+        border: $section-border;
         border-radius: 4px;
         transition: all 0.4s ease-in-out;
         padding: 5px 10px;
@@ -365,8 +374,9 @@
         &.show__p {
           @media screen and (max-width: 767px) {
             animation: showParagraphMaxWidth767 0.5s forwards;
-            color: $high-dark;
-            border: 1px solid $high-dark;
+            color: $headings;
+            // border: 1px solid $high-dark;
+            border: $section-border;
           }
           @media screen and (max-width: 570px) {
             animation: showParagraphMaxWidth570 0.5s forwards;
@@ -407,7 +417,7 @@
           animation: sectionTitleShow 1s ease-in-out 4s forwards;
           cursor: pointer;
           .section__span {
-            color: $high-dark;
+            color: $arrow;
             font-weight: 900;
             font-size: 1.25rem;
             height: 19px;
@@ -425,7 +435,7 @@
           &.showContainer {
             animation: openingSkills 0.4s forwards;
             border: none;
-            border: 1px solid $high-dark;
+            border: $section-border;
             border-radius: 5px;
             @media screen and (max-width: 860px) {
               animation: openSkillsMobile 0.4s forwards;
@@ -453,7 +463,7 @@
           animation: sectionTitleShow 1s ease-in-out 4s forwards;
           cursor: pointer;
           .section__span {
-            color: $high-dark;
+            color: $arrow;
             font-weight: 900;
             font-size: 1.25rem;
             height: 19px;
@@ -470,7 +480,8 @@
           width: 0;
           &.showContainer {
             animation: openingProjects 0.4s forwards;
-            border: 1px solid $high-dark;
+            // border: 1px solid $high-dark;
+            border: $section-border;
             border-radius: 5px;
             @media screen and (max-width: 860px) {
               animation: openProjectsMobile 0.4s forwards;
@@ -514,7 +525,7 @@
     margin-top: 30%;
     z-index: 2000;
     width: 50%;
-    border-left: 3px solid $light;
+    border-left: 3px solid $headings;
     padding-left: 5px;
     display: flex;
     right: 1%;
@@ -551,7 +562,8 @@
     .more__p {
       margin-top: 0;
       font-family: 'Jost', sans-serif;
-      color: $high-light;
+      // color: $high-light;
+      color: $headings;
       font-weight: 100;
       display: block;
       @media screen and (max-width: 767px) {

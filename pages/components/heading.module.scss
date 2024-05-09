@@ -1,13 +1,13 @@
 @import '../../styles/variables.scss';
 
 .heading {
-  color: $high-dark;
+  color: $headings;
   font-family: 'Jost', sans-serif;
   text-transform: uppercase;
   font-weight: 200;
   padding: 0px;
   @media screen and (max-width: 767px) {
-    color: $high-dark;
+    color: $headings;
   }
   .headingH3 {
     font-weight: 700;

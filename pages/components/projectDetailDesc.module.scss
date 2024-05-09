@@ -6,19 +6,21 @@
   display: flex;
   flex-direction: column;
   .descContainer__p {
-    color: $high-light;
+    color: #000000;
     font-family: 'Jost', sans-serif;
     padding: 0 10px;
   }
   .descContainer__href {
-    color: $high-dark;
+    // color: $high-dark;
+    color: $headings;
     text-transform: capitalize;
     letter-spacing: 2px;
     text-decoration: none;
     margin-top: -5px;
     margin-bottom: 5px;
     margin-left: 10px;
-    border: 1px solid $high-dark;
+    // border: 1px solid #000000;
+    border: $section-border;
     text-transform: uppercase;
     border-radius: 4px;
     width: 30%;
@@ -26,10 +28,11 @@
     text-align: center;
     transition: all 0.5s ease-in-out;
     &:hover {
-      border: 1px solid $high-light;
-      box-shadow: 0px 0px 4px $high-light;
+      // border: 1px solid $high-light;
+      // box-shadow: 0px 0px 4px $high-light;
       // text-shadow: 0px 0px 4px $high-light;
-      color: $high-light;
+      // color: $high-light;
+      color: $headings;
       padding-left: 10px;
       padding-right: 10px;
       letter-spacing: 3px;
