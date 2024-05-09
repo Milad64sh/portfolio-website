@@ -7,6 +7,7 @@ import Heading from './Heading';
 import Projects from './projects/Projects';
 import { useAppContext } from '../../contexts/AppContext';
 import ProjectDetailDesc from './ProjectDetailDesc';
+import { IoIosArrowRoundDown } from 'react-icons/io';
 type State = {
   toggleSkillsIcon: boolean;
   toggleProjectsIcon: boolean;
@@ -43,7 +44,11 @@ type Action =
   | ToggleProjectDetailAction
   | { type: 'TOGGLE_MORE_ICON' };
 
-const Header = () => {
+interface HeaderProps {
+  scrollToNextSection: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ scrollToNextSection }) => {
   const { projects } = useAppContext();
 
   const initialState: State = {
@@ -315,6 +320,15 @@ const Header = () => {
               journey as a developer, ensuring that I deliver innovative and
               cutting-edge solutions to every project I undertake.
             </p>
+          </div>
+          <div className={styles.navigationBtn}>
+            <div
+              onClick={scrollToNextSection}
+              className={styles.navigationBtn__btn}
+            >
+              <div className={styles.navigationBtn__btn__icon}></div>
+              <IoIosArrowRoundDown />
+            </div>
           </div>
         </div>
       </header>

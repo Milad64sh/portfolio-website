@@ -1,0 +1,23 @@
+@import '../../../styles/global.scss';
+
+aside {
+  width: var(--snap-size);
+  margin-top: calc(50vh - (var(--snap-size) * 0.25));
+  margin-bottom: calc(50vh - (var(--snap-size) * 0.5));
+  z-index: 2;
+  main {
+    padding-left: 1rem;
+    padding-right: calc(var(--snap-size) * 5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    height: calc(100vh * var(--count));
+    grid-template-rows: repeat(var(--count), 1fr);
+    place-items: center;
+    animation: img-reel both steps(calc(var(--count) - 1));
+    animation-timeline: scroll(root);
+    pointer-events: none;
+  }
+}

@@ -10,7 +10,9 @@ interface AppContextType {
     id: number;
     title: string;
     prjDesc: string;
+    longDesc: string;
     prjLink: string;
+    prjImg: string;
   }>;
 }
 interface AppProviderProps {

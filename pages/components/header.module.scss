@@ -572,3 +572,31 @@
     }
   }
 }
+
+.navigationBtn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 90%;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    top: 89%;
+  }
+  &__btn {
+    border: none;
+    // padding: 10px;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    background-color: rgba($headings, 0.3);
+    font-size: 2rem;
+    cursor: pointer;
+
+    &__icon {
+      margin-top: 25%;
+    }
+  }
+}

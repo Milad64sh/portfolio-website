@@ -2,19 +2,33 @@
   {
     "id": 1,
     "title": "real-estate",
+    "longDesc": "Real Estate project is a responsive web application built using React.js and powered by a firebase database. It allows users to explore real estate listings, view property details, and connect with sellers. Features include: Responsive Design, Listings, Authentication and Authorization and smooth navigation",
     "prjDesc": "Real Estate project is a responsive web application built using React.js and powered by a firebase database. It allows users to explore real estate listings, view property details, and connect with sellers. Features include: Responsive Design, Listings, Authentication and Authorization and smooth navigation",
-    "prjLink": "https://real-state-react-app.vercel.app/"
+    "prjLink": "https://real-state-react-app.vercel.app/",
+    "prjImg": "/images/project-1.png"
   },
   {
     "id": 2,
     "title": "ecommerce",
     "prjDesc": "Technology stack: React.js, Router-Dom, Pagination, React Hooks, SASS. Key features: Responsive design, Product Listing to display a curated collection of products, User interface components, Shopping bag functionality including: adding Items, Removing Items, Quantity Management, Total Price calculation.",
-    "prjLink": "https://ecommerce-website-six-fawn.vercel.app/"
+    "longDesc": "Technology stack: React.js, Router-Dom, Pagination, React Hooks, SASS. Key features: Responsive design, Product Listing to display a curated collection of products, User interface components, Shopping bag functionality including: adding Items, Removing Items, Quantity Management, Total Price calculation.",
+    "prjLink": "https://ecommerce-website-six-fawn.vercel.app/",
+    "prjImg": "/images/project-2.png"
   },
   {
     "id": 3,
+    "title": "Portfolio",
+    "prjDesc": "My portfolio project is built using Next.js and TypeScript, making it both efficient and type-safe. With responsive design implemented using SCSS, it adapts seamlessly to various screen sizes. I've deployed it on Vercel for easy access and scalability.",
+    "longDesc": "My portfolio project is built using Next.js and TypeScript, making it both efficient and type-safe. With responsive design implemented using SCSS, it adapts seamlessly to various screen sizes. I've deployed it on Vercel for easy access and scalability.",
+    "prjLink": "https://karian1985.com/",
+    "prjImg": "/images/project-3.png"
+  },
+  {
+    "id": 4,
     "title": "Handover-App",
     "prjDesc": "MERN stack project, MongoDB, Express, React and Node.js. Features: CRUD Operations, Different Access types (manager, Admin, Employee), Authentication and Authorization, Filters for Search Option, Pagination, Responsive Design, Deployment (firebase for static part, Heroku for backend)",
-    "prjLink": "https://handovers-5d5e8.web.app/auth"
+    "longDesc": "MERN stack project, MongoDB, Express, React and Node.js. Features: CRUD Operations, Different Access types (manager, Admin, Employee), Authentication and Authorization, Filters for Search Option, Pagination, Responsive Design, Deployment (firebase for static part, Heroku for backend)",
+    "prjLink": "https://handovers-5d5e8.web.app/auth",
+    "prjImg": "/images/project-4.png"
   }
 ]
