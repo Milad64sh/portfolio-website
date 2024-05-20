@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import MobileNav from './components/MobileNav';
 import styles from './index.module.scss';
 import ProjectsSlideShow from './components/projects/ProjectsSlideShow';
+import Description from './components/Description';
 
 interface LayoutProps {
   children: ReactNode;
@@ -48,6 +49,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           {isMobile ? <MobileNav /> : <Navigation />}
           <Header scrollToNextSection={scrollToNextSection} />
         </header>
+        <section id='description' className={styles.description}>
+          <Description />
+        </section>
         <section id='projectsSlideShowSection' className={styles.section}>
           <ProjectsSlideShow />
         </section>

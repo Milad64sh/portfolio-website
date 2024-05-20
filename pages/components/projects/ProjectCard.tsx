@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './projectCard.module.scss';
 
-interface ProjectDetail {
+interface ProjectDescriptions {
   project?:
     | {
         id: number;
@@ -12,22 +12,43 @@ interface ProjectDetail {
         prjImg: string;
       }
     | undefined;
+  handleClick: (
+    projectId: number,
+    mouseEvent: React.MouseEvent<HTMLImageElement, MouseEvent>
+  ) => void;
+  isSelected: boolean;
 }
-const ProjectCard: React.FC<ProjectDetail> = ({ project }) => {
+const ProjectCard: React.FC<ProjectDescriptions> = ({
+  project,
+  handleClick,
+  isSelected,
+}) => {
+  const [clicked, setClicked] = useState<boolean>(false);
+  useEffect(() => {
+    setClicked(isSelected);
+  }, [isSelected]);
+  const handleClickImage = (
+    mouseEvent: React.MouseEvent<HTMLImageElement, MouseEvent>
+  ) => {
+    if (project) {
+      handleClick(project.id, mouseEvent);
+      setClicked(true);
+    }
+  };
   return (
     <>
-      <aside className={styles.aside}>
-        <nav>
-          <ul>
-            <li>
-              <h3>{project?.title}</h3>
-            </li>
-          </ul>
+      <main className={styles.container}>
+        <nav className={styles.container__nav}>
+          <div className={styles.container__nav__imgContainer}>
+          <img
+            onClick={handleClickImage}
+            src={project?.prjImg}
+            alt=''
+            className={`${styles.img} ${clicked ? styles.clicked : ''}`}
+            />
+            </div>
         </nav>
-        <main>
-          <img src={project?.prjImg} alt='' />
-        </main>
-      </aside>
+      </main>
     </>
   );
 };

@@ -18,3 +18,12 @@ $transition-timing-function: ease-in-out;
 }
 
 /* Define other global transitions as needed */
+
+@keyframes translateY {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(15px);
+  }
+}

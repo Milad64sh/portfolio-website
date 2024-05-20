@@ -11,7 +11,8 @@
   align-items: center;
   visibility: visible;
   background-color: transparent;
-  background-color: $high-dark;
+  // background-color: $high-dark;
+  background-color: rgba($section-bcg, 0.3);
   transition: $transition;
   animation: fadeIn 1s ease-in-out;
   height: 5rem;
@@ -30,8 +31,8 @@
         display: block;
         letter-spacing: 3px;
         font-weight: 400;
-        // color: $light;
-        color: darken($main-color, 20%);
+        color: $headings;
+        // color: darken($main-color, 20%);
       }
     }
   }
@@ -45,8 +46,8 @@
         letter-spacing: 3px;
         font-size: 1.5rem;
         @include Link;
-        // color: $light;
-        color: darken($main-color, 20%);
+        color: $headings;
+        // color: darken($main-color, 20%);
         a:hover {
           transform: scale(1.1);
         }

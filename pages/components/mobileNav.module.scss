@@ -6,8 +6,8 @@
 }
 .mobileNav {
   height: 5rem;
-  // background-color: rgba($light, 0.7);
-  background-color: $main-color;
+  background-color: rgba($section-bcg, 0.3);
+  // background-color: $main-color;
   animation: fadeIn 1s ease-in-out;
   position: relative;
   z-index: 50000;
