@@ -12,18 +12,14 @@ interface LayoutProps {
 }
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isMobile, setIsMobile] = useState(false);
+  const [show, setShow] = useState(false);
 
-  const scrollToNextSection: () => void = () => {
-    // Scroll to the ProjectsSlideShow section
-    const projectsSlideShowSection = document.getElementById(
-      'projectsSlideShowSection'
-    );
-    if (projectsSlideShowSection !== null) {
-      projectsSlideShowSection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      console.warn('projectsSlideShowSection not found');
-    }
-  };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShow(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,9 +41,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <div className={styles.layout}>
-        <header className={styles.header}>
+        <div className={`${styles.layout__nav} ${show ? styles.show : ''}`}>
           {isMobile ? <MobileNav /> : <Navigation />}
-          <Header scrollToNextSection={scrollToNextSection} />
+        </div>
+        <span className={styles.layout__1}></span>
+        <span className={styles.layout__2}></span>
+        <span className={styles.layout__3}></span>
+        <span className={styles.layout__4}></span>
+        <span className={styles.layout__5}></span>
+
+        <header className={styles.header}>
+          <Header />
         </header>
         <section id='description' className={styles.description}>
           <Description />

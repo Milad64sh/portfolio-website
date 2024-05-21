@@ -8,10 +8,17 @@ import Link from 'next/link';
 const MobileNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showIcons, setShowIcons] = useState(false);
+  const [show, setShow] = useState(false);
 
   const myEmailAddress = 'm.shalikarian@gmail.com';
   const githubProfileLink = 'https://github.com/Milad64sh';
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShow(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
   const handleLinkClick = () => {
     const mailToLink = `mailto:${myEmailAddress}`;
     window.open(mailToLink, '_blank');
@@ -24,7 +31,7 @@ const MobileNav = () => {
 
   return (
     <>
-      <nav className={styles.mobileNav}>
+      <nav className={`${styles.mobileNav} ${show ? styles.show : ''}`}>
         <div className={styles.logoMenu}>
           <div className={styles.logo}>
             <Link href='/' legacyBehavior>

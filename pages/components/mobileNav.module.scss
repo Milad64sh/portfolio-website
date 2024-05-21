@@ -5,12 +5,16 @@
   transition: $transition;
 }
 .mobileNav {
+  display: none;
   height: 5rem;
-  background-color: rgba($section-bcg, 0.3);
-  // background-color: $main-color;
+  background-color: transparent;
+
   animation: fadeIn 1s ease-in-out;
   position: relative;
   z-index: 50000;
+  &.show {
+    display: block;
+  }
   @media screen and (max-width: 767px) {
     height: 4.5rem;
   }
