@@ -7,11 +7,17 @@ import Link from 'next/link';
 
 const MobileNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isRotating, setIsRotating] = useState(false);
   const [showIcons, setShowIcons] = useState(false);
   const [show, setShow] = useState(false);
 
   const myEmailAddress = 'm.shalikarian@gmail.com';
   const githubProfileLink = 'https://github.com/Milad64sh';
+
+  const handleClick = () => {
+    setIsRotating(true);
+    setTimeout(() => setIsRotating(false), 1000); // Reset after animation duration
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -35,9 +41,16 @@ const MobileNav = () => {
         <div className={styles.logoMenu}>
           <div className={styles.logo}>
             <Link href='/' legacyBehavior>
-              <a className={styles.logoLink}>
-                <span className={styles.logoSpan__m}>mi</span>
-                <span className={styles.logoSpan__s}>sh</span>
+              <a
+                className={`${styles.logoLink} ${
+                  isRotating ? styles.rotate : ''
+                }`}
+                onClick={handleClick}
+              >
+                <span className={styles.logoLink__m}>m</span>
+                <span className={styles.logoLink__i}>i</span>
+                <span className={styles.logoLink__s}>s</span>
+                <span className={styles.logoLink__h}>h</span>
               </a>
             </Link>
           </div>

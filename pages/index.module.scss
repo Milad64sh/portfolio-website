@@ -138,22 +138,44 @@
   .header {
     background-size: cover;
     background-position: center;
-    // height: 100%;
-    // overflow: auto;
     z-index: 1;
     opacity: 1;
   }
-  .section {
+  .slideShow {
     position: relative;
     width: 100%;
     height: 100vh;
+    top: 100%;
     transition: transform 0.3s ease;
+    z-index: 1;
   }
   .description {
     position: relative;
     width: 100%;
     height: 100vh;
+    top: 0%;
     transition: transform 0.3s ease;
+    z-index: 0;
+
+    &.fixed {
+      position: fixed;
+      top: 0%;
+      width: 50%;
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        top: 26%;
+      }
+    }
+
+    // &.sticky {
+    //   position: sticky;
+    //   top: 75%;
+    //   width: 50%;
+    //   @media screen and (max-width: 767px) {
+    //     width: 100%;
+    //     top: 75%;
+    //   }
+    // }
   }
   .footer {
     position: absolute;

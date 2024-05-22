@@ -4,7 +4,6 @@ import { useAppContext } from '../../contexts/AppContext';
 
 const Header = () => {
   const { projects } = useAppContext();
-
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -12,12 +11,10 @@ const Header = () => {
       const scrollTop = window.scrollY;
       const maxScroll = window.innerHeight;
       const header = document.getElementById('headerH2') as HTMLElement | null;
+      const opacity = Math.max(0, 1 - (scrollTop / maxScroll) * 2);
       if (header) {
-        const opacity = Math.max(0, 1 - scrollTop / maxScroll);
         header.style.opacity = opacity.toString();
       }
-      console.log('maxscroll:', maxScroll);
-      console.log('scrollTop:', scrollTop);
     };
     window.addEventListener('scroll', handleScroll);
     return () => {

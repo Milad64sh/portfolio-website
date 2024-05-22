@@ -25,25 +25,46 @@
     width: 100%;
   }
   .logoLink {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
     text-decoration: none;
-    text-transform: uppercase;
-    padding-left: 10px;
-    .logoSpan__m {
-      display: block;
-      letter-spacing: 3px;
-      padding-left: 10px;
-      // color: $high-dark;
-      color: $headings;
+    transition: transform 0.3ss ease-in-out;
+    &.rotate {
+      animation: rotate360 1s ease-in-out;
     }
-    .logoSpan__s {
-      display: block;
-      letter-spacing: 3px;
-      padding-left: 10px;
-      // color: $high-dark;
+
+    &__m,
+    &__i,
+    &__s,
+    &__h {
+      position: absolute;
+      transform-origin: center center;
       color: $headings;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    &__m {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%) translateY(20%) rotate(0deg);
+    }
+    &__i {
+      top: 50%;
+      left: 100%;
+      transform: translateY(-45%) translateX(-270%) rotate(90deg);
+    }
+    &__s {
+      bottom: 0;
+      left: 50%;
+      transform: translateY(-30%) translateX(-50%) rotate(180deg);
+    }
+    &__h {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%) translateX(40%) rotate(270deg);
     }
   }
   .menuIcon {
