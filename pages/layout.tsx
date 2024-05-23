@@ -13,69 +13,47 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [show, setShow] = useState(false);
-  // const contentRef = useRef<HTMLDivElement>(null);
-  // const [isFixed, setIsFixed] = useState(false);
-  // const [isSticky, setIsSticky] = useState(false);
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-  //     const maxScroll = window.innerHeight;
-
-  //     if (scrollTop >= 635 && scrollTop < 1450) {
-  //       setIsFixed(true);
-  //       setIsSticky(false);
-  //     } else if (scrollTop >= 1450) {
-  //       const opacity = Math.max(0, 1 - (scrollTop - 950) / (maxScroll - 950));
-  //       if (contentRef.current) {
-  //         contentRef.current.style.opacity = opacity.toString();
-  //       }
-  //       setIsFixed(false);
-  //       setIsSticky(true);
-  //     } else {
-  //       setIsFixed(false);
-  //       setIsSticky(false);
-  //     }
-
-  //     if (scrollTop >= 950) {
-  //       const opacity = Math.max(0, 1 - (scrollTop - 950) / (maxScroll - 950));
-  //       if (contentRef.current) {
-  //         contentRef.current.style.opacity = opacity.toString();
-  //       }
-  //     } else {
-  //       if (contentRef.current) {
-  //         contentRef.current.style.opacity = '1';
-  //       }
-  //     }
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const handleScroll = () => {
-        const description = document.querySelector('#description');
-        const slideShow = document.querySelector('#projectsSlideShowSection');
-        const header = document.querySelector('#header');
-        const layout = document.querySelector('#layout');
+      const slideShow = document.querySelector(
+        '#projectsSlideShowSection'
+      ) as HTMLElement | null;
+      // const slideShowPlaceholder = document.querySelector(
+      //   '#slideShowPlaceholder'
+      // ) as HTMLElement | null;
+      const description = document.querySelector(
+        '#description'
+      ) as HTMLElement | null;
 
+      const handleScroll = () => {
+        const scrollTop = window.scrollY;
+        const maxScroll = window.innerHeight;
+        const opacity = Math.max(0, 1 - (scrollTop / maxScroll) * 2);
+        const scrollPosition = window.scrollY;
         if (description) {
-          const scrollPosition = window.scrollY;
           if (scrollPosition >= 635) {
             description.classList.add(styles.fixed);
           } else {
             description.classList.remove(styles.fixed);
           }
-          // console.log('scroll position:', scrollPosition);
+          if (scrollPosition >= 1850) {
+            description.style.opacity = opacity.toString();
+          } else {
+            description.style.opacity = '1';
+          }
         }
-        // console.log(description?.clientHeight);
-        console.log('layout:', layout?.clientHeight);
-        console.log('header:', header?.clientHeight);
-        // console.log(slideShow?.clientHeight);
-        // console.log(description?);
+        console.log(description?.classList);
+        if (slideShow) {
+          if (scrollPosition >= 1720) {
+            slideShow.classList.add(styles.fixed);
+            // slideShowPlaceholder.style.display = 'block';
+          } else {
+            slideShow.classList.remove(styles.fixed);
+            // slideShowPlaceholder.style.display = 'none';
+          }
+        }
+        console.log(scrollPosition);
       };
       window.addEventListener('scroll', handleScroll);
 
@@ -85,6 +63,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       };
     }
   }, []);
+  useEffect(() => {}, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -128,9 +107,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <section id='description' className={styles.description}>
           <Description />
         </section>
+
         <section id='projectsSlideShowSection' className={styles.slideShow}>
           <ProjectsSlideShow />
         </section>
+        <div
+          id='slideShowPlaceholder'
+          className={styles.slideShowPlaceholder}
+        ></div>
       </div>
     </>
   );
