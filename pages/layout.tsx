@@ -31,7 +31,7 @@ const Layout = () => {
         const scrollPosition = window.scrollY;
 
         if (description) {
-          if (scrollPosition >= 635) {
+          if (scrollPosition >= 715) {
             description.classList.add(styles.fixed768);
             description.classList.remove(styles.fixed480);
           } else {
@@ -59,7 +59,7 @@ const Layout = () => {
 
         console.log(description?.classList);
         if (slideShow) {
-          if (scrollPosition >= 1720) {
+          if (scrollPosition >= 1690) {
             slideShow.classList.add(styles.fixed);
             // slideShowPlaceholder.style.display = 'block';
           } else {
