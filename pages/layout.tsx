@@ -6,11 +6,9 @@ import MobileNav from './components/MobileNav';
 import styles from './index.module.scss';
 import ProjectsSlideShow from './components/projects/ProjectsSlideShow';
 import Description from './components/Description';
+import Footer from './components/Footer';
 
-interface LayoutProps {
-  children: ReactNode;
-}
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [show, setShow] = useState(false);
 
@@ -31,11 +29,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         const maxScroll = window.innerHeight;
         const opacity = Math.max(0, 1 - (scrollTop / maxScroll) * 2);
         const scrollPosition = window.scrollY;
+
         if (description) {
           if (scrollPosition >= 635) {
-            description.classList.add(styles.fixed);
+            description.classList.add(styles.fixed768);
+            description.classList.remove(styles.fixed480);
           } else {
-            description.classList.remove(styles.fixed);
+            description.classList.remove(styles.fixed768);
           }
           if (scrollPosition >= 1850) {
             description.style.opacity = opacity.toString();
@@ -43,10 +43,33 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             description.style.opacity = '1';
           }
         }
+        if (description) {
+          if (scrollPosition >= 710) {
+            description.classList.remove(styles.fixed768);
+            description.classList.add(styles.fixed480);
+          } else {
+            description.classList.remove(styles.fixed480);
+          }
+          if (scrollPosition >= 1850) {
+            description.style.opacity = opacity.toString();
+          } else {
+            description.style.opacity = '1';
+          }
+        }
+
         console.log(description?.classList);
         if (slideShow) {
           if (scrollPosition >= 1720) {
             slideShow.classList.add(styles.fixed);
+            // slideShowPlaceholder.style.display = 'block';
+          } else {
+            slideShow.classList.remove(styles.fixed);
+            // slideShowPlaceholder.style.display = 'none';
+          }
+        }
+        if (slideShow) {
+          if (scrollPosition >= 1420) {
+            slideShow.classList.add(styles.fi);
             // slideShowPlaceholder.style.display = 'block';
           } else {
             slideShow.classList.remove(styles.fixed);
@@ -115,6 +138,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           id='slideShowPlaceholder'
           className={styles.slideShowPlaceholder}
         ></div>
+        <footer className={styles.footer}>
+          <Footer />
+        </footer>
       </div>
     </>
   );

@@ -6,11 +6,7 @@ import Layout from './layout';
 const Home = () => {
   return (
     <>
-      <Layout>
-        <div className={styles.footer}>
-          <Footer />
-        </div>
-      </Layout>
+      <Layout />
     </>
   );
 };

@@ -6,6 +6,7 @@ import projects from '../data/projects.json';
 import skillsData from '../data/skillsListData.json';
 
 import Head from 'next/head';
+import Footer from './components/Footer';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (

@@ -11,28 +11,58 @@
   align-items: center;
   visibility: visible;
   background-color: transparent;
-  // background-color: $high-dark;
-  background-color: rgba($section-bcg, 0.3);
   transition: $transition;
   animation: fadeIn 1s ease-in-out;
   height: 5rem;
   .logo {
     display: block;
     margin-left: 10px;
+    z-index: 1000;
     @media screen and (max-width: 767px) {
       display: none;
     }
+
     .logoLink {
-      padding: 10px;
-      @include Link;
-      width: 100%;
-      padding-bottom: 0;
-      .logoSpan {
-        display: block;
-        letter-spacing: 3px;
-        font-weight: 400;
+      position: relative;
+      display: block;
+      width: 50px;
+      height: 50px;
+      margin-left: 10px;
+      text-decoration: none;
+      transition: transform 0.3ss ease-in-out;
+      &.rotate {
+        animation: rotate360 1s ease-in-out;
+      }
+
+      &__m,
+      &__i,
+      &__s,
+      &__h {
+        position: absolute;
+        transform-origin: center center;
         color: $headings;
-        // color: darken($main-color, 20%);
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      &__m {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(20%) rotate(0deg);
+      }
+      &__i {
+        top: 50%;
+        left: 100%;
+        transform: translateY(-45%) translateX(-270%) rotate(90deg);
+      }
+      &__s {
+        bottom: 0;
+        left: 50%;
+        transform: translateY(-30%) translateX(-50%) rotate(180deg);
+      }
+      &__h {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) translateX(40%) rotate(270deg);
       }
     }
   }
