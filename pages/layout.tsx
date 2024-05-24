@@ -43,19 +43,19 @@ const Layout = () => {
             description.style.opacity = '1';
           }
         }
-        if (description) {
-          if (scrollPosition >= 710) {
-            description.classList.remove(styles.fixed768);
-            description.classList.add(styles.fixed480);
-          } else {
-            description.classList.remove(styles.fixed480);
-          }
-          if (scrollPosition >= 1850) {
-            description.style.opacity = opacity.toString();
-          } else {
-            description.style.opacity = '1';
-          }
-        }
+        // if (description) {
+        //   if (scrollPosition >= 710) {
+        //     description.classList.remove(styles.fixed768);
+        //     description.classList.add(styles.fixed480);
+        //   } else {
+        //     description.classList.remove(styles.fixed480);
+        //   }
+        //   if (scrollPosition >= 1850) {
+        //     description.style.opacity = opacity.toString();
+        //   } else {
+        //     description.style.opacity = '1';
+        //   }
+        // }
 
         console.log(description?.classList);
         if (slideShow) {

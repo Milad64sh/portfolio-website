@@ -193,19 +193,19 @@
         top: 26%;
       }
     }
-    &.fixed480 {
-      position: fixed;
-      display: block;
-      margin: 0 auto;
-      top: 10%;
-      width: 80%;
-      left: 50%;
-      transform: translateX(-50%);
-      @media screen and (max-width: 480px) {
-        width: 90%;
-        top: 5%;
-      }
-    }
+    // &.fixed480 {
+    //   position: fixed;
+    //   display: block;
+    //   margin: 0 auto;
+    //   top: 10%;
+    //   width: 80%;
+    //   left: 50%;
+    //   transform: translateX(-50%);
+    //   @media screen and (max-width: 480px) {
+    //     width: 90%;
+    //     top: 5%;
+    //   }
+    // }
   }
   .footer {
     position: absolute;
