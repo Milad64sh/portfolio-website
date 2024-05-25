@@ -3,61 +3,127 @@
   height: 200px;
   background-color: $headings;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  &__logo {
+  @media screen and (max-width: 768px) {
+    align-items: start;
+  }
+  &__content {
     display: flex;
-    flex-direction: row;
-    width: 50%;
-    cursor: pointer;
-    z-index: 10000;
-    .logoLink {
-      position: relative;
-      display: block;
-      width: 50px;
-      height: 50px;
-      margin-left: 10px;
-      text-decoration: none;
-      transition: transform 0.3ss ease-in-out;
-      text-shadow: 0px 0px 10px white;
-      &.rotate {
-        animation: rotate360 1s ease-in-out;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    padding: 20px 10px;
+    @media screen and (max-width: 768px) {
+      width: 90%;
+      align-items: center;
+      justify-content: center;
+    }
+    &__logo {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      padding-top: 10px;
+      padding-left: 20px;
+      cursor: pointer;
+      z-index: 10000;
+      .logoLink {
+        position: relative;
+        display: block;
+        width: 50px;
+        height: 50px;
+        // margin-left: 10px;
+        text-decoration: none;
+        transition: transform 0.3ss ease-in-out;
+        text-shadow: 0px 0px 10px white;
+        &.rotate {
+          animation: rotate360 1s ease-in-out;
+        }
+        // &__square {
+        //   position: absolute;
+        //   // border: 1px solid #fff;
+        //   box-shadow: 0px 0px 10px #fff;
+        //   border-radius: 2px;
+        //   width: 20px;
+        //   height: 20px;
+        //   top: 14px;
+        //   left: 15.5px;
+        // }
+        &__m,
+        &__i,
+        &__s,
+        &__h {
+          // position: absolute;
+          transform-origin: center center;
+          color: #fff;
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 2rem;
+          letter-spacing: -4px;
+        }
+        // &__m {
+        //   top: 0;
+        //   left: 50%;
+        //   transform: translateX(-50%) translateY(-50%) rotate(0deg);
+        // }
+        // &__i {
+        //   top: 50%;
+        //   left: 100%;
+        //   transform: translateY(-50%) translateX(-30%) rotate(90deg);
+        // }
+        // &__s {
+        //   bottom: 0;
+        //   left: 50%;
+        //   transform: translateY(48%) translateX(-50%) rotate(180deg);
+        // }
+        // &__h {
+        //   top: 50%;
+        //   left: 0;
+        //   transform: translateY(-52%) translateX(-47%) rotate(270deg);
+        // }
       }
+    }
+    &__links {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
 
-      &__m,
-      &__i,
-      &__s,
-      &__h {
-        position: absolute;
-        transform-origin: center center;
-        color: white;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 2rem;
+      width: 100%;
+      &__question {
+        flex: 0 0 50%;
+        padding-left: 10px;
+        &__p {
+          font-size: 1.5rem;
+          letter-spacing: 2px;
+        }
       }
-      &__m {
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+      &__items {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        &__a {
+          transition: all 0.3s ease;
+          text-decoration: none;
+          letter-spacing: 1px;
+          color: white;
+          &:hover {
+            color: rgba(#fff, 0.4);
+          }
+        }
       }
-      &__i {
-        top: 50%;
-        left: 100%;
-        transform: translateY(-50%) translateX(-30%) rotate(90deg);
-      }
-      &__s {
-        bottom: 0;
-        left: 50%;
-        transform: translateY(45%) translateX(-50%) rotate(180deg);
-      }
-      &__h {
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%) translateX(-70%) rotate(270deg);
-      }
+    }
+    &__copyright {
+      display: block;
+      width: 100%;
+      padding-left: 20px;
     }
   }
 }

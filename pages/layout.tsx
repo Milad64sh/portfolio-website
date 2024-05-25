@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/header';
-import { ReactNode } from 'react';
 import Navigation from './components/Navigation';
 import MobileNav from './components/MobileNav';
 import styles from './index.module.scss';
@@ -17,9 +16,6 @@ const Layout = () => {
       const slideShow = document.querySelector(
         '#projectsSlideShowSection'
       ) as HTMLElement | null;
-      // const slideShowPlaceholder = document.querySelector(
-      //   '#slideShowPlaceholder'
-      // ) as HTMLElement | null;
       const description = document.querySelector(
         '#description'
       ) as HTMLElement | null;
@@ -29,13 +25,13 @@ const Layout = () => {
         const maxScroll = window.innerHeight;
         const opacity = Math.max(0, 1 - (scrollTop / maxScroll) * 2);
         const scrollPosition = window.scrollY;
+        const isSmallScreen = window.matchMedia('(max-width: 768px)').matches;
 
         if (description) {
           if (scrollPosition >= 715) {
-            description.classList.add(styles.fixed768);
-            description.classList.remove(styles.fixed480);
+            description.classList.add(styles.fixed);
           } else {
-            description.classList.remove(styles.fixed768);
+            description.classList.remove(styles.fixed);
           }
           if (scrollPosition >= 1850) {
             description.style.opacity = opacity.toString();
@@ -43,37 +39,21 @@ const Layout = () => {
             description.style.opacity = '1';
           }
         }
-        // if (description) {
-        //   if (scrollPosition >= 710) {
-        //     description.classList.remove(styles.fixed768);
-        //     description.classList.add(styles.fixed480);
-        //   } else {
-        //     description.classList.remove(styles.fixed480);
-        //   }
-        //   if (scrollPosition >= 1850) {
-        //     description.style.opacity = opacity.toString();
-        //   } else {
-        //     description.style.opacity = '1';
-        //   }
-        // }
-
-        console.log(description?.classList);
         if (slideShow) {
-          if (scrollPosition >= 1690) {
-            slideShow.classList.add(styles.fixed);
-            // slideShowPlaceholder.style.display = 'block';
+          if (isSmallScreen) {
+            // For screens smaller than 768px
+            if (scrollPosition >= 1690) {
+              slideShow.classList.add(styles.fixed);
+            } else {
+              slideShow.classList.remove(styles.fixed);
+            }
           } else {
-            slideShow.classList.remove(styles.fixed);
-            // slideShowPlaceholder.style.display = 'none';
-          }
-        }
-        if (slideShow) {
-          if (scrollPosition >= 1420) {
-            slideShow.classList.add(styles.fi);
-            // slideShowPlaceholder.style.display = 'block';
-          } else {
-            slideShow.classList.remove(styles.fixed);
-            // slideShowPlaceholder.style.display = 'none';
+            // For screens larger than 768px
+            if (scrollPosition >= 2150) {
+              slideShow.classList.add(styles.fixed);
+            } else {
+              slideShow.classList.remove(styles.fixed);
+            }
           }
         }
         console.log(scrollPosition);
