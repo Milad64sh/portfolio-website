@@ -16,7 +16,7 @@ const ProjectDetail: React.FC<ProjectDetail> = ({ project }) => {
   return (
     <>
       <main className={styles.container}>
-        <header className={styles.container__header}>
+        {/* <header className={styles.container__header}>
           {project?.prjLink && (
             <Link href={project.prjLink} legacyBehavior>
               <a>
@@ -24,7 +24,7 @@ const ProjectDetail: React.FC<ProjectDetail> = ({ project }) => {
               </a>
             </Link>
           )}
-        </header>
+        </header> */}
         <section className={styles.container__section}>
           <h3>{project?.title}</h3>
           <p>{project?.longDesc}</p>
