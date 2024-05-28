@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import styles from './footer.module.scss';
 import Link from 'next/link';
+import { FaLinkedin } from 'react-icons/fa';
+import { FaGithubSquare } from 'react-icons/fa';
+import { IoMdMail } from 'react-icons/io';
+import { FaXTwitter } from 'react-icons/fa6';
 const Footer = () => {
   const [isRotating, setIsRotating] = useState(false);
 
@@ -43,21 +47,23 @@ const Footer = () => {
             <div className={styles.container__content__links__items}>
               <Link href={linkedinProfileLink} legacyBehavior>
                 <a className={styles.container__content__links__items__a}>
-                  LINKEDIN
+                  <FaLinkedin />
                 </a>
               </Link>
               <Link href={myEmailAddress} legacyBehavior>
                 <a className={styles.container__content__links__items__a}>
-                  GMAIL
+                  <IoMdMail />
                 </a>
               </Link>
               <Link href={githubProfileLink} legacyBehavior>
                 <a className={styles.container__content__links__items__a}>
-                  GITHUB
+                  <FaGithubSquare />
                 </a>
               </Link>
               <Link href={twitterProfileLink} legacyBehavior>
-                <a className={styles.container__content__links__items__a}>X</a>
+                <a className={styles.container__content__links__items__a}>
+                  <FaXTwitter />
+                </a>
               </Link>
             </div>
           </div>

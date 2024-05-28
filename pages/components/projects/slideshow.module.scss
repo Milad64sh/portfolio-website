@@ -23,11 +23,23 @@
       justify-content: center;
       margin-top: 1rem;
       width: 20%;
+      &__scrollable {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        width: 100%;
+        -webkit-overflow-scrolling: touch; // For smooth scrolling on iOS
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          display: none; // Hide scrollbar for WebKit browsers
+        }
+      }
 
       @media screen and (max-width: 767px) {
         flex-direction: row;
         justify-content: space-evenly;
-        width: 80%;
+        width: 90%;
       }
       &__projectContainer {
         width: 100%;
@@ -52,15 +64,16 @@
     &__detail {
       position: relative;
       display: flex;
-      width: 70%;
+      width: 80%;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      margin-top: 2rem;
+      // margin-top: 1rem;
       transition: opacity 0.3s ease-in-out;
       opacity: 0;
       @media screen and (max-width: 767px) {
         flex-direction: column;
+        width: 90%;
       }
       &.entering {
         opacity: 0;

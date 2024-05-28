@@ -30,8 +30,8 @@ const Description = () => {
             ))}
           </span>
           <br />
-          based in Berkshire. lets connect best ideas to best design because
-          your eyes deserve beauty
+          based in Berkshire. Connecting best ideas to best designs for best
+          audinece.
         </p>
       </div>
     </div>

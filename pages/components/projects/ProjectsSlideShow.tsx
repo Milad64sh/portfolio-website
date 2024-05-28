@@ -20,31 +20,35 @@ const ProjectsSlideShow = () => {
     <section className={styles.container}>
       <div className={styles.container__content}>
         <div className={styles.container__content__nav}>
-          {projects.map((project, index) => (
-            <div
-              key={project.id}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className={`${styles.container__content__nav__projectContainer} ${
-                hoveredIndex === index
-                  ? styles.hovered
-                  : (hoveredIndex === index - 1 ||
-                      hoveredIndex === index + 1) &&
-                    hoveredIndex !== null
-                  ? styles.adjacentHovered
-                  : ''
-              }`}
-            >
-              <ProjectCard
+          <div className={styles.container__content__nav__scrollable}>
+            {projects.map((project, index) => (
+              <div
                 key={project.id}
-                project={project}
-                handleClick={(projectId: number) => {
-                  selectProjectById(projectId);
-                }}
-                isSelected={selectedProjectId === project.id}
-              />
-            </div>
-          ))}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                className={`${
+                  styles.container__content__nav__projectContainer
+                } ${
+                  hoveredIndex === index
+                    ? styles.hovered
+                    : (hoveredIndex === index - 1 ||
+                        hoveredIndex === index + 1) &&
+                      hoveredIndex !== null
+                    ? styles.adjacentHovered
+                    : ''
+                }`}
+              >
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  handleClick={(projectId: number) => {
+                    selectProjectById(projectId);
+                  }}
+                  isSelected={selectedProjectId === project.id}
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Render only the selected ProjectDetail */}
