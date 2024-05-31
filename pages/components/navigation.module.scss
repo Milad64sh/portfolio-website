@@ -67,6 +67,7 @@
     }
   }
   .navList {
+    z-index: 100;
     .menu {
       display: flex;
       flex-direction: row;

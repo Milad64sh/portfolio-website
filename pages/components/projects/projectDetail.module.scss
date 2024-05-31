@@ -17,30 +17,39 @@
     @media screen and (max-width: 767px) {
       margin-top: 2rem;
     }
-    img {
-      width: 400px;
-      height: auto;
-      border-radius: 10px;
-      @media screen and (max-width: 767px) {
-        width: 200px;
-        height: auto;
-      }
-    }
   }
   &__section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     padding: 0 10px;
-    border: 1px solid $section-bcg;
-    border-radius: 10px;
+    border: 1px solid $headings;
+    border-radius: 5px;
     width: 70%;
-    margin-left: -10rem;
     @media screen and (max-width: 767px) {
       width: 90%;
       margin-top: 2rem;
       margin-left: 0;
+    }
+    h3 {
+      margin: 0;
+      font-size: 4rem;
+      text-transform: uppercase;
+      @media screen and (max-width: 768px) {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+    }
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      @media screen and (max-width: 768px) {
+        font-size: 1.25rem;
+      }
     }
   }
 }

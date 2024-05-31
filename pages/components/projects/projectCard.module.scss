@@ -3,30 +3,34 @@
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
   &__nav {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    // width: 100%;
-    overflow-x: auto;
     margin: 0px;
+    padding: 30px 20px;
+    @media screen and (max-width: 768px) {
+      padding: 0px 10px;
+    }
     &__imgContainer {
       position: relative;
-      // &:hover {
-      //   .img {
-      //     transform: translateY(15px) scale(1.3);
-      //     z-index: 2;
-      //   }
 
-      //   & + .imgContainer .img,
-      //   & ~ .imgContainer .img {
-      //     transform: translateY(15px) scale(1.1);
-      //     z-index: 1;
-      //   }
-      // }
+      &:hover {
+        .img {
+          transform: translateY(15px) scale(1.1);
+          z-index: 2;
+        }
+
+        & + .imgContainer .img,
+        & ~ .imgContainer .img {
+          transform: translateY(15px) scale(1.1);
+          z-index: 1;
+        }
+      }
       .img {
-        width: 100px;
+        width: 250px;
         height: auto;
         border-radius: 10px;
         cursor: pointer;
@@ -34,7 +38,7 @@
         transform-origin: center;
         @media screen and (max-width: 767px) {
           width: 180px;
-          margin: 0 10px;
+          // margin: 0 10px;
         }
       }
     }

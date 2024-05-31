@@ -28,7 +28,7 @@ const Layout = () => {
         const isSmallScreen = window.matchMedia('(max-width: 768px)').matches;
 
         if (description) {
-          if (scrollPosition >= 715) {
+          if (scrollPosition >= 745) {
             description.classList.add(styles.fixed);
           } else {
             description.classList.remove(styles.fixed);
@@ -49,7 +49,7 @@ const Layout = () => {
             }
           } else {
             // For screens larger than 768px
-            if (scrollPosition >= 1800) {
+            if (scrollPosition >= 2050) {
               slideShow.classList.add(styles.fixed);
             } else {
               slideShow.classList.remove(styles.fixed);
