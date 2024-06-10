@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Transition from 'react-transition-group/Transition';
 import styles from './slideshow.module.scss';
 import { useAppContext } from '../../../contexts/AppContext';
@@ -11,10 +11,24 @@ const ProjectsSlideShow = () => {
     null
   );
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [showDetail, setShowDetail] = useState<boolean>(false);
 
   const selectProjectById = (projectId: number) => {
     setSelectedProjectId(projectId === selectedProjectId ? null : projectId);
+    setShowDetail(true);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowDetail(false);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -66,7 +80,7 @@ const ProjectsSlideShow = () => {
               console.log('Click position:');
               return (
                 <div className={`${styles.container__detail} ${styles[state]}`}>
-                  {selectedProjectId && (
+                  {selectedProjectId && showDetail && (
                     <ProjectDetail
                       project={projects.find(
                         (project) => project.id === selectedProjectId

@@ -26,9 +26,9 @@ const About = () => {
   }, []);
   return (
     <>
-      <div className={styles.navBackground}>
+      {/* <div className={styles.navBackground}>
         {isMobile ? <MobileNav /> : <Navigation />}
-      </div>
+      </div> */}
       <div className={styles.header}>
         <AboutContent />
       </div>

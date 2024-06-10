@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/global.scss';
 import AppProvider from '../contexts/AppContext';
 import { AppProps } from 'next/app';
 import projects from '../data/projects.json';
 import skillsData from '../data/skillsListData.json';
+import Navigation from './components/Navigation';
 
 import Head from 'next/head';
 import Footer from './components/Footer';
+import MobileNav from './components/MobileNav';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    // Initial call to set the initial state
+    handleResize();
+
+    // Attach event listener
+    window.addEventListener('resize', handleResize);
+
+    // Detach event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
     <>
       <Head>
@@ -35,6 +55,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
         />
       </Head>
+      <div>{isMobile ? <MobileNav /> : <Navigation />}</div>
       <AppProvider value={{ skillsData, projects }}>
         <Component {...pageProps} />
       </AppProvider>

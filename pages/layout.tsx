@@ -95,9 +95,6 @@ const Layout = () => {
   return (
     <>
       <div id='layout' className={styles.layout}>
-        <div className={`${styles.layout__nav} ${show ? styles.show : ''}`}>
-          {isMobile ? <MobileNav /> : <Navigation />}
-        </div>
         <span className={styles.layout__1}></span>
         <span className={styles.layout__2}></span>
         <span className={styles.layout__3}></span>

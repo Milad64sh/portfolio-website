@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './projectCard.module.scss';
+import { title } from 'process';
 
 interface ProjectDescriptions {
   project?:
@@ -39,14 +40,15 @@ const ProjectCard: React.FC<ProjectDescriptions> = ({
     <>
       <main className={styles.container}>
         <nav className={styles.container__nav}>
-          <div className={styles.container__nav__imgContainer}>
-          <img
+          <div
             onClick={handleClickImage}
-            src={project?.prjImg}
-            alt=''
-            className={`${styles.img} ${clicked ? styles.clicked : ''}`}
-            />
-            </div>
+            style={{ backgroundImage: `url(${project?.prjImg})` }}
+            className={styles.container__nav__imgContainer}
+          >
+            <h3 className={styles.container__nav__imgContainer__h3}>
+              {project?.title}
+            </h3>
+          </div>
         </nav>
       </main>
     </>
