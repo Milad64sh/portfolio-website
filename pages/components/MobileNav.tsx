@@ -17,8 +17,14 @@ const MobileNav = () => {
   const handleClick = () => {
     setIsRotating(true);
     setTimeout(() => setIsRotating(false), 1000); // Reset after animation duration
+    setShowIcons(false);
+    setIsMenuOpen(false);
   };
 
+  const handleMeClick = () => {
+    setIsMenuOpen(false);
+    setShowIcons(false);
+  };
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(true);
@@ -29,6 +35,7 @@ const MobileNav = () => {
     const mailToLink = `mailto:${myEmailAddress}`;
     window.open(mailToLink, '_blank');
     console.log('email pop up opened');
+    setIsMenuOpen(false);
   };
   const toggleMenu = () => {
     setShowIcons((showIcons) => !showIcons);
@@ -62,7 +69,7 @@ const MobileNav = () => {
                 }`}
               >
                 <Link href='/about' legacyBehavior>
-                  <a className={styles.menuItem}>
+                  <a onClick={handleMeClick} className={styles.menuItem}>
                     <SiAboutdotme />
                   </a>
                 </Link>
