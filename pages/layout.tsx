@@ -49,7 +49,7 @@ const Layout = () => {
             }
           } else {
             // For screens larger than 768px
-            if (scrollPosition >= 2050) {
+            if (scrollPosition >= 1450) {
               slideShow.classList.add(styles.fixed);
             } else {
               slideShow.classList.remove(styles.fixed);

@@ -27,7 +27,8 @@
     padding: 0 10px;
     border: 1px solid $headings;
     border-radius: 5px;
-    width: 70%;
+    width: 100%;
+    margin-top: 10rem;
     @media screen and (max-width: 767px) {
       width: 90%;
       margin-top: 2rem;
@@ -35,7 +36,7 @@
     }
     h3 {
       margin: 0;
-      font-size: 4rem;
+      font-size: 2.5rem;
       text-transform: uppercase;
       @media screen and (max-width: 768px) {
         font-size: 1.5rem;
