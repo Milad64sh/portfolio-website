@@ -36,11 +36,12 @@
     color: $headings;
     padding: 10px 20px;
     font-weight: 200;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     border-radius: 4px;
     width: 70%;
-    @media screen and (width: 360px) and (height: 800px) {
+    @media screen and (max-width: 768px) {
       margin-top: 20px;
+      font-size: 1.1rem;
     }
   }
 }

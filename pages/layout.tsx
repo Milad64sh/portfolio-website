@@ -66,7 +66,6 @@ const Layout = () => {
       };
     }
   }, []);
-  useEffect(() => {}, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -101,6 +100,7 @@ const Layout = () => {
         <span className={styles.layout__4}></span>
         <span className={styles.layout__5}></span>
 
+        <div>{isMobile ? <MobileNav /> : <Navigation />}</div>
         <header id='header' className={styles.header}>
           <Header />
         </header>
