@@ -5,11 +5,33 @@ import MobileNav from './components/MobileNav';
 import styles from './index.module.scss';
 import ProjectsSlideShow from './components/projects/ProjectsSlideShow';
 import Description from './components/Description';
+import Task1 from './components/tasks/Task1';
 import Footer from './components/Footer';
 
 const Layout = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [show, setShow] = useState(false);
+  const [showTask1, setShowTask1] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const task1Element = document.querySelector('#task1');
+
+      if (task1Element) {
+        const rect = task1Element.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (rect.top < windowHeight * 0.8) {
+          setShowTask1(true);
+        } else {
+          setShowTask1(false);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -26,7 +48,6 @@ const Layout = () => {
         const opacity = Math.max(0, 1 - (scrollTop / maxScroll) * 2);
         const scrollPosition = window.scrollY;
         const isSmallScreen = window.matchMedia('(max-width: 768px)').matches;
-
         if (description) {
           if (scrollPosition >= 745) {
             description.classList.add(styles.fixed);
@@ -104,17 +125,24 @@ const Layout = () => {
         <header id='header' className={styles.header}>
           <Header />
         </header>
-        <section id='description' className={styles.description}>
-          <Description />
+        <section
+          id='task1'
+          className={`${styles.tasks} ${showTask1 ? styles.animate : ''}`}
+        >
+          <Task1 />
         </section>
 
-        <section id='projectsSlideShowSection' className={styles.slideShow}>
+        {/* <section id='description' className={styles.description}>
+          <Description />
+        </section> */}
+
+        {/* <section id='projectsSlideShowSection' className={styles.slideShow}>
           <ProjectsSlideShow />
-        </section>
-        <div
+        </section> */}
+        {/* <div
           id='slideShowPlaceholder'
           className={styles.slideShowPlaceholder}
-        ></div>
+        ></div> */}
         <footer className={styles.footer}>
           <Footer />
         </footer>

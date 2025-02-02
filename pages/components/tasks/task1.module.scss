@@ -1,0 +1,42 @@
+@import '../../../styles/variables.scss';
+.container {
+  display: flex;
+  background-color: $section-bcg;
+  border-radius: 10px;
+  padding: 0px 20px;
+  font-family: 'Jost', sans-serif;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    &__header {
+      font-size: 2rem;
+      color: $headings;
+      margin-top: 10px;
+      h2 {
+        margin: 0;
+        padding: 0;
+        letter-spacing: 2px;
+      }
+    }
+    &__desc {
+      color: $headings;
+      p {
+        font-size: 1.25rem;
+        a {
+          color: $headings; // Change to your desired color
+          font-size: 1.35rem;
+          text-decoration: none; // Remove underline if needed
+          font-weight: bold; // Optional: Make it bold
+          transition: all 0.3s ease-in-out;
+          text-decoration: underline;
+
+          &:hover {
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+  }
+}
