@@ -17,7 +17,7 @@ const Task1 = () => {
             via AJAX requests{' '}
             <span>
               <Link
-                href='https://geonames-api-requests-a22d16a04475.herokuapp.com/'
+                href='https://geonames.miladshalikarian.co.uk'
                 target='_blank'
                 rel='noopener noreferrer'
               >
