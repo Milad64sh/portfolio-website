@@ -6,6 +6,7 @@ import styles from './index.module.scss';
 import ProjectsSlideShow from './components/projects/ProjectsSlideShow';
 import Description from './components/Description';
 import Task1 from './components/tasks/Task1';
+import ProjectOne from './components/tasks/projectOne';
 import Footer from './components/Footer';
 
 const Layout = () => {
@@ -130,6 +131,12 @@ const Layout = () => {
           className={`${styles.tasks} ${showTask1 ? styles.animate : ''}`}
         >
           <Task1 />
+        </section>
+        <section
+          id='task1'
+          className={`${styles.tasks} ${showTask1 ? styles.animate : ''}`}
+        >
+          <ProjectOne />
         </section>
 
         {/* <section id='description' className={styles.description}>
